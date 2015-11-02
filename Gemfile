@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'togostanza', '~> 2.0'
+gem 'togostanza', path: '../togostanza-gem'
 
 gem 'unicorn'
 gem 'rake'
