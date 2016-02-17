@@ -72,18 +72,6 @@ PATH
       togostanza
 
 PATH
-  remote: ./geneset_entry_stanza
-  specs:
-    geneset_entry_stanza (0.0.1)
-      togostanza
-
-PATH
-  remote: ./geneset_stanza
-  specs:
-    geneset_stanza (0.0.1)
-      togostanza
-
-PATH
   remote: ./genome_cross_references_stanza
   specs:
     genome_cross_references_stanza (0.0.1)
@@ -348,11 +336,6 @@ PATH
     taxonomy_ortholog_profile_stanza (0.0.1)
       togostanza
 
-PATH
-  remote: ./variation_stanza
-  specs:
-    variation_stanza (0.0.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -475,8 +458,6 @@ DEPENDENCIES
   environment_top_level_symbolic_image_nano_stanza!
   gene_attributes_stanza!
   gene_length_nano_stanza!
-  geneset_entry_stanza!
-  geneset_stanza!
   genome_cross_references_stanza!
   genome_genomic_context_stanza!
   genome_information_stanza!
@@ -526,7 +507,6 @@ DEPENDENCIES
   taxonomy_ortholog_profile_stanza!
   togostanza (~> 2.0)
   unicorn
-  variation_stanza!
 
 BUNDLED WITH
    1.10.6
