@@ -981,12 +981,12 @@
           "stanza:required": true
         },
         { "stanza:key": "gene_id",
-          "stanza:example": "all1455",
-          "stanza:description": "Gene identifier (e.g. all1455)",
+          "stanza:example": "PCC7120DELTA_RS09085",
+          "stanza:description": "Gene identifier (e.g. PCC7120DELTA_RS09085)",
           "stanza:required": true
         }
       ],
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_ontologies\" data-stanza-tax-id=\"103690\" data-stanza-gene-id=\"all1455\"></div>",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_ontologies\" data-stanza-tax-id=\"103690\" data-stanza-gene-id=\"PCC7120DELTA_RS09085\"></div>",
       "stanza:type": "Stanza",
       "stanza:context": "Phenotype",
       "stanza:display": "Table",
@@ -1030,8 +1030,8 @@
       "stanza:definition": "Scatter plot of Pfam corresponding with genes.",
       "stanza:parameter": [
         { "stanza:key": "gene_id",
-          "stanza:example": "all1455",
-          "stanza:description": "Gene identifier (e.g. all1455)",
+          "stanza:example": "PCC7120DELTA_RS09085",
+          "stanza:description": "Gene identifier (e.g. PCC7120DELTA_RS09085)",
           "stanza:required": true
         },
         { "stanza:key": "tax_id",
@@ -1040,7 +1040,7 @@
           "stanza:required": true
         }
       ],
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_pfam_plot\" data-stanza-tax-id=\"103690\" data-stanza-gene-id=\"all1455\"></div>",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_pfam_plot\" data-stanza-tax-id=\"103690\" data-stanza-gene-id=\"PCC7120DELTA_RS09085\"></div>",
       "stanza:type": "Stanza",
       "stanza:context": "Phenotype",
       "stanza:display": "Graph",

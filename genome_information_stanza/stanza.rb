@@ -7,18 +7,18 @@ class GenomeInformationStanza < TogoStanza::Stanza::Base
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
       PREFIX idtax: <http://identifiers.org/taxonomy/>
       PREFIX togo: <http://togogenome.org/stats/>
+      PREFIX ass: <http://www.ncbi.nlm.nih.gov/assembly/>
 
-      SELECT  ?bioproject  ?bioproject_id ?refseq_version ?refseq_link  ?desc ?replicon_type ?sequence_length
+      SELECT  DISTINCT ?assembly_id ?assembly_name ?refseq_version ?refseq_link  ?desc ?replicon_type ?sequence_length
        ?gene_cnt ?rrna_cnt ?trna_cnt ?other_cnt
       FROM <http://togogenome.org/graph/refseq>
       FROM <http://togogenome.org/graph/so>
       FROM <http://togogenome.org/graph/stats>
+      FROM <http://togogenome.org/graph/assembly_report>
       WHERE
       {
-        idtax:#{tax_id} rdfs:seeAlso ?bioproject .
-        ?bioproject a insdc:BioProject ;
-          rdfs:label ?bioproject_id .
-        ?refseq_link insdc:dblink ?bioproject ;
+        ?seq obo:RO_0002162 idtax:#{tax_id} .
+        ?refseq_link insdc:sequence ?seq ;
           a insdc:Entry ;
           insdc:sequence_version ?refseq_version ;
           insdc:definition ?desc ;
@@ -29,10 +29,14 @@ class GenomeInformationStanza < TogoStanza::Stanza::Base
           togo:rrna ?rrna_cnt ;
           togo:trna ?trna_cnt ;
           togo:other ?other_cnt .
-      } ORDER BY ?bioproject_id ?refseq_version
+        ?refseq_link rdfs:seeAlso ?ass_id .
+        ?ass rdfs:seeAlso ?ass_id ;
+          ass:assembly_id ?assembly_id ;
+          ass:asm_name ?assembly_name .
+      } ORDER BY ?assembly_id ?refseq_version
     SPARQL
 
-    results.reverse.group_by {|hash| hash[:bioproject_id] }.map {|hash|
+    results.reverse.group_by {|hash| hash[:assembly_id] }.map {|hash|
       hash.last.sort_by {|hash2|
         hash2[:replicon_type]
       }
