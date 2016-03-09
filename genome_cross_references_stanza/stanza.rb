@@ -6,8 +6,9 @@ class GenomeCrossReferencesStanza < TogoStanza::Stanza::Base
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
       PREFIX idtax: <http://identifiers.org/taxonomy/>
+      PREFIX ass: <http://www.ncbi.nlm.nih.gov/assembly/>
 
-      SELECT ?bp_label ?rs ?desc ?xref ?xref_type ?label
+      SELECT ?assembly_name ?rs ?desc ?xref ?xref_type ?label
       WHERE
       {
         VALUES ?tax_id { idtax:#{tax_id} }
@@ -19,10 +20,7 @@ class GenomeCrossReferencesStanza < TogoStanza::Stanza::Base
         {
           ?refseq a insdc:Entry ;
             insdc:definition ?desc ;
-            insdc:sequence_version ?rs ;
-            insdc:dblink  ?bp .
-          ?bp rdf:type insdc:BioProject ;
-             rdfs:label ?bp_label .
+            insdc:sequence_version ?rs .
 
           #link data
           { #BioProject
@@ -45,15 +43,25 @@ class GenomeCrossReferencesStanza < TogoStanza::Stanza::Base
             FILTER (! ?xref_type IN (insdc:Entry, insdc:RefSeq))
           }
         }
-      } ORDER BY ?bp_label ?refseq
+        GRAPH <http://togogenome.org/graph/stats>
+        {
+          ?refseq rdfs:seeAlso ?ass_id .
+        }
+        GRAPH <http://togogenome.org/graph/assembly_report>
+        {
+          ?ass rdfs:seeAlso ?ass_id ;
+            ass:assembly_id ?assembly_id ;
+            ass:asm_name ?assembly_name .
+        }
+      } ORDER BY ?assembly_name ?refseq
     SPARQL
 
-    results.group_by {|h| h[:bp_label] }.map do |bp, values|
+    results.group_by {|h| h[:assembly_name] }.map do |assembly, values|
       data = values.group_by {|h| h[:rs] }.map {|rs, v|
         {rs: rs, desc: v.first[:desc], xref: xref(v)}
       }
-      bp = 'BioProject:' + bp
-      {bp: bp, data: data}
+      assembly = 'Assembly:' + assembly
+      {assembly: assembly, data: data}
     end
   end
 

@@ -10,8 +10,8 @@ class OrganismJbrowseStanza < TogoStanza::Stanza::Base
       WHERE
       {
         GRAPH <http://togogenome.org/graph/refseq> {
-        ?seq obo:RO_0002162 idtax:#{tax_id}  .
-        ?refseq_link insdc:sequence ?seq ;
+          ?seq obo:RO_0002162 idtax:#{tax_id}  .
+          ?refseq_link insdc:sequence ?seq ;
             a insdc:Entry ;
             insdc:sequence_version ?version ;
             insdc:sequence/insdc:sequence_length ?length .
