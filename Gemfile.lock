@@ -72,6 +72,12 @@ PATH
       togostanza
 
 PATH
+  remote: ./gene_wikidata_nano_stanza
+  specs:
+    gene_wikidata_nano_stanza (0.0.1)
+      togostanza
+
+PATH
   remote: ./genome_cross_references_stanza
   specs:
     genome_cross_references_stanza (0.0.1)
@@ -458,6 +464,7 @@ DEPENDENCIES
   environment_top_level_symbolic_image_nano_stanza!
   gene_attributes_stanza!
   gene_length_nano_stanza!
+  gene_wikidata_nano_stanza!
   genome_cross_references_stanza!
   genome_genomic_context_stanza!
   genome_information_stanza!
