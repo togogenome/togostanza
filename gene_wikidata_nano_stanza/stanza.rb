@@ -9,7 +9,7 @@ class GeneWikidataNanoStanza < TogoStanza::Stanza::Base
       PREFIX wdt: <http://www.wikidata.org/prop/direct/>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-      SELECT DISTINCT * #?species ?taxid ?gene ?locustag
+      SELECT DISTINCT ?species ?taxid ?gene ?gene_id
       WHERE
       {
         VALUES ?taxid { "#{tax_id}" }
@@ -36,5 +36,4 @@ class GeneWikidataNanoStanza < TogoStanza::Stanza::Base
       result
     end
   end
-
 end
