@@ -1,0 +1,23 @@
+{
+  "id": "organism_wikidata_nano",
+  "label": "Wikidata",
+  "definition": "Corresponding Wikidata entry of an organism.",
+  "parameter": [
+    {
+      "key": "data-stanza-tax-id",
+      "example": "471472",
+      "description": "Taxonomy identifier.",
+      "required": true
+    }
+  ],
+  "type": "NanoStanza",
+  "context": "Organism",
+  "display": "String",
+  "provider": "DBCLS",
+  "license": "CC-BY",
+  "author": "Toshiaki Katayama",
+  "address": "ktym@dbcls.jp",
+  "contributor": ["Yoko Okabeppu", "Tim Putman"],
+  "created": "2016-06-16",
+  "updated": "2016-06-16"
+}
