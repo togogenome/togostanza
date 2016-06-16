@@ -75,3 +75,4 @@ gem 'protein_3d_structure_nano_stanza', path: './protein_3d_structure_nano_stanz
 gem 'protein_ec_number_nano_stanza', path: './protein_ec_number_nano_stanza'
 gem 'protein_references_timeline_nano_stanza', path: './protein_references_timeline_nano_stanza'
 gem 'gene_wikidata_nano_stanza', path: './gene_wikidata_nano_stanza'
+gem 'organism_wikidata_nano_stanza', path: './organism_wikidata_nano_stanza'
