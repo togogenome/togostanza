@@ -9,12 +9,21 @@ class GeneWikidataNanoStanza < TogoStanza::Stanza::Base
       PREFIX wdt: <http://www.wikidata.org/prop/direct/>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-      SELECT DISTINCT ?species ?taxid ?gene ?locustag
-      WHERE {
+      SELECT DISTINCT ?species ?taxid ?gene ?gene_id
+      WHERE
+      {
         VALUES ?taxid { "#{tax_id}" }
-        VALUES ?lucustag { "#{gene_id}" }
-        ?gene wdt:P703 ?species . # P703 Found in taxon
-        OPTIONAL { ?gene wdt:P2393 ?locustag }
+        VALUES ?gene_id { "#{gene_id}"@en "#{gene_id}" }
+
+        ?gene rdfs:label | wdt:P2393 ?gene_id .
+        {
+          ?gene wdt:P703 ?species . # P703 Found in taxon
+        }
+        UNION
+        {
+           ?gene wdt:P703 ?species2 . # P703 Found in taxon
+           ?species2 wdt:P460 ?species . # Same as
+        }
         ?species wdt:P685 ?taxid .
       }
     SPARQL
@@ -27,5 +36,4 @@ class GeneWikidataNanoStanza < TogoStanza::Stanza::Base
       result
     end
   end
-
 end
