@@ -1,0 +1,35 @@
+{
+  "id": "js_stanza_wrapper",
+  "label": "JS stanza wrapper",
+  "definition": "Provides IFRAME for the JavaScript version of TogoStanza",
+  "parameter": [
+    {
+      "key": "data-stanza-server",
+      "example": "http://togostanza.org/dist/stanza",
+      "description": "JavaScript stanza server URL",
+      "required": true
+    },
+    {
+      "key": "data-stanza-name",
+      "example": "list_refex_uberon_expression",
+      "description": "JavaScript stanza name",
+      "required": true
+    },
+    {
+      "key": "data-stanza-options",
+      "example": "uberon_id=UBERON_0001890 hoge_id=fuga",
+      "description": "JavaScript stanza options",
+      "required": true
+    }
+  ],
+  "type": "Stanza",
+  "context": "",
+  "display": "",
+  "provider": "DBCLS",
+  "license": "CC-BY",
+  "author": "Toshiaki Katayama",
+  "address": "ktym@dbcls.jp",
+  "contributor": [],
+  "created": "2016-10-11",
+  "updated": "2016-10-11"
+}
