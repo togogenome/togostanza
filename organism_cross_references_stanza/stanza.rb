@@ -5,6 +5,7 @@ class OrganismCrossReferencesStanza < TogoStanza::Stanza::Base
       PREFIX tax: <http://identifiers.org/taxonomy/>
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
       PREFIX mccv: <http://purl.jp/bio/01/mccv#>
+      PREFIX obo: <http://purl.obolibrary.org/obo/>
 
       SELECT DISTINCT ?type_label ?link
       WHERE
@@ -18,12 +19,10 @@ class OrganismCrossReferencesStanza < TogoStanza::Stanza::Base
         }
         UNION
         {
-          GRAPH <http://togogenome.org/graph/stats>
-          {
-            tax:#{tax_id} rdfs:seeAlso/rdfs:seeAlso ?refseq .
-          }
           GRAPH  <http://togogenome.org/graph/refseq>
           {
+            ?sequence obo:RO_0002162 tax:#{tax_id} .
+            ?refseq insdc:sequence ?sequence .
             ?refseq a insdc:Entry ;
               rdfs:seeAlso ?link .
             ?link a ?type .

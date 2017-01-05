@@ -12,12 +12,10 @@ class GenomeCrossReferencesStanza < TogoStanza::Stanza::Base
       WHERE
       {
         VALUES ?tax_id { idtax:#{tax_id} }
-        GRAPH <http://togogenome.org/graph/stats>
-        {
-          ?tax_id  rdfs:seeAlso/rdfs:seeAlso ?refseq .
-        }
         GRAPH  <http://togogenome.org/graph/refseq>
         {
+          ?sequence obo:RO_0002162 ?tax_id .
+          ?refseq insdc:sequence ?sequence .
           ?refseq a insdc:Entry ;
             insdc:definition ?desc ;
             insdc:sequence_version ?rs .

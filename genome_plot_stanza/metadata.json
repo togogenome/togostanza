@@ -8,12 +8,6 @@
       "example": "103690",
       "description": "Taxonomy identifier.",
       "required": true
-    },
-    {
-      "key": "data-stanza-gene-id",
-      "example": "PCC7120DELTA_RS09085",
-      "description": "Gene identifier.",
-      "required": true
     }
   ],
   "type": "Stanza",
