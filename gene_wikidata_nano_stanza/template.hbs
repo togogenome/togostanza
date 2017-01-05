@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/stanza/assets/nanostanza.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="/stanza/assets/nanostanza.js"></script>
+  </head>
+
+  <body>
+    <h1>{{title}}</h1>
+    <div id="main-view">
+      {{#if result}}
+        <p class="single-text-view text-size-adjust text-size-middle" style="line-height: 20px; font-size: 18px;"><span style="white-space: nowrap; line-height: 0;"><img src="/stanza/assets/gene_wikidata_nano/wikidatawiki.png" style="margin-top: 24px; height: 90px;"><br><a href="{{result.gene}}" target="_blank">{{result.item}}</a></span></p>          
+      {{else}}
+        <img src="/stanza/assets/no_data.svg" />
+      {{/if}}
+    </div>
+  </body>
+</html>

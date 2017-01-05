@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>JS stanza wrapper</title>
+    {{#each css_uri}}
+    <link rel="stylesheet" href="{{this}}" />
+    {{/each}}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/bootstrap.min.js"></script>
+    {{adjust_iframe_height_script}}
+    <script src="assets/js_stanza_wrapper/webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="{{params.server}}/{{params.name}}/">
+    <link rel="stylesheet" href="assets/js_stanza_wrapper/css/ts.css">
+  </head>
+
+  <body>
+    <div class="js_stanza_wrapper">
+      <togostanza-{{params.name}} {{params.options}}></togostanza-{{params.name}}>
+    </div>
+  </body>
+</html>
