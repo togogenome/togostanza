@@ -26,14 +26,16 @@ class ProteinOrthologsStanza < TogoStanza::Stanza::Base
     end
 
     uniprot_uri = protein_attributes.first[:protein]
-    ortholog_uris = query("http://sparql.nibb.ac.jp/sparql", <<-SPARQL.strip_heredoc)
+    ortholog_uris = query("http://mbgd.genome.ad.jp:8047/sparql", <<-SPARQL.strip_heredoc)
       PREFIX mbgd: <http://purl.jp/bio/11/mbgd#>
       PREFIX orth: <http://purl.jp/bio/11/orth#>
+      PREFIX mbgdr: <http://mbgd.genome.ad.jp/rdf/resource/>
 
       SELECT DISTINCT ?protein
       WHERE
       {
         ?group a orth:OrthologGroup ;
+          orth:inDataset mbgdr:default ;
           orth:member/orth:gene/mbgd:uniprot <#{uniprot_uri}> ;
           orth:member/orth:gene/mbgd:uniprot ?protein .
       }
