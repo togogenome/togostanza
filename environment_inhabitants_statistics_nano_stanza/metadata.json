@@ -5,7 +5,7 @@
   "parameter": [
     {
       "key": "data-stanza-meo-id",
-      "example": "MEO_0000038 # Fresh water",
+      "example": "MEO_0000038",
       "description": "MEO identifier .",
       "required": true
     }

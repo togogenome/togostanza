@@ -3,7 +3,7 @@ class Protein3dStructureNanoStanza < TogoStanza::Stanza::Base
     result = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc).first
       PREFIX up: <http://purl.uniprot.org/core/>
 
-      SELECT ?protein ?attr ?url
+      SELECT ?protein ?pdb_uri
       FROM <http://togogenome.org/graph/uniprot>
       FROM <http://togogenome.org/graph/tgup>
       WHERE {
@@ -16,15 +16,14 @@ class Protein3dStructureNanoStanza < TogoStanza::Stanza::Base
         <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
           rdfs:seeAlso ?id_upid .
         ?id_upid rdfs:seeAlso ?protein .
-        ?protein a up:Protein .
-        ?attr rdf:subject ?protein .
-        ?attr a up:Structure_Mapping_Statement .
-        ?attr rdf:object ?url .
+        ?protein a up:Protein ;
+          rdfs:seeAlso ?pdb_uri .
+        ?pdb_uri a up:Structure_Resource .
       }
     SPARQL
 
     if result
-      result.merge(img_url: "http://www.rcsb.org/pdb/images/#{result[:url][-4, 4].downcase!}_bio_r_500.jpg")
+      result.merge(img_url: "http://www.rcsb.org/pdb/images/#{result[:pdb_uri][-4, 4].downcase!}_bio_r_500.jpg")
     else
       nil
     end

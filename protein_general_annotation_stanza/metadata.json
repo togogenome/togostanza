@@ -1,5 +1,5 @@
 {
-  "@id": "http://togostanza.org/stanza/protein_general_annotation",
+  "id": "protein_general_annotation",
   "label": "Protein general annotation",
   "definition": "Protein general annotation",
   "parameter": [
@@ -11,12 +11,12 @@
     },
     {
       "key": "data-stanza-gene-id",
-      "example": "all1455",
+      "example": "PCC7120DELTA_RS09085",
       "description": "Gene identifier.",
       "required": true
     }
   ],
-  "usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_general_annotation\" data-stanza-tax-id=\"103690\" data-stanza-gene-id=\"all1455\"></div>",
+  "usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_general_annotation\" data-stanza-tax-id=\"103690\" data-stanza-gene-id=\"PCC7120DELTA_RS09085\"></div>",
   "type": "Stanza",
   "context": "Phenotype",
   "display": "Other",

@@ -5,7 +5,7 @@
   "parameter": [
     {
       "key": "data-stanza-gene-id",
-      "example": "all1455",
+      "example": "PCC7120DELTA_RS09085",
       "description": "Locus tag of a gene",
       "required": true
     },
