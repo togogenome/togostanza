@@ -23,11 +23,14 @@ class MicrobialPhenotypeEnvironmentCompositionStanza < TogoStanza::Stanza::Base
       PREFIX meo: <http://purl.jp/bio/11/meo/>
       PREFIX tax: <http://ddbj.nig.ac.jp/ontologies/taxonomy/>
 
-      SELECT ?environment ?meo COUNT(DISTINCT(?tax_id)) AS ?cnt
-       FROM <http://togogenome.org/graph/taxonomy>
-       FROM <http://togogenome.org/graph/gold>
-       FROM <http://togogenome.org/graph/mpo>
-       FROM <http://togogenome.org/graph/meo>
+      SELECT
+       ?environment
+       (REPLACE(STR(?meo), 'http://purl.jp/bio/11/meo/', '') AS ?meo_id)
+       COUNT(DISTINCT(?tax_id)) AS ?cnt
+      FROM <http://togogenome.org/graph/taxonomy>
+      FROM <http://togogenome.org/graph/gold>
+      FROM <http://togogenome.org/graph/mpo>
+      FROM <http://togogenome.org/graph/meo>
       WHERE
       {
         VALUES ?mpo_id { mpo:#{mpo_id} }
