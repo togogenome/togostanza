@@ -21,26 +21,29 @@ class MicrobialPhenotypeEnvironmentCompositionStanza < TogoStanza::Stanza::Base
       PREFIX mpo:  <http://purl.jp/bio/01/mpo#>
       PREFIX mccv: <http://purl.jp/bio/01/mccv#>
       PREFIX meo: <http://purl.jp/bio/11/meo/>
+      PREFIX tax: <http://ddbj.nig.ac.jp/ontologies/taxonomy/>
 
-      SELECT ?environment ?meo_id COUNT(DISTINCT(?tax_id)) AS ?cnt
+      SELECT
+       ?environment
+       (REPLACE(STR(?meo), 'http://purl.jp/bio/11/meo/', '') AS ?meo_id)
+       COUNT(DISTINCT(?tax_id)) AS ?cnt
       FROM <http://togogenome.org/graph/taxonomy>
       FROM <http://togogenome.org/graph/gold>
       FROM <http://togogenome.org/graph/mpo>
       FROM <http://togogenome.org/graph/meo>
-      WHERE {
-        ?mpo_list rdfs:subClassOf* mpo:#{mpo_id} .
-        ?tax_id ?p ?mpo_list .
-        BIND('http://identifiers.org/taxonomy/' AS ?identifer) .
-        FILTER(CONTAINS(STR(?tax_id), ?identifer)) .
-        OPTIONAL {
+      WHERE
+      {
+        VALUES ?mpo_id { mpo:#{mpo_id} }
+        ?mpo_list rdfs:subClassOf* ?mpo_id .
+        ?tax_id ?mpo_prop ?mpo_list .
+        ?tax_id a tax:Taxon .
+        OPTIONAL
+       {
           ?gold mccv:MCCV_000020 ?tax_id .
           ?gold meo:MEO_0000437  ?meo .
           ?meo rdfs:label ?environment .
-          BIND(REPLACE(STR(?meo), 'http://purl.jp/bio/11/meo/', '') AS ?meo_id)
-          FILTER(LANG(?environment) != "ja")
         }
-      }
-      GROUP BY ?meo_id ?environment ORDER BY DESC(?cnt)
+      } GROUP BY ?meo ?environment ORDER BY DESC(?cnt)
     SPARQL
   end
 end
