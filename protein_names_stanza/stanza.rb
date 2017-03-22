@@ -47,7 +47,7 @@ class ProteinNamesStanza < TogoStanza::Stanza::Base
     protein_summary = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
       PREFIX up: <http://purl.uniprot.org/core/>
 
-      SELECT DISTINCT ?recommended_name ?ec_name ?alternative_names ?organism_name ?parent_taxonomy_names (COUNT(?parent_taxonomy) AS ?taxonomy_count) REPLACE( STR(?tax_id), "http://purl.uniprot.org/taxonomy/", "") AS ?taxonomy_id
+      SELECT DISTINCT ?recommended_name ?ec_name ?alternative_names
       FROM <http://togogenome.org/graph/taxonomy>
       FROM <http://togogenome.org/graph/uniprot>
       FROM <http://togogenome.org/graph/tgup>
@@ -77,27 +77,7 @@ class ProteinNamesStanza < TogoStanza::Stanza::Base
           ?protein up:alternativeName ?alternative_names_node .
           ?alternative_names_node up:fullName ?alternative_names .
         }
-
-        # Taxonomic identifier
-        <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
-          rdfs:seeAlso ?id_taxid.
-        ?id_taxid rdfs:seeAlso ?tax_id .
-        ?tax_id a up:Taxon .
-
-        # Organism
-        OPTIONAL { ?tax_id up:scientificName ?organism_name . }
-
-        # Taxonomic lineage
-        OPTIONAL {
-          ?tax_id rdfs:subClassOf* ?parent_taxonomy .
-          # 真核は階層が多いので rank のあるものだけ表示
-          ?parent_taxonomy up:rank ?rank .
-          ?parent_taxonomy up:scientificName ?parent_taxonomy_names .
-          ?parent_taxonomy rdfs:subClassOf* ?ancestor .
-        }
       }
-      GROUP BY ?recommended_name ?ec_name ?alternative_names ?organism_name ?parent_taxonomy_names ?parent_taxonomy ?tax_id
-      ORDER BY DESC(?taxonomy_count)
     SPARQL
 
     summary = {}
@@ -110,8 +90,29 @@ class ProteinNamesStanza < TogoStanza::Stanza::Base
 
       summary[:parent_taxonomy_names].reverse! if summary[:parent_taxonomy_names]
     end
-
     protein_names = genes.merge(summary)
+
+    organism = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+      PREFIX taxo: <http://ddbj.nig.ac.jp/ontologies/taxonomy/>
+      PREFIX taxid: <http://identifiers.org/taxonomy/>
+
+      SELECT DISTINCT ?tax ?tax_label
+      FROM <http://togogenome.org/graph/taxonomy>
+      FROM <http://togogenome.org/graph/tgup>
+      WHERE
+      {
+        <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
+          rdfs:seeAlso ?id_taxid.
+        ?id_taxid rdfs:seeAlso ?search_tax .
+        ?search_tax a taxo:Taxon .
+        ?search_tax rdfs:subClassOf ?tax OPTION (transitive, t_direction 1, t_min(0), t_step("step_no") as ?step) .
+        ?tax rdfs:label ?tax_label .
+        FILTER(?tax != taxid:1)
+      } ORDER BY DESC(?step)
+    SPARQL
+    protein_names[:taxonomy_id] = organism.last[:tax].split('/').last
+    protein_names[:organism_name] = organism.last[:tax_label]
+    protein_names[:parent_taxonomy_names] = organism[0..-2].map {|row| row[:tax_label]}
 
     if protein_names.keys.size == 0
       nil
