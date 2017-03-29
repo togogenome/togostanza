@@ -110,9 +110,11 @@ class ProteinNamesStanza < TogoStanza::Stanza::Base
         FILTER(?tax != taxid:1)
       } ORDER BY DESC(?step)
     SPARQL
-    protein_names[:taxonomy_id] = organism.last[:tax].split('/').last
-    protein_names[:organism_name] = organism.last[:tax_label]
-    protein_names[:parent_taxonomy_names] = organism[0..-2].map {|row| row[:tax_label]}
+    if organism.size != 0
+      protein_names[:taxonomy_id] = organism.last[:tax].split('/').last
+      protein_names[:organism_name] = organism.last[:tax_label]
+      protein_names[:parent_taxonomy_names] = organism[0..-2].map {|row| row[:tax_label]}
+    end
 
     if protein_names.keys.size == 0
       nil
