@@ -1,9 +1,11 @@
 class EnvironmentOrganismDistributionOnPhNanoStanza < TogoStanza::Stanza::Base
   property :list do |meo_id|
     results = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX mpo: <http://purl.jp/bio/01/mpo#>
       PREFIX mccv: <http://purl.jp/bio/01/mccv#>
       PREFIX meo: <http://purl.jp/bio/11/meo/>
+
       SELECT ?tax_id ?opt_ph ?min_ph ?max_ph
       FROM <http://togogenome.org/graph/gold>
       FROM <http://togogenome.org/graph/mpo>

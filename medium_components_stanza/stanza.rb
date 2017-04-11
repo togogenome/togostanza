@@ -1,6 +1,7 @@
 class MediumComponentsStanza < TogoStanza::Stanza::Base
   property :medium_information do |medium_id|
     medium_list = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX gmo: <http://purl.jp/bio/11/gmo#>
 
       SELECT DISTINCT ?medium ?medium_id ?medium_type_label ?medium_name
@@ -17,8 +18,10 @@ class MediumComponentsStanza < TogoStanza::Stanza::Base
     SPARQL
 
     ingredient_list = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX mccv: <http://purl.jp/bio/01/mccv#>
       PREFIX gmo: <http://purl.jp/bio/11/gmo#>
+
       SELECT ?medium_id ?classification ?class_label ?ingredient as ?ingredient_id ?ingredient_label ?link_pubchem ?link_chebi ?link_snomedct ?link_mesh ?link_wikipedia
       FROM <http://togogenome.org/graph/brc>
       FROM <http://togogenome.org/graph/gmo>

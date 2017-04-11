@@ -1,6 +1,9 @@
 class ProteinAttributesStanza < TogoStanza::Stanza::Base
   property :attributes do |tax_id, gene_id|
     protein_attributes = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX up: <http://purl.uniprot.org/core/>
 
       SELECT DISTINCT ?sequence ?fragment ?precursor ?existence_label

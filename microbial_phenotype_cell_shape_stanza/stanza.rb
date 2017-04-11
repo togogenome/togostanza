@@ -4,6 +4,7 @@ class MicrobialPhenotypeCellShapeStanza < TogoStanza::Stanza::Base
   property :features do |mpo_id|
     query = <<-SPARQL.strip_heredoc
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX mpo:  <http://purl.jp/bio/01/mpo#>
 
       SELECT distinct ?label ?definition ?altlabel

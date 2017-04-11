@@ -6,8 +6,10 @@ class EnvironmentGeographicalMapStanza < TogoStanza::Stanza::Base
   resource :place_list do |meo_id|
     gazetter = []
     results = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX meo: <http://purl.jp/bio/11/meo/>
       PREFIX msv: <http://purl.jp/bio/11/msv/>
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
       SELECT
         ?gold (REPLACE(STR(?gold),"http://www.genomesonline.org/cgi-bin/GOLD/GOLDCards.cgi\\\\?goldstamp=","") AS ?gold_id)

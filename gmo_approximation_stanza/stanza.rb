@@ -24,8 +24,8 @@ class GmoApproximationStanza < TogoStanza::Stanza::Base
   property :medium_score do |medium_id|
     # Score List
     query = <<-SPARQL.strip_heredoc
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX gmo: <http://purl.jp/bio/11/gmo#>
-      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       SELECT ?subject ?medium_id ?title ?index AS ?index2 COUNT(?object) AS ?count2 ?original (ROUND((2.0*?index)/(COUNT(?object)+?original)*1000.0)/10.0) AS ?score
       FROM <http://togogenome.org/graph/brc>
       FROM <http://togogenome.org/graph/gmo>
@@ -100,6 +100,7 @@ class GmoApproximationStanza < TogoStanza::Stanza::Base
 
     # Is Binded Undefined Components from Request Mediums
     query = <<-SPARQL.strip_heredoc
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX gmo: <http://purl.jp/bio/11/gmo#>
       SELECT DISTINCT COUNT(?brc) AS ?c {
         ?brc gmo:GMO_000101 "#{medium_id}" .
@@ -113,6 +114,7 @@ class GmoApproximationStanza < TogoStanza::Stanza::Base
 
     # Get Undefined Components Binding List
     query = <<-SPARQL.strip_heredoc
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX gmo: <http://purl.jp/bio/11/gmo#>
       SELECT DISTINCT ?brc {
         ?brc gmo:GMO_000104 ?gmo .

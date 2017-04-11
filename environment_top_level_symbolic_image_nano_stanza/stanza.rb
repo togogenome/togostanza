@@ -1,7 +1,11 @@
 class EnvironmentTopLevelSymbolicImageNanoStanza < TogoStanza::Stanza::Base
   property :top_level_category do |meo_id|
     result = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc).first
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
       PREFIX meo: <http://purl.jp/bio/11/meo/>
+
       SELECT DISTINCT ?ancestor
       FROM <http://togogenome.org/graph/meo>
       WHERE {

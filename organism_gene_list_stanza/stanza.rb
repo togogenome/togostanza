@@ -7,6 +7,7 @@ class OrganismGeneListStanza < TogoStanza::Stanza::Base
 
     ### gene - gene name, position, etc.
     result = query(endpoint, <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX faldo: <http://biohackathon.org/resource/faldo#>
       PREFIX obo: <http://purl.obolibrary.org/obo/>
@@ -29,6 +30,7 @@ class OrganismGeneListStanza < TogoStanza::Stanza::Base
 
     ### gene - pseudogene
     gene_pseudo = query(endpoint, <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX faldo: <http://biohackathon.org/resource/faldo#>
@@ -51,6 +53,7 @@ class OrganismGeneListStanza < TogoStanza::Stanza::Base
 
     ### gene - tRNA, ncRNA
     gene_rna_product = query(endpoint, <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX obo: <http://purl.obolibrary.org/obo/>
@@ -78,6 +81,8 @@ class OrganismGeneListStanza < TogoStanza::Stanza::Base
 
     ### gene - citation
     gene_citation = query(endpoint, <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX up: <http://purl.uniprot.org/core/>
       SELECT ?gene (COUNT(DISTINCT ?cite) AS ?citation)
       WHERE {
@@ -131,6 +136,7 @@ class OrganismGeneListStanza < TogoStanza::Stanza::Base
 
     # gene - reactome_id
     gene_reactome = query(endpoint, <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX up: <http://purl.uniprot.org/core/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       SELECT ?gene (REPLACE( STR(?reactome), "http://purl.uniprot.org/reactome/", "") AS ?reactome_id)
@@ -157,6 +163,7 @@ class OrganismGeneListStanza < TogoStanza::Stanza::Base
 
     ### gene - protein name, ec
     gene_protein = query(endpoint, <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX up: <http://purl.uniprot.org/core/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       SELECT DISTINCT ?gene ?protein_name ?ec_name

@@ -2,6 +2,7 @@ class ProteinNamesStanza < TogoStanza::Stanza::Base
   property :protein_names do |tax_id, gene_id|
     # genes
     gene_names = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX up: <http://purl.uniprot.org/core/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
@@ -45,6 +46,8 @@ class ProteinNamesStanza < TogoStanza::Stanza::Base
 
     # summary
     protein_summary = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX up: <http://purl.uniprot.org/core/>
 
       SELECT DISTINCT ?recommended_name ?ec_name ?alternative_names
@@ -93,6 +96,7 @@ class ProteinNamesStanza < TogoStanza::Stanza::Base
     protein_names = genes.merge(summary)
 
     organism = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX taxo: <http://ddbj.nig.ac.jp/ontologies/taxonomy/>
       PREFIX taxid: <http://identifiers.org/taxonomy/>
 

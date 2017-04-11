@@ -2,7 +2,9 @@ class ProteinReferencesStanza < TogoStanza::Stanza::Base
   property :references do |tax_id, gene_id|
     query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
       DEFINE sql:select-option "order"
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX up:   <http://purl.uniprot.org/core/>
+      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
       SELECT DISTINCT ?pmid ?title (GROUP_CONCAT(?author, ", ") AS ?authors) ?date ?name ?pages ?volume ?same

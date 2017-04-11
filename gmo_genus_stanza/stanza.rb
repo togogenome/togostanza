@@ -1,6 +1,7 @@
 class GmoGenusStanza < TogoStanza::Stanza::Base
   property :genus_list do |medium_id|
     query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX mccv: <http://purl.jp/bio/01/mccv#>
       PREFIX gmo: <http://purl.jp/bio/11/gmo#>
       PREFIX taxonomy:  <http://ddbj.nig.ac.jp/ontologies/taxonomy/>

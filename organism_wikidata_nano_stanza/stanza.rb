@@ -7,7 +7,6 @@ class OrganismWikidataNanoStanza < TogoStanza::Stanza::Base
     results = query("https://query.wikidata.org/bigdata/namespace/wdq/sparql", <<-SPARQL.strip_heredoc)
       PREFIX wd: <http://www.wikidata.org/entity/>
       PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
       SELECT DISTINCT ?species ?taxid
       WHERE {

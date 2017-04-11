@@ -2,7 +2,7 @@ class EnvironmentInhabitantsStanza < TogoStanza::Stanza::Base
   property :inhabitants_statistics do |meo_id|
     gold_list = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
       DEFINE sql:select-option "order"
-
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX mccv: <http://purl.jp/bio/01/mccv#>
       PREFIX meo: <http://purl.jp/bio/11/meo/>
       PREFIX taxo: <http://ddbj.nig.ac.jp/ontologies/taxonomy#>
@@ -30,6 +30,8 @@ class EnvironmentInhabitantsStanza < TogoStanza::Stanza::Base
     SPARQL
 
     strain_list = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX mccv: <http://purl.jp/bio/01/mccv#>
       PREFIX meo: <http://purl.jp/bio/11/meo/>
 
