@@ -15,7 +15,7 @@ class GenomePlotStanza < TogoStanza::Stanza::Base
         PREFIX meo: <http://purl.jp/bio/11/meo/>
         PREFIX mccv: <http://purl.jp/bio/01/mccv#>
 
-        SELECT ?tax ((sql:GROUP_DIGEST (?label, ', ', 1000, 1)) AS ?habitat)
+        SELECT ?tax (GROUP_CONCAT(DISTINCT ?label, ", ") AS ?habitat)
         FROM <http://togogenome.org/graph/gold>
         FROM <http://togogenome.org/graph/meo>
         WHERE
@@ -44,9 +44,9 @@ class GenomePlotStanza < TogoStanza::Stanza::Base
 
         SELECT
           ?tax ?organism_name ?genome_length
-          ((sql:GROUP_DIGEST (?cell_shape_label, ', ', 1000, 1)) AS ?cell_shape_label)
-          ((sql:GROUP_DIGEST (?temp_range_label, ', ', 1000, 1)) AS ?temp_range_label)
-          ((sql:GROUP_DIGEST (?oxy_req_label, ', ', 1000, 1)) AS ?oxy_req_label)
+          (GROUP_CONCAT(DISTINCT ?cell_shape_label, ", ") AS ?cell_shape_label)
+          (GROUP_CONCAT(DISTINCT ?temp_range_label, ", ") AS ?temp_range_label)
+          (GROUP_CONCAT(DISTINCT ?oxy_req_label, ", ") AS ?oxy_req_label)
           ?opt_temp ?min_temp ?max_temp ?opt_ph ?min_ph ?max_ph
         FROM <http://togogenome.org/graph/refseq>
         FROM <http://togogenome.org/graph/mpo>
