@@ -13,12 +13,11 @@ class EnvironmentInhabitantsStatisticsStanza < TogoStanza::Stanza::Base
       WHERE
       {
         {
-          SELECT ?type (COUNT(DISTINCT ?gold) AS ?cnt)
+          SELECT ("GOLD" AS ?type) (COUNT(DISTINCT ?gold) AS ?cnt)
           {
             VALUES ?meo_mapping { meo:MEO_0000437 meo:MEO_0000440 }
             ?gold_meo_id rdfs:subClassOf* meo:#{meo_id} .
             ?gold ?meo_mapping ?gold_meo_id .
-            BIND ("GOLD" AS ?type ).
           }
         }
         UNION

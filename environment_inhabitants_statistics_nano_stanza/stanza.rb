@@ -3,7 +3,7 @@ class EnvironmentInhabitantsStatisticsNanoStanza < TogoStanza::Stanza::Base
     query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX meo: <http://purl.jp/bio/11/meo/>
-      SELECT COUNT(DISTINCT ?gold) AS ?cnt
+      SELECT (COUNT(DISTINCT ?gold) AS ?cnt)
       FROM <http://togogenome.org/graph/gold>
       FROM <http://togogenome.org/graph/meo>
       WHERE {

@@ -22,7 +22,7 @@ class OrganismPathogenInformationStanza < TogoStanza::Stanza::Base
         GRAPH <http://togogenome.org/graph/pdo> {
           ?disease rdfs:label ?diseaseName .
         }
-      }
+      } GROUP BY ?tax_id ?bacterialName ?infectiousType ?strainType
     SPARQL
     results.map {|hash|
       hash.merge(

@@ -11,7 +11,7 @@ class OrganismGeneListStanza < TogoStanza::Stanza::Base
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX faldo: <http://biohackathon.org/resource/faldo#>
       PREFIX obo: <http://purl.obolibrary.org/obo/>
-      SELECT ?gene ?gene_name REPLACE (REPLACE( STR(?sequence), "#sequence$", ""), "http://identifiers.org/refseq/", "") AS ?seq ?begin
+      SELECT ?gene ?gene_name (REPLACE (REPLACE( STR(?sequence), "#sequence$", ""), "http://identifiers.org/refseq/", "") AS ?seq) ?begin
       WHERE {
           GRAPH <http://togogenome.org/graph/tgup> {
               ?gene rdfs:seeAlso <http://identifiers.org/taxonomy/#{tax_id}> ;

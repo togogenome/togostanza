@@ -6,9 +6,9 @@ class OrganismCultureCollectionsStanza < TogoStanza::Stanza::Base
       PREFIX taxid: <http://identifiers.org/taxonomy/>
 
       SELECT ?strain_id ?strain_number (?strain_name AS ?organism_name)
-        ?isolation (GROUP_CONCAT(DISTINCT ?env, "||") AS ?env_links)
+        ?isolation (GROUP_CONCAT(DISTINCT ?env; SEPARATOR = "||") AS ?env_links)
         ?type_strain_label ?application
-        (GROUP_CONCAT(DISTINCT ?other_link, ", ") AS ?other_collections)
+        (GROUP_CONCAT(DISTINCT ?other_link; SEPARATOR = ", ") AS ?other_collections)
       FROM <http://togogenome.org/graph/taxonomy>
       FROM <http://togogenome.org/graph/brc>
       FROM <http://togogenome.org/graph/meo>

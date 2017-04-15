@@ -33,8 +33,8 @@ class OrganismMediumInformationStanza < TogoStanza::Stanza::Base
       PREFIX gmo: <http://purl.jp/bio/11/gmo#>
       PREFIX taxid: <http://identifiers.org/taxonomy/>
 
-      SELECT ?medium_id ?classification (STR(?class_label) AS ?class_label)
-        ?ingredient (STR(?ingredient_label) AS ?ingredient_label)
+      SELECT ?medium_id ?classification (STR(?class_lbl) AS ?class_label)
+        ?ingredient (STR(?ingredient_lbl) AS ?ingredient_label)
       FROM <http://togogenome.org/graph/brc>
       FROM <http://togogenome.org/graph/gmo>
       WHERE
@@ -49,8 +49,8 @@ class OrganismMediumInformationStanza < TogoStanza::Stanza::Base
         ?medium gmo:GMO_000101 ?medium_id .
         ?medium gmo:GMO_000104 ?ingredient .
         ?ingredient rdfs:subClassOf* ?classification .
-        ?ingredient rdfs:label ?ingredient_label FILTER (lang(?ingredient_label) = "en") .
-        ?classification rdfs:label ?class_label .
+        ?ingredient rdfs:label ?ingredient_lbl FILTER (lang(?ingredient_lbl) = "en") .
+        ?classification rdfs:label ?class_lbl .
       } ORDER BY ?classification
     SPARQL
 

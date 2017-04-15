@@ -28,8 +28,7 @@ class ProteinReferencesTimelineNanoStanza < TogoStanza::Stanza::Base
         ?citation up:date ?date ;
                   a up:Journal_Citation .
         BIND(year(?date) AS ?years)
-      }
-      ORDER BY ?year
+      } GROUP BY ?citation ORDER BY ?year
     SPARQL
 
     time = Time.new

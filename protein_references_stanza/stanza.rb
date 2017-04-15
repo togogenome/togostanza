@@ -7,7 +7,7 @@ class ProteinReferencesStanza < TogoStanza::Stanza::Base
       PREFIX foaf: <http://xmlns.com/foaf/0.1/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-      SELECT DISTINCT ?pmid ?title (GROUP_CONCAT(?author, ", ") AS ?authors) ?date ?name ?pages ?volume ?same
+      SELECT DISTINCT ?pmid ?title (GROUP_CONCAT(?author; SEPARATOR = ", ") AS ?authors) ?date ?name ?pages ?volume ?same
       FROM <http://togogenome.org/graph/uniprot>
       FROM <http://togogenome.org/graph/tgup>
       WHERE {

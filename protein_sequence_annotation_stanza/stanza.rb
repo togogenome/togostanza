@@ -7,7 +7,7 @@ class ProteinSequenceAnnotationStanza < TogoStanza::Stanza::Base
       PREFIX up: <http://purl.uniprot.org/core/>
       PREFIX faldo: <http://biohackathon.org/resource/faldo#>
 
-      SELECT DISTINCT ?parent_label ?label ?begin_location ?end_location ?seq_length ?comment (GROUP_CONCAT(?substitution, ", ") AS ?substitutions) ?seq ?feature_identifier
+      SELECT DISTINCT ?parent_label ?label ?begin_location ?end_location ?seq_length ?comment (GROUP_CONCAT(?substitution; SEPARATOR = ", ") AS ?substitutions) ?seq ?feature_identifier
       FROM <http://togogenome.org/graph/uniprot>
       FROM <http://togogenome.org/graph/tgup>
       WHERE {
@@ -40,7 +40,7 @@ class ProteinSequenceAnnotationStanza < TogoStanza::Stanza::Base
         # 互いに isoform なUniprotがあるので (e.g. P42166, P42167) 同じIDの isoform で配列のあるものに絞る
         ?protein up:sequence ?isoform .
         BIND( REPLACE( STR(?protein), "http://purl.uniprot.org/uniprot/", "") AS ?up_id)
-        FILTER( REGEX(?isoform, ?up_id))
+        FILTER( REGEX(STR(?isoform), ?up_id))
         ?isoform rdf:value ?value .
 
         # description の一部が取得できるが、内容の表示に必要があるのか
