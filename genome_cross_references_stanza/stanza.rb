@@ -1,7 +1,7 @@
 class GenomeCrossReferencesStanza < TogoStanza::Stanza::Base
   property :xrefs do |tax_id|
     results = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
-      DEFINE sql:select-option "order"
+      
       PREFIX obo: <http://purl.obolibrary.org/obo/>
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

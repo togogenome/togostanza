@@ -11,7 +11,7 @@ class OrganismRelatedDiseaseNanoStanza < TogoStanza::Stanza::Base
         tax:#{tax_id} pdo:isAssociatedTo ?bk .
         ?bk ?p ?pdo_id .
         ?pdo_id rdfs:label ?label
-        FILTER(regex(?pdo_id, "PDO"))
+        FILTER(regex(STR(?pdo_id), "PDO"))
       }
     SPARQL
 

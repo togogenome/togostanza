@@ -9,7 +9,7 @@ class TaxonomyOrthologProfileStanza < TogoStanza::Stanza::Base
 
   resource :taxonomy_ortholog_profile do |tax_id|
     ortholog_uris = query("http://mbgd.genome.ad.jp:8047/sparql", <<-SPARQL.strip_heredoc)
-      DEFINE sql:select-option "order"
+      
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX mbgd: <http://purl.jp/bio/11/mbgd#>
       PREFIX orth: <http://purl.jp/bio/11/orth#>

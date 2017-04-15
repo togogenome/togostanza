@@ -1,7 +1,7 @@
 class GenomeInformationStanza < TogoStanza::Stanza::Base
   property :genome_info_list do |tax_id|
     results = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
-      DEFINE sql:select-option "order"
+      
       PREFIX obo: <http://purl.obolibrary.org/obo/>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>

@@ -1,7 +1,7 @@
 class OrganismMediumInformationStanza < TogoStanza::Stanza::Base
   property :medium_information do |tax_id|
     medium_list = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
-      DEFINE sql:select-option "order"
+      
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX mccv: <http://purl.jp/bio/01/mccv#>
       PREFIX gmo: <http://purl.jp/bio/11/gmo#>
@@ -26,7 +26,7 @@ class OrganismMediumInformationStanza < TogoStanza::Stanza::Base
     SPARQL
 
     ingredient_list = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
-#      DEFINE sql:select-option "order"
+#      
 # TODO: Uncomment the above line when endpoint data is update.
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX mccv: <http://purl.jp/bio/01/mccv#>

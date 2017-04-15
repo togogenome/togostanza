@@ -5,7 +5,7 @@ class EnvironmentTaxonomicCompositionStanza < TogoStanza::Stanza::Base
 
   resource :taxonomy_sunburst do |meo_id|
     results = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
-      DEFINE sql:select-option "order"
+      
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX mccv: <http://purl.jp/bio/01/mccv#>
       PREFIX meo: <http://purl.jp/bio/11/meo/>

@@ -1,7 +1,7 @@
 class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
   property :pfam_list do |tax_id, gene_id|
     results = query("http://togogenome.org/sparql",<<-SPARQL.strip_heredoc)
-      DEFINE sql:select-option "order"
+      
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX up: <http://purl.uniprot.org/core/>
@@ -97,7 +97,7 @@ class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
      pfam_summary_list = []
 
     pfam_list = query("http://togogenome.org/sparql",<<-SPARQL.strip_heredoc)
-      DEFINE sql:select-option "order"
+      
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX up: <http://purl.uniprot.org/core/>
@@ -155,7 +155,7 @@ class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
 
     query2 = Thread.new {
       genome_list = query("http://togogenome.org/sparql",<<-SPARQL.strip_heredoc)
-        DEFINE sql:select-option "order"
+        
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX mccv: <http://purl.jp/bio/01/mccv#>
         PREFIX mpo: <http://purl.jp/bio/01/mpo#>
@@ -201,7 +201,7 @@ class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
     #gene #pseudogene #rrna #trna #ncrna
     query3 = Thread.new {
       summary_list = query("http://togogenome.org/sparql",<<-SPARQL.strip_heredoc)
-        DEFINE sql:select-option "order"
+        
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX togo: <http://togogenome.org/stats/>
         PREFIX tax: <http://ddbj.nig.ac.jp/ontologies/taxonomy/>

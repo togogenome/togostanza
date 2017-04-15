@@ -5,7 +5,7 @@ class OrganismHabitatStanza < TogoStanza::Stanza::Base
 
   resource :environment_tree do |tax_id|
     result = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
-      DEFINE sql:select-option "order"
+      
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX idorg:  <http://rdf.identifiers.org/database/>
       PREFIX mccv: <http://purl.jp/bio/01/mccv#>

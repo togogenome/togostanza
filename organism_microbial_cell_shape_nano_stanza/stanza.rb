@@ -1,7 +1,7 @@
 class OrganismMicrobialCellShapeNanoStanza < TogoStanza::Stanza::Base
   property :cell_shapes do |tax_id|
     result = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc).first
-      DEFINE sql:select-option "order"
+      
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX mpo: <http://purl.jp/bio/01/mpo#>
       PREFIX tax: <http://identifiers.org/taxonomy/>

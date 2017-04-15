@@ -10,7 +10,7 @@ class ProteinReferencesTimelineNanoStanza < TogoStanza::Stanza::Base
       PREFIX up: <http://purl.uniprot.org/core/>
 
       # "SAMPLE" for multi-year citation (publish, Epub)(e.g. <http://purl.uniprot.org/citations/20978534> up:date ?date)
-      SELECT DISTINCT SAMPLE(?years) AS ?year ?citation
+      SELECT DISTINCT (SAMPLE(?date) AS ?year) ?citation
       FROM <http://togogenome.org/graph/uniprot>
       FROM <http://togogenome.org/graph/tgup>
       WHERE {
@@ -27,7 +27,6 @@ class ProteinReferencesTimelineNanoStanza < TogoStanza::Stanza::Base
                  up:citation ?citation.
         ?citation up:date ?date ;
                   a up:Journal_Citation .
-        BIND(year(?date) AS ?years)
       } GROUP BY ?citation ORDER BY ?year
     SPARQL
 
