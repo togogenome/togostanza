@@ -255,24 +255,23 @@ class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
     pfam_list.each do |pfam_entity|
       pfam_id = pfam_entity[:pfam_id]
       pfam_summary_list = query("http://togogenome.org/sparql",<<-SPARQL.strip_heredoc)
-        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX sio: <http://semanticscience.org/resource/>
         PREFIX up: <http://purl.uniprot.org/core/>
-        PREFIX tax: <http://purl.uniprot.org/taxonomy/>
         PREFIX pfam: <http://purl.uniprot.org/pfam/>
+        PREFIX stats: <http://togogenome.org/stats/>
 
         SELECT
           (REPLACE(STR(?tax), "http://purl.uniprot.org/taxonomy/", "http://identifiers.org/taxonomy/") AS ?tax_id)
           ((SUM(?hits) AS ?num_pfam))
           (COUNT(DISTINCT(?prot_id)) AS ?num_pfam_protein)
         FROM <http://togogenome.org/graph/uniprot>
+        FROM <http://togogenome.org/graph/stats>
         WHERE
         {
-          ?prot_id up:organism ?tax .
-          ?prot_id rdfs:seeAlso pfam:#{pfam_id} .
-          ?id rdf:subject ?prot_id .
-          ?id rdf:object pfam:#{pfam_id} .
-          ?id up:hits ?hits .
+          pfam:#{pfam_id} stats:pfam_info ?pfam_info .
+          ?pfam_info sio:SIO_000068 ?uniprot_id ;
+            up:hits ?hits .
+          ?uniprot_id up:organism ?tax .
         } GROUP BY ?tax
       SPARQL
 

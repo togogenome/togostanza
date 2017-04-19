@@ -7,7 +7,7 @@ class GenomeCrossReferencesStanza < TogoStanza::Stanza::Base
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
       PREFIX idtax: <http://identifiers.org/taxonomy/>
-      PREFIX ass: <http://www.ncbi.nlm.nih.gov/assembly/>
+      PREFIX ass: <http://ddbj.nig.ac.jp/ontologies/assembly/>
 
       SELECT ?assembly_name ?rs ?desc ?xref ?xref_type ?label
       WHERE

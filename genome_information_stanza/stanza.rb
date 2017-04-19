@@ -7,7 +7,7 @@ class GenomeInformationStanza < TogoStanza::Stanza::Base
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
       PREFIX idtax: <http://identifiers.org/taxonomy/>
       PREFIX togo: <http://togogenome.org/stats/>
-      PREFIX ass: <http://www.ncbi.nlm.nih.gov/assembly/>
+      PREFIX ass: <http://ddbj.nig.ac.jp/ontologies/assembly/>
 
       SELECT  DISTINCT ?assembly_id ?assembly_name ?refseq_version ?refseq_link  ?desc ?replicon_type ?sequence_length
        ?gene_cnt ?rrna_cnt ?trna_cnt ?other_cnt
