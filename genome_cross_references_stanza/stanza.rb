@@ -1,6 +1,6 @@
 class GenomeCrossReferencesStanza < TogoStanza::Stanza::Base
   property :xrefs do |tax_id|
-    results = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    results = query("http://dev.togogenome.org/sparql-sd", <<-SPARQL.strip_heredoc)
       
       PREFIX obo: <http://purl.obolibrary.org/obo/>
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>

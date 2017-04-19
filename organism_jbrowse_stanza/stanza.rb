@@ -1,6 +1,6 @@
 class OrganismJbrowseStanza < TogoStanza::Stanza::Base
   property :sequence_version do |tax_id|
-    results = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    results = query("http://dev.togogenome.org/sparql-sd", <<-SPARQL.strip_heredoc)
       
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
       PREFIX idtax: <http://identifiers.org/taxonomy/>

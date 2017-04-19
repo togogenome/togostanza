@@ -1,6 +1,6 @@
 class ProteinSequenceAnnotationStanza < TogoStanza::Stanza::Base
   property :sequence_annotations do |tax_id, gene_id|
-    annotations = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    annotations = query("http://dev.togogenome.org/sparql-sd", <<-SPARQL.strip_heredoc)
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>

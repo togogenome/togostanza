@@ -1,6 +1,6 @@
 class ProteinReferencesStanza < TogoStanza::Stanza::Base
   property :references do |tax_id, gene_id|
-    query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    query("http://dev.togogenome.org/sparql-sd", <<-SPARQL.strip_heredoc)
       
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX up:   <http://purl.uniprot.org/core/>

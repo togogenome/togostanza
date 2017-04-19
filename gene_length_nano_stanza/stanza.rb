@@ -6,7 +6,7 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
 
   property :result do |tax_id, gene_id|
     # At first selects a feature of gene.
-    results = query("http://togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    results = query("http://dev.togogenome.org/sparql-sd", <<-SPARQL.strip_heredoc)
       
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
