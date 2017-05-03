@@ -36,10 +36,10 @@ class ProteinGeneralAnnotationStanza < TogoStanza::Stanza::Base
             ?annotation a up:Subcellular_Location_Annotation .
 
             # name, message の取得
-            up:Subcellular_Location_Annotation rdfs:label ?name .
             ?annotation up:locatedIn ?located_in .
             ?located_in up:cellularComponent ?location .
             ?location up:alias ?message .
+            BIND(STR("Subcellular Location") AS ?name) .
         }UNION{
             # type が up:Subcellular_Location_Annotation 以外の subClassOf Annotation のアノテーション
  

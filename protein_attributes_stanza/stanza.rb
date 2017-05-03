@@ -7,6 +7,8 @@ class ProteinAttributesStanza < TogoStanza::Stanza::Base
       PREFIX up: <http://purl.uniprot.org/core/>
 
       SELECT DISTINCT ?sequence ?fragment ?precursor ?existence_label
+      FROM <http://togogenome.org/graph/uniprot>
+      FROM <http://togogenome.org/graph/tgup>
       WHERE {
         {
           SELECT ?gene

@@ -66,12 +66,10 @@ class ProteinOntologiesStanza < TogoStanza::Stanza::Base
         ?id_upid rdfs:seeAlso ?protein .
         ?protein a up:Protein ;
                  up:classifiedWith ?obo_go_uri .
-        GRAPH <http://togogenome.org/graph/go> {
-          ?obo_go_uri rdfs:label ?name .
-          ?obo_go_uri rdfs:subClassOf* ?parents .
-          ?parents rdfs:label ?root_name .
-          FILTER (str(?root_name) IN ('biological_process', 'cellular_component', 'molecular_function')) . 
-        }
+        ?obo_go_uri rdfs:label ?name .
+        ?obo_go_uri rdfs:subClassOf* ?parents .
+        ?parents rdfs:label ?root_name .
+        FILTER (str(?root_name) IN ('biological_process', 'cellular_component', 'molecular_function')) .
       }
     SPARQL
 

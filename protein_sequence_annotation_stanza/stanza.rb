@@ -7,7 +7,7 @@ class ProteinSequenceAnnotationStanza < TogoStanza::Stanza::Base
       PREFIX up: <http://purl.uniprot.org/core/>
       PREFIX faldo: <http://biohackathon.org/resource/faldo#>
 
-      SELECT DISTINCT ?parent_label ?label ?begin_location ?end_location ?seq_length ?comment (GROUP_CONCAT(?substitution; SEPARATOR = ", ") AS ?substitutions) ?seq ?feature_identifier
+      SELECT DISTINCT ?parent_label ?label ?begin_location ?end_location ?seq_length ?comment (GROUP_CONCAT(?substitution; SEPARATOR = ", ") AS ?substitutions) ?seq_txt ?feature_identifier
       FROM <http://togogenome.org/graph/uniprot>
       FROM <http://togogenome.org/graph/tgup>
       WHERE {
@@ -46,7 +46,6 @@ class ProteinSequenceAnnotationStanza < TogoStanza::Stanza::Base
         # description の一部が取得できるが、内容の表示に必要があるのか
         OPTIONAL {
           ?annotation up:substitution ?substitution . 
-          ?isoform rdf:value ?seq .
         }
 
         # sequence の長さ取得
@@ -56,12 +55,12 @@ class ProteinSequenceAnnotationStanza < TogoStanza::Stanza::Base
         }
 
         OPTIONAL {
-          ?annotation rdf:type ?type . # Virtuoso 対応
+          ?annotation rdf:type ?any_type . # Virtuoso 対応
           BIND (STR(?annotation) AS ?feature_identifier) .
-          FILTER REGEX(STR(?annotation), 'http://purl.uniprot.org/annotation')
+          FILTER REGEX(STR(?feature_identifier), "http://purl.uniprot.org/annotation")
         }
       }
-      GROUP BY ?parent_label ?label ?begin_location ?end_location ?seq_length ?comment ?seq ?feature_identifier
+      GROUP BY ?parent_label ?label ?begin_location ?end_location ?seq_length ?comment ?seq_txt ?feature_identifier
       ORDER BY ?parent_label ?label ?begin_location ?end_location
     SPARQL
 

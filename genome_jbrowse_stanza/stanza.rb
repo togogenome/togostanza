@@ -5,22 +5,19 @@ class GenomeJbrowseStanza < TogoStanza::Stanza::Base
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX obo: <http://purl.obolibrary.org/obo/>
 
-      SELECT DISTINCT (REPLACE(STR(?taxonomy),"http://identifiers.org/taxonomy/","") AS ?tax_id)
+      SELECT DISTINCT ?tax_id
+      FROM <http://togogenome.org/graph/tgup>
+      FROM <http://togogenome.org/graph/refseq>
       WHERE
       {
         {
           SELECT ?feature_uri
           {
-            GRAPH <http://togogenome.org/graph/tgup>
-            {
-              <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?feature_uri .
-            }
+            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?feature_uri .
           } ORDER BY ?feature_uri LIMIT 1
         }
-        GRAPH <http://togogenome.org/graph/refseq>
-        {
-           ?feature_uri  obo:RO_0002162 ?taxonomy
-        }
+        ?feature_uri  obo:RO_0002162 ?taxonomy
+        BIND (REPLACE(STR(?taxonomy),"http://identifiers.org/taxonomy/","") AS ?tax_id)
       }
     SPARQL
 
@@ -36,29 +33,25 @@ class GenomeJbrowseStanza < TogoStanza::Stanza::Base
       PREFIX faldo: <http://biohackathon.org/resource/faldo#>
 
       SELECT ?seq_label ?start ?end ?seq_length
+      FROM <http://togogenome.org/graph/tgup>
+      FROM <http://togogenome.org/graph/refseq>
       WHERE
       {
         {
           SELECT ?feature_uri
           {
-            GRAPH <http://togogenome.org/graph/tgup>
-            {
-              <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?feature_uri .
-            }
+            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?feature_uri .
           } ORDER BY ?feature_uri LIMIT 1
         }
-        GRAPH <http://togogenome.org/graph/refseq>
-        {
-          ?feature_uri insdc:location  ?insdc_location ;
-            faldo:location  ?faldo .
-          ?faldo faldo:begin/faldo:position ?start .
-          ?faldo faldo:end/faldo:position ?end .
+        ?feature_uri insdc:location  ?insdc_location ;
+          faldo:location  ?faldo .
+        ?faldo faldo:begin/faldo:position ?start .
+        ?faldo faldo:end/faldo:position ?end .
 
-          ?feature_uri obo:so_part_of* ?seq .
-          ?refseq insdc:sequence ?seq ;
-            insdc:sequence_version ?seq_label .
-          ?seq insdc:sequence_length ?seq_length
-        }
+        ?feature_uri obo:so_part_of ?seq .
+        ?refseq insdc:sequence ?seq ;
+          insdc:sequence_version ?seq_label .
+        ?seq insdc:sequence_length ?seq_length
       }
     SPARQL
 

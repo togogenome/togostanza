@@ -24,7 +24,7 @@ class ProteinSequenceStanza < TogoStanza::Stanza::Base
 
         # (P42166 & P42167) x (P42166-1 & P42167-1) => P42166 - P42166-1, P42167 - P42167-1
         BIND( REPLACE( STR(?protein), "http://purl.uniprot.org/uniprot/", "") AS ?up_id)
-        FILTER( REGEX(?isoform, ?up_id))
+        FILTER( REGEX(STR(?isoform), ?up_id))
 
         ?isoform rdf:value ?aminoacid ;
                  up:mass ?mass ;
