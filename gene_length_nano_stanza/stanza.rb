@@ -39,8 +39,46 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
                 ?feature obo:so_part_of ?gene ;
                   a ?feature_type ;
                   insdc:translation ?translation .
+                VALUES ?priority { 1 }
               }
               FILTER (?protein_seq = ?translation)
+            }
+            UNION
+            {
+              GRAPH <http://togogenome.org/graph/tgup>
+              {
+                ?tggene skos:exactMatch ?gene ;
+                  rdfs:seeAlso/rdfs:seeAlso ?uniprot .
+              }
+              GRAPH <http://togogenome.org/graph/uniprot>
+              {
+                ?uniprot a uniprot:Protein ;
+                  uniprot:sequence ?isoform .
+                ?isoform rdf:value ?protein_seq .
+              }
+              GRAPH <http://togogenome.org/graph/refseq>
+              {
+                VALUES ?feature_type { insdc:Coding_Sequence }
+                ?feature obo:so_part_of ?gene ;
+                  a ?feature_type ;
+                  insdc:translation ?translation .
+                VALUES ?priority { 2 }
+              }
+              FILTER (strlen(?protein_seq) = strlen(?translation))
+            }
+            UNION
+            {
+              GRAPH <http://togogenome.org/graph/tgup>
+              {
+                ?tggene skos:exactMatch ?gene .
+              }
+              GRAPH <http://togogenome.org/graph/refseq>
+              {
+                VALUES ?feature_type { insdc:Coding_Sequence }
+                ?feature obo:so_part_of ?gene ;
+                  a ?feature_type .
+                VALUES ?priority { 3 }
+              }
             }
             UNION
             {
@@ -54,9 +92,10 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
                 ?feature obo:so_part_of ?gene ;
                   insdc:location ?insdc_location ;
                   a ?feature_type .
+                VALUES ?priority { 4 }
               }
             }
-          } LIMIT 1
+          } ORDER BY ?priority LIMIT 1
         }
         GRAPH <http://togogenome.org/graph/refseq>
         {
