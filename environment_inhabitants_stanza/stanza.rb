@@ -72,6 +72,12 @@ class EnvironmentInhabitantsStanza < TogoStanza::Stanza::Base
     source_list = gold_list.concat(strain_list)
 
     source_list.map {|hash|
+      # Pads numbers with 0 to make NBRC's CAT id the 8 length.
+      if hash[:source_id].start_with?("NBRC")
+        url_parts = hash[:source_link].split("=")
+        cat_id = url_parts.last.rjust(8, "0")
+        hash[:source_link] = url_parts[0..-2].push(cat_id).join("=")
+      end
       unless hash[:env_links] == "" then
         env_link_array = hash[:env_links].split("||")
         hash[:env_link_array] = env_link_array.map {|env_text|

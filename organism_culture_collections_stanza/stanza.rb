@@ -36,6 +36,12 @@ class OrganismCultureCollectionsStanza < TogoStanza::Stanza::Base
     SPARQL
 
     results.map {|hash|
+      # Pads numbers with 0 to make NBRC's CAT id the 8 length.
+      if hash[:strain_number].start_with?("NBRC")
+        url_parts = hash[:strain_id].split("=")
+        cat_id = url_parts.last.rjust(8, "0")
+        hash[:strain_id] = url_parts[0..-2].push(cat_id).join("=")
+      end
       unless hash[:env_links] == "" then
         env_link_array = hash[:env_links].split("||")
         hash[:env_link_array] = env_link_array.map {|env_text|
