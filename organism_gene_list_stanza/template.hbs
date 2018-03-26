@@ -1,91 +1,196 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>Gene list</title>
     {{#each css_uri}}
     <link rel="stylesheet" href="{{this}}" />
     {{/each}}
-    <link rel="stylesheet" type="text/css" href="//rawgithub.com/akottr/dragtable/master/dragtable.css" />
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.0/js/jquery.tablesorter.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-    <script src="//rawgithub.com/akottr/dragtable/master/jquery.dragtable.js"></script>
-<script>
-$(document).ready(function() 
-    { 
-       // $("#contents").tablesorter( {sortList: [[6,1], [7,0]], widgets: ["zebra", "columns"]});
-        $("#contents").tablesorter( {widgets: ["zebra", "columns"]});  
-        $("#contents").dragtable({dragHandle:'.handle'});
-
-        $(".hl_tr").hover(function(){
-            $(this).addClass("rowHover");
-        },function(){
-            $(this).removeClass("rowHover");
-        });
-
-        $(".tax_id").click(function(){
-            if($(this).closest(".hl_tr").hasClass("rowSelect")){
-                $(this).closest(".hl_tr").removeClass("rowSelect");
-            }else{
-                $(this).closest(".hl_tr").addClass("rowSelect");
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/mark.js/8.6.0/jquery.mark.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/datatables.mark.js/2.0.0/datatables.mark.min.js"></script>    
+    <script type="text/javascript">
+      window.gene = {{{organism_gene_list}}};
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var table = $('#contents').DataTable( {
+          data: window.gene,
+          deferRender: true,
+          dom: '<"wrapper"fliptp>',
+          fixedHeader: true,
+          autoWidth: false,
+          scrollX: true,
+          mark: true,
+          columns: [
+            {
+              data: 'gene_name',
+              render: function ( data, type, row ) {
+                if (data) {
+                  if (type === "display" || type === "filter") {
+                    if (row.gene) {
+                      data = '<a target="_blank" href="' + row.gene + '">' + data + '</a>'
+                    }
+                    if (row.pseudo && row.pseudo === true) {
+                      return data + ' (pseudo)';
+                    }
+                  }
+                }
+                return data;
+              }
+            },
+            {
+              data: 'seq',
+              defaultContent: ''
+            },
+            {
+              data: 'begin',
+              defaultContent: '',
+              className: 'dt-right'
+            },
+            {
+              data: 'end',
+              defaultContent: '',
+              className: 'dt-right'
+            },
+            {
+              data: null,
+              defaultContent: '',
+              className: 'dt-right',
+              render: function ( data, type, row ) {
+                if (row.begin && row.end) {
+                  data = Math.abs(row.end - row.begin) + 1;
+                }
+                return data;
+              }
+            },
+            {
+              data: 'protein_name',
+              defaultContent: ''
+            },
+            {
+              data: 'ec_name',
+              defaultContent: ''
+            },
+            {
+              data: 'pathway_label',
+              orderable: false,
+              defaultContent: '',
+              render: function ( data, type, row ) {
+                if (data) {
+                  if (type === "display" || type === "filter") {
+                    var spl = data.split(';');
+                    data = '<ul>'
+                    spl.forEach(function (item, index, array) {
+                      data += '<li>' + item + '</li>';
+                    });
+                    data += '</ul>'
+                  }
+                }
+                return data;
+              }
+            },
+            {
+              data: 'biological_process',
+              orderable: false,
+              defaultContent: '',
+              render: function ( data, type, row ) {
+                if (data) {
+                  if (type === "display" || type === "filter") {
+                    var arr = data.concat();
+                    data = '<ul>'
+                    arr.forEach(function (item, index, array) {
+                      data += '<li>' + item + '</li>';
+                    });
+                    data += '</ul>'
+                  }
+                }
+                return data;
+              }
+            },
+            {
+              data: 'cellular_component',
+              orderable: false,
+              defaultContent: '',
+              render: function ( data, type, row ) {
+                if (data) {
+                  if (type === "display" || type === "filter") {
+                    var arr = data.concat();
+                    data = '<ul>'
+                    arr.forEach(function (item, index, array) {
+                      data += '<li>' + item + '</li>';
+                    });
+                    data += '</ul>'
+                  }
+                }
+                return data;
+              }
+            },
+            {
+              data: 'molecular_function',
+              orderable: false,
+              defaultContent: '',
+              render: function ( data, type, row ) {
+                if (data) {
+                  if (type === "display" || type === "filter") {
+                    var arr = data.concat();
+                    data = '<ul>'
+                    arr.forEach(function (item, index, array) {
+                      data += '<li>' + item + '</li>';
+                    });
+                    data += '</ul>'
+                  }
+                }
+                return data;
+              }
+            },
+            {
+              data: 'citation',
+              defaultContent: '',
+              className: 'dt-right'
             }
-        });
-    } 
-); 
-
-
-</script>
+          ]
+        } ).columns.adjust().draw();
+      } );
+    </script>
+    <style type="text/css">
+      th {
+        border-right: 1px solid #dddddd;
+      }
+      th:first-child {
+        border-left: 1px solid #dddddd;
+      }
+      mark {
+        padding: 0;
+        background: #f1c40f;
+      }
+    </style>
     {{adjust_iframe_height_script}}
-  <style type="text/css">
-<!--
-    table {border-color: #aaaaaa;}
-    th {padding: 2px 15px 2px 2px;}
-    tr.odd {background-color: #ffffff;}
-    tr.even {background-color: #f8f8f8;}
-    tr.even.rowHover, tr.odd.rowHover {background-color: #d8f1f5;}
-    tr.rowSelect {background-color: #ffffee;}
-    td {text-align: right; padding: 2px 10px 2px 10px; border-color: #aaaaaa; white-space: nowrap;}
-    td.tax_id {cursor: pointer;}
-    td.left {text-align: left;}
-    td.limit300 {width:300px; max-width:300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-    td.limit200 {width:200px; max-width:200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-    td.limit100 {width:100px; max-width:100px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-    table.tablesorter {font-size: 10pt;}
-    table.tablesorter th {background-position: 95% center; background-repeat: no-repeat; color: #ffffff; white-space: nowrap;}
-    table.tablesorter .tablesorter-header {background-image: url(//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.0/css/images/white-unsorted.gif);background-color: #45b8cc; white-space: nowrap; cursor: pointer;}
-    table.tablesorter .tablesorter-headerAsc {background-image: url(//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.0/css/images/white-asc.gif); background-color: #33717f; cursor: pointer;}
-    table.tablesorter .tablesorter-headerDesc {background-image: url(//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.0/css/images/white-desc.gif); background-color: #33717f; cursor: pointer;}
-    table.tablesorter .sorter-false {background-image: none; cursor: default;}
-    .handle {background-color: #95d7e2; background-repeat:repeat-x; font-weight: normal; color: #309db0; height:18px; width: 18px; border-radius: 5px; cursor: move; float: left; margin-right: 5px;}
-    ul.ul_none {list-style-type: none; margin: 0px;}
--->
-  </style>
   </head>
-
   <body>
     {{#if organism_gene_list}}
-    <table border="1" id="contents" class="tablesorter dragable">
+    <table id="contents" class='stripe nowrap'>
     <thead>
       <tr>
-          <th><div class="handle">&harr;</div>gene id</th>
-          <th><div class="handle">&harr;</div>attributes</th>
-          <th><div class="handle">&harr;</div>EC number</th>
-          <th><div class="handle">&harr;</div>citation</th>
-          <th><div class="handle">&harr;</div>reactome</th>
-          <th><div class="handle">&harr;</div>refseq</th>
-          <th><div class="handle">&harr;</div>position</th>
+          <th>Gene</th>
+          <th>RefSeq</th>
+          <th>Begin</th>
+          <th>End</th>
+          <th>Length</th>
+          <th>Protain name</th>
+          <th>E.C.</th>
+          <th>Pathway</th>
+          <th>Biological process</th>
+          <th>Cellular component</th>
+          <th>Molecular function</th>
+          <th>Citation</th>
       </tr>
     </thead>
     <tbody>
-    {{#each organism_gene_list}}
-      <tr class="hl_tr"><td class="left"><a href="{{gene}}">{{gene_name}}</a></td><td class="left limit300">{{attr}}</td><td class="left limit100">{{ec}}</td><td>{{citation}}</td><td class="left limit200">{{#if reactome}}<ul class="ul_none">{{#each reactome}}<li>{{this}}</li>{{/each}}</ul>{{/if}}</td><td class="left">{{seq}}</td><td>{{begin}}</td></tr>
-    {{/each}}
     </tbody>
     </table>
     {{/if}}
   </body>
 </html>
-
