@@ -13,6 +13,7 @@ class GeneAttributesStanza < TogoStanza::Stanza::Base
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
       PREFIX uniprot: <http://purl.uniprot.org/core/>
       PREFIX faldo: <http://biohackathon.org/resource/faldo#>
+      PREFIX up: <http://purl.uniprot.org/core/>
 
       SELECT DISTINCT
         ?locus_tag ?gene_type_label ?gene_name
@@ -33,7 +34,8 @@ class GeneAttributesStanza < TogoStanza::Stanza::Base
               {
                 ?uniprot a uniprot:Protein ;
                   uniprot:sequence ?isoform .
-                ?isoform rdf:value ?protein_seq .
+                ?isoform rdf:type up:Simple_Sequence ;
+                  rdf:value ?protein_seq .
               }
               GRAPH <http://togogenome.org/graph/refseq>
               {
@@ -56,7 +58,8 @@ class GeneAttributesStanza < TogoStanza::Stanza::Base
               {
                 ?uniprot a uniprot:Protein ;
                   uniprot:sequence ?isoform .
-                ?isoform rdf:value ?protein_seq .
+                ?isoform rdf:type up:Simple_Sequence ;
+                  rdf:value ?protein_seq .
               }
               GRAPH <http://togogenome.org/graph/refseq>
               {

@@ -37,11 +37,8 @@ class ProteinSequenceAnnotationStanza < TogoStanza::Stanza::Base
         ?range faldo:begin/faldo:position ?begin_location ;
                faldo:end/faldo:position ?end_location .
 
-
-        # 互いに isoform なUniprotがあるので (e.g. P42166, P42167) 同じIDの isoform で配列のあるものに絞る
-        ?protein up:sequence ?isoform .
-        BIND( REPLACE( STR(?protein), "http://purl.uniprot.org/uniprot/", "") AS ?up_id)
-        FILTER( REGEX(STR(?isoform), ?up_id))
+        # sequence annotationが紐づいているisoformとそのsequenceを取得する
+        ?range faldo:begin/faldo:reference ?isoform .
         ?isoform rdf:value ?value .
 
         # description の一部が取得できるが、内容の表示に必要があるのか

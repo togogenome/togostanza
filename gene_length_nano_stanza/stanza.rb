@@ -14,6 +14,7 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
       PREFIX obo:    <http://purl.obolibrary.org/obo/>
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
       PREFIX uniprot: <http://purl.uniprot.org/core/>
+      PREFIX up: <http://purl.uniprot.org/core/>
 
       SELECT ?insdc_location
       {
@@ -31,7 +32,8 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
               {
                 ?uniprot a uniprot:Protein ;
                   uniprot:sequence ?isoform .
-                ?isoform rdf:value ?protein_seq .
+                ?isoform rdf:type up:Simple_Sequence ;
+                  rdf:value ?protein_seq .
               }
               GRAPH <http://togogenome.org/graph/refseq>
               {
@@ -54,7 +56,8 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
               {
                 ?uniprot a uniprot:Protein ;
                   uniprot:sequence ?isoform .
-                ?isoform rdf:value ?protein_seq .
+                ?isoform rdf:type up:Simple_Sequence ;
+                  rdf:value ?protein_seq .
               }
               GRAPH <http://togogenome.org/graph/refseq>
               {
