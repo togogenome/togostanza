@@ -5,7 +5,7 @@
   "parameter": [
     {
       "key": "data-stanza-tax-id",
-      "example": "103690",
+      "example": "511145",
       "description": "Taxonomy identifier",
       "required": true
     }
