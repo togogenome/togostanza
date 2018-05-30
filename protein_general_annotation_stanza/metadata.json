@@ -5,18 +5,18 @@
   "parameter": [
     {
       "key": "data-stanza-tax-id",
-      "example": "103690",
+      "example": "9606",
       "description": "Taxonomy identifier.",
       "required": true
     },
     {
       "key": "data-stanza-gene-id",
-      "example": "PCC7120DELTA_RS09085",
+      "example": "BRCA1",
       "description": "Gene identifier.",
       "required": true
     }
   ],
-  "usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_general_annotation\" data-stanza-tax-id=\"103690\" data-stanza-gene-id=\"PCC7120DELTA_RS09085\"></div>",
+  "usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_general_annotation\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
   "type": "Stanza",
   "context": "Phenotype",
   "display": "Other",
@@ -26,5 +26,5 @@
   "address": "hoge@example.org",
   "version": "1",
   "created": "2015-02-03",
-  "updated": "2015-09-30"
+  "updated": "2018-05-30"
 }

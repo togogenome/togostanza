@@ -11,16 +11,16 @@ class ProteinSequenceStanza < TogoStanza::Stanza::Base
       FROM <http://togogenome.org/graph/tgup>
       WHERE {
         {
-          SELECT ?gene
-          {
-            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene .
-          } ORDER BY ?gene LIMIT 1
+          SELECT ?protein
+           {
+             <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
+               rdfs:seeAlso ?id_upid .
+             ?id_upid rdfs:seeAlso ?protein .
+             ?protein a up:Protein ;
+               up:reviewed ?reviewed .
+           } ORDER BY DESC(?reviewed) LIMIT 1
         }
-        <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
-          rdfs:seeAlso ?id_upid .
-        ?id_upid rdfs:seeAlso ?protein .
-        ?protein a up:Protein ;
-                 up:sequence ?isoform .
+        ?protein up:sequence ?isoform .
 
         # (P42166 & P42167) x (P42166-1 & P42167-1) => P42166 - P42166-1, P42167 - P42167-1
         ?isoform rdf:type up:Simple_Sequence .

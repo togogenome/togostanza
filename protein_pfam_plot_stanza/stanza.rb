@@ -13,16 +13,16 @@ class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
       WHERE
       {
         {
-          SELECT ?gene
+          SELECT ?protein
           {
-            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene .
-          } ORDER BY ?gene LIMIT 1
+            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
+              rdfs:seeAlso ?id_upid .
+            ?id_upid rdfs:seeAlso ?protein .
+            ?protein a up:Protein ;
+              up:reviewed ?reviewed .
+          } ORDER BY DESC(?reviewed) LIMIT 1
         }
-        <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
-          rdfs:seeAlso ?id_upid .
-        ?id_upid rdfs:seeAlso ?protein .
-        ?protein a <http://purl.uniprot.org/core/Protein> ;
-          rdfs:seeAlso ?ref .
+        ?protein rdfs:seeAlso ?ref .
         ?ref up:database ?database .
         ?database up:abbreviation ?abbr
         FILTER (?abbr ='Pfam').
@@ -109,16 +109,16 @@ class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
       WHERE
       {
         {
-          SELECT ?gene
+          SELECT ?protein
           {
-            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene .
-          } ORDER BY ?gene LIMIT 1
+            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
+              rdfs:seeAlso ?id_upid .
+            ?id_upid rdfs:seeAlso ?protein .
+            ?protein a up:Protein ;
+              up:reviewed ?reviewed .
+          } ORDER BY DESC(?reviewed) LIMIT 1
         }
-        <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
-          rdfs:seeAlso ?id_upid .
-        ?id_upid rdfs:seeAlso ?protein .
-        ?protein a <http://purl.uniprot.org/core/Protein> ;
-          rdfs:seeAlso ?ref .
+        ?protein rdfs:seeAlso ?ref .
         ?ref up:database ?database .
         ?database up:abbreviation ?abbr
         FILTER (?abbr ='Pfam').
@@ -255,6 +255,7 @@ class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
     pfam_list.each do |pfam_entity|
       pfam_id = pfam_entity[:pfam_id]
       pfam_summary_list = query("http://togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
+        DEFINE sql:select-option "order"
         PREFIX sio: <http://semanticscience.org/resource/>
         PREFIX up: <http://purl.uniprot.org/core/>
         PREFIX pfam: <http://purl.uniprot.org/pfam/>

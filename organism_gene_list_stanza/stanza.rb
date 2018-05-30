@@ -147,6 +147,12 @@ class OrganismGeneListStanza < TogoStanza::Stanza::Base
                   rdfs:seeAlso/rdfs:seeAlso ?uniprot .
           }
           GRAPH <http://togogenome.org/graph/uniprot> {
+              {
+                  select ?uniprot {
+                      ?uniprot a up:Protein ;
+                          up:reviewed ?reviewed .
+                  } ORDER BY DESC(?reviewed) LIMIT 1
+              }
               ?uniprot rdfs:seeAlso ?reactome .
               ?reactome up:database <http://purl.uniprot.org/database/Reactome> .
           }
@@ -174,6 +180,12 @@ class OrganismGeneListStanza < TogoStanza::Stanza::Base
                   rdfs:seeAlso/rdfs:seeAlso ?uniprot .
           }
           GRAPH <http://togogenome.org/graph/uniprot> {
+              {
+                  select ?uniprot {
+                      ?uniprot a up:Protein ;
+                          up:reviewed ?reviewed .
+                  } ORDER BY DESC(?reviewed) LIMIT 1
+              }
               ?uniprot up:recommendedName ?recommended_name_node .
               ?recommended_name_node up:fullName ?protein_name .
               OPTIONAL { ?recommended_name_node up:ecName ?ec_name . }

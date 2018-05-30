@@ -13,17 +13,16 @@ class ProteinSequenceAnnotationStanza < TogoStanza::Stanza::Base
       FROM <http://togogenome.org/graph/tgup>
       WHERE {
         {
-          SELECT ?gene
+          SELECT ?protein
           {
-            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene .
-          } ORDER BY ?gene LIMIT 1
+            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
+              rdfs:seeAlso ?id_upid .
+            ?id_upid rdfs:seeAlso ?protein .
+            ?protein a up:Protein ;
+              up:reviewed ?reviewed .
+          } ORDER BY DESC(?reviewed) LIMIT 1
         }
-        <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
-          rdfs:seeAlso ?id_upid .
-        ?id_upid rdfs:seeAlso ?protein .
-        ?protein a up:Protein ;
-                 up:annotation ?annotation .
-
+        ?protein up:annotation ?annotation .
         ?annotation rdf:type ?type .
         ?type rdfs:label ?label .
 

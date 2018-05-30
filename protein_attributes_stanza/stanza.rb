@@ -9,30 +9,33 @@ class ProteinAttributesStanza < TogoStanza::Stanza::Base
       SELECT DISTINCT ?sequence ?fragment ?precursor ?existence_label
       WHERE {
         {
-          SELECT ?gene
+          SELECT ?protein
           {
-            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene .
-          } ORDER BY ?gene LIMIT 1
+            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
+              rdfs:seeAlso ?id_upid .
+            ?id_upid rdfs:seeAlso ?protein .
+            ?protein a up:Protein ;
+              up:reviewed ?reviewed .
+          } ORDER BY DESC(?reviewed) LIMIT 1
         }
-        <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
-          rdfs:seeAlso ?id_upid .
-        ?id_upid rdfs:seeAlso ?protein .
-        ?protein a up:Protein ;
-                 up:sequence ?seq .
+        ?protein up:sequence ?isoform .
+        ?isoform rdf:type up:Simple_Sequence .
+        BIND( REPLACE( STR(?protein), "http://purl.uniprot.org/uniprot/", "") AS ?up_id)
+        FILTER( REGEX(?isoform, ?up_id))
 
         # Sequence
         OPTIONAL {
-          ?seq rdf:value ?sequence .
+          ?isoform rdf:value ?sequence .
         }
 
         # Sequence status
         OPTIONAL {
-          ?seq up:fragment ?fragment .
+          ?isoform up:fragment ?fragment .
         }
 
         # Sequence processing
         OPTIONAL {
-          ?seq up:precursor ?precursor .
+          ?isoform up:precursor ?precursor .
         }
 
         # Protein existence

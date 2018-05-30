@@ -14,7 +14,6 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
       PREFIX obo:    <http://purl.obolibrary.org/obo/>
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
       PREFIX uniprot: <http://purl.uniprot.org/core/>
-      PREFIX up: <http://purl.uniprot.org/core/>
 
       SELECT ?insdc_location
       {
@@ -31,8 +30,9 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
               GRAPH <http://togogenome.org/graph/uniprot>
               {
                 ?uniprot a uniprot:Protein ;
+                  uniprot:reviewed ?reviewed ;
                   uniprot:sequence ?isoform .
-                ?isoform rdf:type up:Simple_Sequence ;
+                ?isoform rdf:type uniprot:Simple_Sequence ;
                   rdf:value ?protein_seq .
               }
               GRAPH <http://togogenome.org/graph/refseq>
@@ -55,8 +55,9 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
               GRAPH <http://togogenome.org/graph/uniprot>
               {
                 ?uniprot a uniprot:Protein ;
+                  uniprot:reviewed ?reviewed ;
                   uniprot:sequence ?isoform .
-                ?isoform rdf:type up:Simple_Sequence ;
+                ?isoform rdf:type uniprot:Simple_Sequence ;
                   rdf:value ?protein_seq .
               }
               GRAPH <http://togogenome.org/graph/refseq>
@@ -80,6 +81,7 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
                 VALUES ?feature_type { insdc:Coding_Sequence }
                 ?feature obo:so_part_of ?gene ;
                   a ?feature_type .
+                VALUES ?reviewed { 0 }
                 VALUES ?priority { 3 }
               }
             }
@@ -95,10 +97,11 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
                 ?feature obo:so_part_of ?gene ;
                   insdc:location ?insdc_location ;
                   a ?feature_type .
+                VALUES ?reviewed { 0 }
                 VALUES ?priority { 4 }
               }
             }
-          } ORDER BY ?priority LIMIT 1
+          } ORDER BY ?priority DESC(?reviewed) LIMIT 1
         }
         GRAPH <http://togogenome.org/graph/refseq>
         {
