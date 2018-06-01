@@ -1,6 +1,6 @@
 class OrganismPhenotypeStanza < TogoStanza::Stanza::Base
   property :phenotype_items do |tax_id|
-    results = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    results = query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX up: <http://purl.uniprot.org/core/>
       PREFIX idtax: <http://purl.uniprot.org/taxonomy/>

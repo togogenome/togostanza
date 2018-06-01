@@ -1,7 +1,7 @@
 class OrganismGeneListStanza < TogoStanza::Stanza::Base
   property :organism_gene_list do |tax_id|
 
-    endpoint = "http://togogenome.org/sparql-app"
+    endpoint = "http://dev.togogenome.org/sparql-app"
     #end_reactome = "http://www.ebi.ac.uk/rdf/services/reactome/sparql"
     end_reactome = "http://ep.dbcls.jp/sparql71ebi"
 

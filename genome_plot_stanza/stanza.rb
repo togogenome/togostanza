@@ -9,7 +9,7 @@ class GenomePlotStanza < TogoStanza::Stanza::Base
     genome_list = []
 
     query1 = Thread.new {
-      habitat_list = query("http://togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
+      habitat_list = query("http://dev.togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX owl: <http://www.w3.org/2002/07/owl#>
         PREFIX meo: <http://purl.jp/bio/11/meo/>
@@ -32,7 +32,7 @@ class GenomePlotStanza < TogoStanza::Stanza::Base
     }
 
     query2 = Thread.new {
-      genome_list = query("http://togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
+      genome_list = query("http://dev.togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
         DEFINE sql:select-option "order"
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX mccv: <http://purl.jp/bio/01/mccv#>
@@ -78,7 +78,7 @@ class GenomePlotStanza < TogoStanza::Stanza::Base
 
     #gene #pseudogene #rrna #trna #ncrna
     query3 = Thread.new {
-      summary_list = query("http://togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
+      summary_list = query("http://dev.togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
         DEFINE sql:select-option "order"
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX togo: <http://togogenome.org/stats/>

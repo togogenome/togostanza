@@ -4,7 +4,7 @@ class LineageInformationStanza < TogoStanza::Stanza::Base
   end
 
   property :tax_lineage_list do |tax_id|
-    results_super = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    results_super = query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX taxo: <http://ddbj.nig.ac.jp/ontologies/taxonomy#>
       PREFIX taxid: <http://identifiers.org/taxonomy/>
@@ -25,7 +25,7 @@ class LineageInformationStanza < TogoStanza::Stanza::Base
       } ORDER BY DESC(?step)
     SPARQL
 
-    results_sub = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    results_sub = query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX taxo: <http://ddbj.nig.ac.jp/ontologies/taxonomy#>
       PREFIX taxid: <http://identifiers.org/taxonomy/>

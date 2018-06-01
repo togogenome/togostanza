@@ -1,6 +1,6 @@
 class OrganismGeneNumberNanoStanza < TogoStanza::Stanza::Base
   property :genome_stats do |tax_id|
-    result = query('http://togogenome.org/sparql-app', <<-SPARQL.strip_heredoc).first
+    result = query('http://dev.togogenome.org/sparql-app', <<-SPARQL.strip_heredoc).first
       PREFIX tgstat:<http://togogenome.org/stats/>
       PREFIX taxid:<http://identifiers.org/taxonomy/>
 

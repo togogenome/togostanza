@@ -1,6 +1,6 @@
 class GmoAppliedSpicesStanza < TogoStanza::Stanza::Base
   property :applied_spices_list do |medium_id|
-    query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX mccv: <http://purl.jp/bio/01/mccv#>
       PREFIX gmo: <http://purl.jp/bio/11/gmo#>
@@ -20,7 +20,7 @@ class GmoAppliedSpicesStanza < TogoStanza::Stanza::Base
   end
 
   property :general_information do |medium_id|
-    query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
       PREFIX gmo: <http://purl.jp/bio/11/gmo#>
       SELECT ?gmo_title
       WHERE {

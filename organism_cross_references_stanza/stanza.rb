@@ -1,6 +1,6 @@
 class OrganismCrossReferencesStanza < TogoStanza::Stanza::Base
   property :link_list do |tax_id|
-    link_list = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    link_list = query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX tax: <http://identifiers.org/taxonomy/>
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>

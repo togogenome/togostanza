@@ -1,6 +1,6 @@
 class ProteinOntologiesStanza < TogoStanza::Stanza::Base
   property :keywords do |tax_id, gene_id|
-    keywords = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    keywords = query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
       DEFINE sql:select-option "order"
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -44,7 +44,7 @@ class ProteinOntologiesStanza < TogoStanza::Stanza::Base
     ##  {:root_name=>"biological_process", :name=>"photosynthetic electron transport in photosystem II"},
     ##  {:root_name=>"molecular_function", :name=>"oxidoreductase activity"},
     ##  ...]
-    gene_ontlogies = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    gene_ontlogies = query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX up: <http://purl.uniprot.org/core/>

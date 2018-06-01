@@ -1,6 +1,6 @@
 class EnvironmentTopLevelSymbolicImageNanoStanza < TogoStanza::Stanza::Base
   property :top_level_category do |meo_id|
-    result = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc).first
+    result = query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc).first
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX owl: <http://www.w3.org/2002/07/owl#>
