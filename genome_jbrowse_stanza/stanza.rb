@@ -78,6 +78,6 @@ class GenomeJbrowseStanza < TogoStanza::Stanza::Base
     end
     display_start_pos = [1, start_pos - margin].max
     display_end_pos = [end_pos + margin, seq_length.to_i].min
-    {ref: seq_label, disp_start: display_start_pos, disp_end: display_end_pos }
+    {ref: seq_label, disp_start: display_start_pos, disp_end: display_end_pos, highlight_start: start_pos, highlight_end: end_pos}
   end
 end
