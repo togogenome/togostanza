@@ -1,6 +1,6 @@
 class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
   property :pfam_list do |tax_id, gene_id|
-    results = query("http://dev.togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
+    results = query("http://togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
       DEFINE sql:select-option "order"
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -35,7 +35,7 @@ class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
     results.each do |entity|
       pfam_hash = {}
       pfam_id = entity[:pfam_id]
-      pfam_name_list =  query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+      pfam_name_list =  query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX pfam: <http://purl.uniprot.org/pfam/>
 
@@ -57,7 +57,7 @@ class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
   end
 
   property :selected_tax_id do |tax_id, gene_id|
-    tax_id =  query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    tax_id =  query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX tax: <http://ddbj.nig.ac.jp/ontologies/taxonomy/>
@@ -96,7 +96,7 @@ class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
      pfam_list = []
      pfam_summary_list = []
 
-    pfam_list = query("http://dev.togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
+    pfam_list = query("http://togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
       DEFINE sql:select-option "order"
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -131,7 +131,7 @@ class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
     end
 
     query1 = Thread.new {
-      habitat_list = query("http://dev.togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
+      habitat_list = query("http://togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX owl: <http://www.w3.org/2002/07/owl#>
         PREFIX meo: <http://purl.jp/bio/11/meo/>
@@ -154,7 +154,7 @@ class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
     }
 
     query2 = Thread.new {
-      genome_list = query("http://dev.togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
+      genome_list = query("http://togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
         DEFINE sql:select-option "order"
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX mccv: <http://purl.jp/bio/01/mccv#>
@@ -200,7 +200,7 @@ class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
 
     #gene #pseudogene #rrna #trna #ncrna
     query3 = Thread.new {
-      summary_list = query("http://dev.togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
+      summary_list = query("http://togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
         DEFINE sql:select-option "order"
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX togo: <http://togogenome.org/stats/>
@@ -254,7 +254,7 @@ class ProteinPfamPlotStanza < TogoStanza::Stanza::Base
     result_hash = {}
     pfam_list.each do |pfam_entity|
       pfam_id = pfam_entity[:pfam_id]
-      pfam_summary_list = query("http://dev.togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
+      pfam_summary_list = query("http://togogenome.org/sparql-app",<<-SPARQL.strip_heredoc)
         DEFINE sql:select-option "order"
         PREFIX sio: <http://semanticscience.org/resource/>
         PREFIX up: <http://purl.uniprot.org/core/>
