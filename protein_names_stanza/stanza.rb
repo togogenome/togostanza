@@ -2,6 +2,7 @@ class ProteinNamesStanza < TogoStanza::Stanza::Base
   property :protein_names do |tax_id, gene_id|
     # genes
     gene_names = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+      DEFINE sql:select-option "order"
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX up: <http://purl.uniprot.org/core/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -11,16 +12,15 @@ class ProteinNamesStanza < TogoStanza::Stanza::Base
       FROM <http://togogenome.org/graph/tgup>
       WHERE {
         {
-          SELECT ?gene
+          SELECT ?protein
           {
-            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene .
-          } ORDER BY ?gene LIMIT 1
+            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
+              rdfs:seeAlso ?id_upid .
+            ?id_upid rdfs:seeAlso ?protein .
+            ?protein a up:Protein ;
+              up:reviewed ?reviewed .
+          } ORDER BY DESC(?reviewed) LIMIT 1
         }
-        <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
-          rdfs:seeAlso ?id_upid .
-        ?id_upid rdfs:seeAlso ?protein .
-        ?protein a up:Protein .
-
         # Gene names
         ?protein up:encodedBy ?gene_hash .
 
@@ -56,15 +56,15 @@ class ProteinNamesStanza < TogoStanza::Stanza::Base
       FROM <http://togogenome.org/graph/tgup>
       WHERE {
         {
-          SELECT ?gene
+          SELECT ?protein
           {
-            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene .
-          } ORDER BY ?gene LIMIT 1
+            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
+              rdfs:seeAlso ?id_upid .
+            ?id_upid rdfs:seeAlso ?protein .
+            ?protein a up:Protein ;
+              up:reviewed ?reviewed .
+          } ORDER BY DESC(?reviewed) LIMIT 1
         }
-        <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
-          rdfs:seeAlso ?id_upid .
-        ?id_upid rdfs:seeAlso ?protein .
-        ?protein a up:Protein .
 
         # Protein names
         ## Recommended name:

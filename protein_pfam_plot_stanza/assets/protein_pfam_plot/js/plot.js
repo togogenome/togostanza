@@ -597,7 +597,7 @@ taxonomy id is specified by request parameter.(?taxid=NNNNN)
 function highlight_selected_id(selected_id) {
   var id = opt.elem_id_prefix + selected_id;
   move_in_front(id);
-  $("circle[id^='" + id + "']")
+  $("circle[id='" + id + "']")
       .attr("fill", opt.init_selected_point_color);
 }
 
@@ -606,7 +606,7 @@ Layers element (specified by id) in front.
 Because svg element is not supported z-index style.
 */
 function move_in_front(id) {
-  $("circle[id^='" + id + "']").appendTo("#plot-svg");
+  $("circle[id='" + id + "']").appendTo("#plot-svg");
 }
 /*
 

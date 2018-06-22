@@ -71,9 +71,13 @@ class GenomeJbrowseStanza < TogoStanza::Stanza::Base
 
     start_pos, end_pos = [first.to_i, last.to_i].minmax
     gene_length = (end_pos - start_pos).abs + 1
-    display_start_pos = [1, start_pos - (gene_length*5)].max
-    display_end_pos = [end_pos + (gene_length*5), seq_length.to_i].min
-
-    {ref: seq_label, disp_start: display_start_pos, disp_end: display_end_pos }
+    if gene_length <= 10 * 1000
+      margin = (gene_length*0.5).floor
+    else
+      margin = 5 * 1000
+    end
+    display_start_pos = [1, start_pos - margin].max
+    display_end_pos = [end_pos + margin, seq_length.to_i].min
+    {ref: seq_label, disp_start: display_start_pos, disp_end: display_end_pos, highlight_start: start_pos, highlight_end: end_pos}
   end
 end

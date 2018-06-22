@@ -5,13 +5,13 @@
   "parameter": [
     {
       "key": "data-stanza-tax-id",
-      "example": "103690",
+      "example": "9606",
       "description": "Taxonomy identifier.",
       "required": true
     },
     {
       "key": "data-stanza-gene-id",
-      "example": "PCC7120DELTA_RS09085",
+      "example": "BRCA1",
       "description": "Gene identifier.",
       "required": true
     }
@@ -25,5 +25,5 @@
   "address": "hoge@example.org",
   "version": "1",
   "created": "2015-02-03",
-  "updated": "2015-09-30"
+  "updated": "2018-05-30"
 }

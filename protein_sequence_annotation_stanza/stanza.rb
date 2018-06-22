@@ -13,17 +13,16 @@ class ProteinSequenceAnnotationStanza < TogoStanza::Stanza::Base
       FROM <http://togogenome.org/graph/tgup>
       WHERE {
         {
-          SELECT ?gene
+          SELECT ?protein
           {
-            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene .
-          } ORDER BY ?gene LIMIT 1
+            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
+              rdfs:seeAlso ?id_upid .
+            ?id_upid rdfs:seeAlso ?protein .
+            ?protein a up:Protein ;
+              up:reviewed ?reviewed .
+          } ORDER BY DESC(?reviewed) LIMIT 1
         }
-        <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
-          rdfs:seeAlso ?id_upid .
-        ?id_upid rdfs:seeAlso ?protein .
-        ?protein a up:Protein ;
-                 up:annotation ?annotation .
-
+        ?protein up:annotation ?annotation .
         ?annotation rdf:type ?type .
         ?type rdfs:label ?label .
 
@@ -37,11 +36,8 @@ class ProteinSequenceAnnotationStanza < TogoStanza::Stanza::Base
         ?range faldo:begin/faldo:position ?begin_location ;
                faldo:end/faldo:position ?end_location .
 
-
-        # 互いに isoform なUniprotがあるので (e.g. P42166, P42167) 同じIDの isoform で配列のあるものに絞る
-        ?protein up:sequence ?isoform .
-        BIND( REPLACE( STR(?protein), "http://purl.uniprot.org/uniprot/", "") AS ?up_id)
-        FILTER( REGEX(STR(?isoform), ?up_id))
+        # sequence annotationが紐づいているisoformとそのsequenceを取得する
+        ?range faldo:begin/faldo:reference ?isoform .
         ?isoform rdf:value ?value .
 
         # description の一部が取得できるが、内容の表示に必要があるのか

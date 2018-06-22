@@ -5,13 +5,13 @@
   "parameter": [
     {
       "key": "data-stanza-gene-id",
-      "example": "PCC7120DELTA_RS09085",
+      "example": "BRCA1",
       "description": "Locus tag of a gene",
       "required": true
     },
     {
       "key": "data-stanza-tax-id",
-      "example": "103690",
+      "example": "9606",
       "description": "Taxonomy identifier",
       "required": false
     }
