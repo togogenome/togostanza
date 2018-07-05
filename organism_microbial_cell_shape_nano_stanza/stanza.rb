@@ -21,7 +21,7 @@ class OrganismMicrobialCellShapeNanoStanza < TogoStanza::Stanza::Base
       if File.exist?(file_path)
         result[:image_url] = "/stanza/assets/organism_microbial_cell_shape_nano/images/#{result[:file_name]}"
       else
-        result[:image_url] = "/stanza/assets/organism_microbial_cell_shape_nano/images/no_image.png"
+        result[:image_url] = "/stanza/assets/organism_microbial_cell_shape_nano/images/no_image.svg"
       end
       result
     else
