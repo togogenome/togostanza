@@ -17,7 +17,12 @@ class OrganismMicrobialCellShapeNanoStanza < TogoStanza::Stanza::Base
     SPARQL
 
     if result
-      result[:image_url] = "/stanza/assets/organism_microbial_cell_shape_nano/images/#{result[:file_name]}"
+      file_path = File.expand_path("../assets/organism_microbial_cell_shape_nano/images/#{result[:file_name]}", __FILE__)
+      if File.exist?(file_path)
+        result[:image_url] = "/stanza/assets/organism_microbial_cell_shape_nano/images/#{result[:file_name]}"
+      else
+        result[:image_url] = "/stanza/assets/organism_microbial_cell_shape_nano/images/no_image.png"
+      end
       result
     else
       nil
