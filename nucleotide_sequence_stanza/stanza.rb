@@ -4,7 +4,7 @@ require 'uri'
 class NucleotideSequenceStanza < TogoStanza::Stanza::Base
   property :nucleotide_sequences do |tax_id, gene_id|
     # At first selects a feature of gene.
-    results = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    results = query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
       DEFINE sql:select-option "order"
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

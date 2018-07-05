@@ -4,7 +4,7 @@ class ProteinReferencesTimelineNanoStanza < TogoStanza::Stanza::Base
   end
 
   property :references do |tax_id, gene_id, step|
-    refs = query('http://togogenome.org/sparql-app', <<-SPARQL.strip_heredoc)
+    refs = query('http://dev.togogenome.org/sparql-app', <<-SPARQL.strip_heredoc)
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX up: <http://purl.uniprot.org/core/>

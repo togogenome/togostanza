@@ -1,6 +1,6 @@
 class GenomeJbrowseStanza < TogoStanza::Stanza::Base
   property :select_tax_id do |tax_id, gene_id|
-    results = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    results = query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
       DEFINE sql:select-option "order"
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX obo: <http://purl.obolibrary.org/obo/>
@@ -28,7 +28,7 @@ class GenomeJbrowseStanza < TogoStanza::Stanza::Base
   end
 
   property :display_range do |tax_id, gene_id|
-    result = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc).first
+    result = query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc).first
       DEFINE sql:select-option "order"
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX obo: <http://purl.obolibrary.org/obo/>

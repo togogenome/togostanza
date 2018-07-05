@@ -1,6 +1,6 @@
 class EnvironmentInhabitantsStatisticsNanoStanza < TogoStanza::Stanza::Base
   property :inhabitants_stats do |meo_id|
-    query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX meo: <http://purl.jp/bio/11/meo/>
       SELECT (COUNT(DISTINCT ?gold) AS ?cnt)

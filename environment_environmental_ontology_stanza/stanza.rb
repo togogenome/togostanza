@@ -8,7 +8,7 @@ class EnvironmentEnvironmentalOntologyStanza < TogoStanza::Stanza::Base
   end
 
   resource :meo_ontology_tree do
-    results = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    results = query("http://dev.togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX meo: <http://purl.jp/bio/11/meo/>
       PREFIX owl: <http://www.w3.org/2002/07/owl#>

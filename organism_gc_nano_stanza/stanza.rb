@@ -8,7 +8,7 @@ class OrganismGcNanoStanza < TogoStanza::Stanza::Base
   property :atgc do |tax_id|
     # http://localhost:9292/stanza/organism_gc_nano?tax_id=192222
 
-    results = query('http://togogenome.org/sparql-app', <<-SPARQL.strip_heredoc)
+    results = query('http://dev.togogenome.org/sparql-app', <<-SPARQL.strip_heredoc)
       PREFIX taxid:<http://identifiers.org/taxonomy/>
       PREFIX stats: <http://togogenome.org/stats/>
 
