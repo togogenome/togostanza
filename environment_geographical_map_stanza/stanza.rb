@@ -45,7 +45,7 @@ class EnvironmentGeographicalMapStanza < TogoStanza::Stanza::Base
       gaz[:goldlist] = []
       gazetter.push(gaz)
     end
-    gazetter = gazetter.uniq!
+    gazetter.uniq!
     gazetter.each do |entity|
       results.each do |result_entity|
         if (entity[:gaz_id] == result_entity[:gaz_id]) then

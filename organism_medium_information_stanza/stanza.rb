@@ -75,6 +75,7 @@ class OrganismMediumInformationStanza < TogoStanza::Stanza::Base
       row.push({:row_key => "Medium type", :row_value => hash[:medium_type_label]})
       ingredients_classes.each{ |classes|
         classifications = classes_by_medium[hash[:medium_id]].find_all {|item| item[:classification].split("#").last == classes }
+        break if classifications.size == 0
         ingredients = ''
         classifications.each_with_index {|item, index|
           ingredients += item[:ingredient_label]
