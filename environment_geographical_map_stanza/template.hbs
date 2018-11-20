@@ -13,6 +13,15 @@
     $(function(){
       $.getJSON("./environment_geographical_map/resources/place_list?meo_id={{select_meo_id}}", function(json) {
         if(json.place_list != null && json.place_list.length >0) {
+          var frame_height = 500;
+          $("#togogenome_css").remove();
+          $(document.body).css("height", "100%");
+          $(document.body).css("margin", "0px");
+          $(document.body).css("padding", "0px");
+          $("#map").css("height", (frame_height - 30) + "px");
+          $("#map").css("border-radius", "4px");
+          $("#map").css("box-shadow", "0 2px 2px rgba(0,0,0,0.2)");
+
           var map = L.map('map').setView([35.0, 139.0], 2);
           var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
             maxZoom: 18,
@@ -26,6 +35,7 @@
             }
             L.marker([json.place_list[i].latitude, json.place_list[i].longitude]).bindPopup(json.place_list[i].place_name + '<br>' + link).addTo(map);
           }
+          adjust_iframe_height(frame_height);
         } else {
           $("#map").text("No data");
           adjust_iframe_height();
@@ -44,7 +54,7 @@
     </script>
   </head>
 
-  <body onload="init()">
+  <body>
     <div id="map"></div>
   </body>
 </html>
