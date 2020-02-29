@@ -77,3 +77,4 @@ gem 'protein_references_timeline_nano_stanza', path: './protein_references_timel
 gem 'gene_wikidata_nano_stanza', path: './gene_wikidata_nano_stanza'
 gem 'organism_wikidata_nano_stanza', path: './organism_wikidata_nano_stanza'
 gem 'js_stanza_wrapper_stanza', path: './js_stanza_wrapper_stanza'
+gem 'environment_inhabitants_brc_stanza', path: './environment_inhabitants_brc_stanza'

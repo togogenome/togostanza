@@ -17,6 +17,12 @@ PATH
       togostanza
 
 PATH
+  remote: ./environment_inhabitants_brc_stanza
+  specs:
+    environment_inhabitants_brc_stanza (0.0.1)
+      togostanza
+
+PATH
   remote: ./environment_inhabitants_stanza
   specs:
     environment_inhabitants_stanza (0.0.1)
@@ -478,6 +484,7 @@ DEPENDENCIES
   environment_attributes_stanza!
   environment_environmental_ontology_stanza!
   environment_geographical_map_stanza!
+  environment_inhabitants_brc_stanza!
   environment_inhabitants_stanza!
   environment_inhabitants_statistics_nano_stanza!
   environment_inhabitants_statistics_stanza!

@@ -1,0 +1,23 @@
+{
+  "id": "environment_inhabitants_brc",
+  "label": "Inhabitants",
+  "definition": "List of samples and cultures which were sampled in specified environment.",
+  "parameter": [
+    {
+      "key": "data-stanza-meo-id",
+      "example": "MEO_0000029",
+      "description": "MEO identifier.",
+      "required": true
+    }
+  ],
+  "type": "Stanza",
+  "context": "Environment",
+  "display": "Table",
+  "provider": "DBCLS",
+  "license": "CC-BY",
+  "author": "Stanza Togo",
+  "address": "hoge@example.org",
+  "version": "1",
+  "created": "2015-02-03",
+  "updated": "2020-03-01"
+}
