@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Environment Organism Distribution On Temperature </title>
+    <link rel="stylesheet" href="/stanza/assets/nanostanza.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="/stanza/assets/nanostanza.js"></script>
+  </head>
+
+  <body>
+    <h1>Inhabitants / temperature</h1>
+    <div id="main-view">
+      <div class="growth-temperature hidden">
+        <div class="datum" data-temperature="psychrophile">{{num_orgs_with_temperature_range.Psychrophile}}</div>
+        <div class="datum" data-temperature="mesophile">{{num_orgs_with_temperature_range.Mesophile}}</div>
+        <div class="datum" data-temperature="thermophile">{{num_orgs_with_temperature_range.Thermophile}}</div>
+      </div>
+    </div>
+  </body>
+</html>

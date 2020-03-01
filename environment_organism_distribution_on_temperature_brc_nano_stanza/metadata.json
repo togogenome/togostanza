@@ -1,0 +1,23 @@
+{
+  "id": "environment_organism_distribution_on_temperature_brc_nano",
+  "label": "Growth temperature distribution",
+  "definition": "NanoStanza for showing the number of Psychrophiles, Mesophiles and Thermophiles with the specified environmental feature.",
+  "parameter": [
+    {
+      "key": "data-stanza-meo-id",
+      "example": "MEO_0000029",
+      "description": "MEO identifier",
+      "required": true
+    }
+  ],
+  "type": "NanoStanza",
+  "context": "Environment",
+  "display": "Chart",
+  "provider": "DBCLS",
+  "license": "CC-BY",
+  "author": "Stanza Togo",
+  "address": "hoge@example.org",
+  "version": "1",
+  "created": "2015-02-03",
+  "updated": "2020-03-01"
+}
