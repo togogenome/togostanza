@@ -1,6 +1,6 @@
 class EnvironmentInhabitantsBrcStanza < TogoStanza::Stanza::Base
   property :inhabitants_statistics do |meo_id|
-    nbrc_list = query("http://ep.dbcls.jp/sparql-import", <<-SPARQL.strip_heredoc)
+    nbrc_list = query("http://ep.dbcls.jp/sparql71tmp", <<-SPARQL.strip_heredoc)
     DEFINE sql:select-option "order"
     PREFIX mccv: <http://purl.jp/bio/10/mccv#>
     PREFIX meo: <http://purl.jp/bio/11/meo/>
@@ -13,9 +13,9 @@ class EnvironmentInhabitantsBrcStanza < TogoStanza::Stanza::Base
       (GROUP_CONCAT(DISTINCT ?isolated_from; SEPARATOR = ", ") AS ?isolation)
       (GROUP_CONCAT(DISTINCT ?tax_no; SEPARATOR = "||") AS ?tax_no)
       (GROUP_CONCAT(DISTINCT ?env; SEPARATOR = "||") AS ?env_links)
-    FROM <http://togogenome.org/graph/nbrc>
-    FROM <http://togogenome.org/graph/meo>
-    FROM <http://togogenome.org/graph/taxonomy>
+    FROM <http://togogenome.org/graph/nbrc/202003>
+    FROM <http://togogenome.org/graph/meo/0.9>
+    FROM <http://ddbj.nig.ac.jp/ontologies/taxonomy/>
     {
       {
         SELECT DISTINCT (?strain) as ?strain_id
@@ -41,7 +41,7 @@ class EnvironmentInhabitantsBrcStanza < TogoStanza::Stanza::Base
     } GROUP BY ?strain_id ?strain_number ?strain_name ORDER BY DESC (?source_id)
     SPARQL
 
-    jcm_list = query("http://ep.dbcls.jp/sparql-import", <<-SPARQL.strip_heredoc)
+    jcm_list = query("http://ep.dbcls.jp/sparql71tmp", <<-SPARQL.strip_heredoc)
     DEFINE sql:select-option "order"
     PREFIX mccv: <http://purl.jp/bio/10/mccv#>
     PREFIX taxid: <http://identifiers.org/taxonomy/>
@@ -55,9 +55,9 @@ class EnvironmentInhabitantsBrcStanza < TogoStanza::Stanza::Base
     (GROUP_CONCAT(DISTINCT ?isolated_from; SEPARATOR = ", ") AS ?isolation)
     (GROUP_CONCAT(DISTINCT ?tax_no; SEPARATOR = "||") AS ?tax_no)
     (GROUP_CONCAT(DISTINCT ?env; SEPARATOR = "||") AS ?env_links)
-    FROM <http://togogenome.org/graph/jcm>
-    FROM <http://togogenome.org/graph/meo>
-    FROM <http://togogenome.org/graph/taxonomy>
+    FROM <http://togogenome.org/graph/jcm/202003>
+    FROM <http://togogenome.org/graph/meo/0.9>
+    FROM <http://ddbj.nig.ac.jp/ontologies/taxonomy/>
     WHERE
     {
       {
