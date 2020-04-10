@@ -1,6 +1,6 @@
 class EnvironmentOrganismDistributionOnTemperatureBrcNanoStanza < TogoStanza::Stanza::Base
   property :num_orgs_with_temperature_range do |meo_id|
-    brc_results = query("http://ep.dbcls.jp/sparql71tmp", <<-SPARQL.strip_heredoc)
+    brc_results = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX mpo: <http://purl.jp/bio/10/mpo/>
     PREFIX mccv: <http://purl.jp/bio/10/mccv#>
@@ -8,9 +8,9 @@ class EnvironmentOrganismDistributionOnTemperatureBrcNanoStanza < TogoStanza::St
     PREFIX sio: <http://semanticscience.org/resource/>
 
     SELECT DISTINCT ?strain_id ?opt_temp_brc ?min_temp_brc ?max_temp_brc
-    FROM <http://togogenome.org/graph/nbrc/202003>
-    FROM <http://togogenome.org/graph/jcm/202003>
-    FROM <http://togogenome.org/graph/meo/0.9>
+    FROM <http://togogenome.org/graph/nbrc>
+    FROM <http://togogenome.org/graph/jcm>
+    FROM <http://togogenome.org/graph/meo0.9>
     WHERE {
       {
         SELECT DISTINCT (?strain) as ?strain_id
@@ -49,7 +49,7 @@ class EnvironmentOrganismDistributionOnTemperatureBrcNanoStanza < TogoStanza::St
     }
     SPARQL
 
-    gold_results = query("http://ep.dbcls.jp/sparql71tmp", <<-SPARQL.strip_heredoc)
+    gold_results = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX mpo: <http://purl.jp/bio/01/mpo#>
     PREFIX mccv: <http://purl.jp/bio/01/mccv#>
@@ -58,7 +58,7 @@ class EnvironmentOrganismDistributionOnTemperatureBrcNanoStanza < TogoStanza::St
     SELECT DISTINCT ?tax_id ?opt_temp ?min_temp ?max_temp ?l
     FROM <http://togogenome.org/graph/gold>
     FROM <http://togogenome.org/graph/mpo>
-    FROM <http://togogenome.org/graph/meo/0.9>
+    FROM <http://togogenome.org/graph/meo0.9>
     WHERE {
       VALUES ?meo_mapping { meo:MEO_0000437 meo:MEO_0000440 } .
       ?descendant rdfs:subClassOf* meo:#{meo_id} .
