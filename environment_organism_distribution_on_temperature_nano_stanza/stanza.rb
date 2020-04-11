@@ -1,41 +1,84 @@
 class EnvironmentOrganismDistributionOnTemperatureNanoStanza < TogoStanza::Stanza::Base
   property :num_orgs_with_temperature_range do |meo_id|
-    results = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
-      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-      PREFIX mpo: <http://purl.jp/bio/01/mpo#>
-      PREFIX mccv: <http://purl.jp/bio/01/mccv#>
-      PREFIX meo: <http://purl.jp/bio/11/meo/>
-      SELECT DISTINCT ?tax_id ?opt_temp ?min_temp ?max_temp
-                      ?opt_temp_brc ?min_temp_brc ?max_temp_brc ?l
-      FROM <http://togogenome.org/graph/gold>
-      FROM <http://togogenome.org/graph/mpo>
-      FROM <http://togogenome.org/graph/meo>
-      FROM <http://togogenome.org/graph/brc>
-      FROM <http://togogenome.org/graph/mccv>
-      WHERE {
-        VALUES ?meo_mapping { meo:MEO_0000437 meo:MEO_0000440 } .
-        ?descendant rdfs:subClassOf* meo:#{meo_id} .
-        ?gold ?meo_mapping ?descendant .
-        OPTIONAL {?gold mccv:MCCV_000020 ?tax_id}
-        OPTIONAL {?culture mccv:MCCV_000056 ?tax_id}
-        OPTIONAL {?tax_id mpo:MPO_10009 ?opt_temp}
-        OPTIONAL {?tax_id mpo:MPO_10010 ?min_temp}
-        OPTIONAL {?tax_id mpo:MPO_10011 ?max_temp}
-        OPTIONAL {?culture mccv:MCCV_000014 ?opt_temp_brc}
-        OPTIONAL {?culture mccv:MCCV_000015 ?min_temp_brc}
-        OPTIONAL {?culture mccv:MCCV_000016 ?max_temp_brc}
-        OPTIONAL {?tax_id mpo:MPO_10003 ?growth_temp_range .
-                  ?growth_temp_range rdfs:label ?label .
-                  FILTER(lang(?label) = "en")
-                  BIND(str(?label) AS ?l)}
-        BIND (COALESCE(?opt_temp, ?min_temp, ?max_temp,
-                       ?opt_temp_brc, ?min_temp_brc, ?max_temp_brc,
-                       ?growth_temp_range, ?l, <NA>) AS ?temperature)
-        FILTER (regex(?tax_id, "identifiers.org") &&
-                (!(?temperature = <NA>) || bound(?growth_temp_range)))
+    brc_results = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX mpo: <http://purl.jp/bio/10/mpo/>
+    PREFIX mccv: <http://purl.jp/bio/10/mccv#>
+    PREFIX meo: <http://purl.jp/bio/11/meo/>
+    PREFIX sio: <http://semanticscience.org/resource/>
+
+    SELECT DISTINCT ?strain_id ?opt_temp_brc ?min_temp_brc ?max_temp_brc
+    FROM <http://togogenome.org/graph/nbrc>
+    FROM <http://togogenome.org/graph/jcm>
+    FROM <http://togogenome.org/graph/meo0.9>
+    WHERE {
+      {
+        SELECT DISTINCT (?strain) as ?strain_id
+        {
+          VALUES ?search_meo_id { meo:#{meo_id} }
+          VALUES ?mep_prop { sio:SIO_000008 mccv:MCCV_000071 } #diffrence nbrc/jcm
+          ?search_meo_id a owl:Class .
+          ?meo_id rdfs:subClassOf* ?search_meo_id .
+           ?isolated_from ?mep_prop  ?meo_id .
+           ?strain mccv:MCCV_000028/mccv:MCCV_000072 ?isolated_from .
+        }
       }
+      OPTIONAL {
+        { # nbrc
+          ?strain_id sio:SIO_000216 ?blank .
+          ?blank rdf:type mpo:MPO_00102 ;
+            sio:SIO_000300  ?opt_temp_brc .
+        }
+        UNION
+        { # jcm
+          ?strain_id mccv:MCCV_000073/sio:SIO_000216 ?blank .
+          ?blank a mpo:MPO_00102 ;
+          sio:SIO_000300 ?opt_temp_brc .
+        }
+      }
+      OPTIONAL {
+        ?strain_id sio:SIO_000216 ?blank .
+        ?blank rdf:type mpo:MPO_00104 ;
+          sio:SIO_000300  ?min_temp_brc .
+      }
+      OPTIONAL {
+        ?strain_id sio:SIO_000216 ?blank .
+        ?blank rdf:type mpo:MPO_00103 ;
+          sio:SIO_000300  ?max_temp_brc .
+      }
+    }
     SPARQL
 
+    gold_results = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX mpo: <http://purl.jp/bio/01/mpo#>
+    PREFIX mccv: <http://purl.jp/bio/01/mccv#>
+    PREFIX meo: <http://purl.jp/bio/11/meo/>
+
+    SELECT DISTINCT ?tax_id ?opt_temp ?min_temp ?max_temp ?l
+    FROM <http://togogenome.org/graph/gold>
+    FROM <http://togogenome.org/graph/mpo>
+    FROM <http://togogenome.org/graph/meo0.9>
+    WHERE {
+      VALUES ?meo_mapping { meo:MEO_0000437 meo:MEO_0000440 } .
+      ?descendant rdfs:subClassOf* meo:#{meo_id} .
+      ?gold ?meo_mapping ?descendant .
+      OPTIONAL {?gold mccv:MCCV_000020 ?tax_id}
+      OPTIONAL {?tax_id mpo:MPO_10009 ?opt_temp}
+      OPTIONAL {?tax_id mpo:MPO_10010 ?min_temp}
+      OPTIONAL {?tax_id mpo:MPO_10011 ?max_temp}
+      OPTIONAL {?tax_id mpo:MPO_10003 ?growth_temp_range .
+                ?growth_temp_range rdfs:label ?label .
+                FILTER(lang(?label) = "en")
+                BIND(str(?label) AS ?l)}
+      BIND (COALESCE(?opt_temp, ?min_temp, ?max_temp,
+                     ?growth_temp_range, ?l, <NA>) AS ?temperature)
+      FILTER (regex(?tax_id, "identifiers.org") &&
+              (!(?temperature = <NA>) || bound(?growth_temp_range)))
+    }
+    SPARQL
+
+    results = brc_results.concat(gold_results)
     category2num = {Mesophile: 0, Thermophile: 0, Psychrophile: 0}
     results.each do |result|
       category = find_category(result)
@@ -66,6 +109,10 @@ class EnvironmentOrganismDistributionOnTemperatureNanoStanza < TogoStanza::Stanz
     case label
     when "Mesophile", "Psychrophile", "Thermophile"
       label.to_sym
+    when "Thermophilic"
+      :Thermophile
+    when "Hyperthermophilic"
+      :Thermophile
     when "Hyperthermophile"
       :Thermophile
     else

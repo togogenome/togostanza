@@ -5,7 +5,7 @@
   "parameter": [
     {
       "key": "data-stanza-meo-id",
-      "example": "MEO_0000005",
+      "example": "MEO_0000029",
       "description": "MEO identifier",
       "required": true
     }
@@ -19,5 +19,5 @@
   "address": "hoge@example.org",
   "version": "1",
   "created": "2015-02-03",
-  "updated": "2015-09-30"
+  "updated": "2020-04-11"
 }
