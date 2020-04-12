@@ -1,4 +1,4 @@
-class EnvironmentInhabitantsStatisticsStanza < TogoStanza::Stanza::Base
+class EnvironmentInhabitantsStatisticsBrcStanza < TogoStanza::Stanza::Base
   property :inhabitants_statistics do |meo_id|
     results = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
       DEFINE sql:select-option "order"

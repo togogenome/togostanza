@@ -17,9 +17,21 @@ PATH
       togostanza
 
 PATH
+  remote: ./environment_inhabitants_brc_stanza
+  specs:
+    environment_inhabitants_brc_stanza (0.0.1)
+      togostanza
+
+PATH
   remote: ./environment_inhabitants_stanza
   specs:
     environment_inhabitants_stanza (0.0.1)
+      togostanza
+
+PATH
+  remote: ./environment_inhabitants_statistics_brc_stanza
+  specs:
+    environment_inhabitants_statistics_brc_stanza (0.0.1)
       togostanza
 
 PATH
@@ -38,6 +50,12 @@ PATH
   remote: ./environment_organism_distribution_on_ph_nano_stanza
   specs:
     environment_organism_distribution_on_ph_nano_stanza (0.0.1)
+      togostanza
+
+PATH
+  remote: ./environment_organism_distribution_on_temperature_brc_nano_stanza
+  specs:
+    environment_organism_distribution_on_temperature_brc_nano_stanza (0.0.1)
       togostanza
 
 PATH
@@ -478,10 +496,13 @@ DEPENDENCIES
   environment_attributes_stanza!
   environment_environmental_ontology_stanza!
   environment_geographical_map_stanza!
+  environment_inhabitants_brc_stanza!
   environment_inhabitants_stanza!
+  environment_inhabitants_statistics_brc_stanza!
   environment_inhabitants_statistics_nano_stanza!
   environment_inhabitants_statistics_stanza!
   environment_organism_distribution_on_ph_nano_stanza!
+  environment_organism_distribution_on_temperature_brc_nano_stanza!
   environment_organism_distribution_on_temperature_nano_stanza!
   environment_taxonomic_composition_stanza!
   environment_top_level_symbolic_image_nano_stanza!

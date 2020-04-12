@@ -1,5 +1,5 @@
 {
-  "id": "environment_inhabitants",
+  "id": "environment_inhabitants_brc",
   "label": "Inhabitants",
   "definition": "List of samples and cultures which were sampled in specified environment.",
   "parameter": [
@@ -19,5 +19,5 @@
   "address": "hoge@example.org",
   "version": "1",
   "created": "2015-02-03",
-  "updated": "2020-04-11"
+  "updated": "2020-03-01"
 }

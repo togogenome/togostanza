@@ -1,4 +1,4 @@
-class EnvironmentInhabitantsStanza < TogoStanza::Stanza::Base
+class EnvironmentInhabitantsBrcStanza < TogoStanza::Stanza::Base
   property :inhabitants_statistics do |meo_id|
     nbrc_list = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
     DEFINE sql:select-option "order"
@@ -51,7 +51,7 @@ class EnvironmentInhabitantsStanza < TogoStanza::Stanza::Base
     PREFIX mpo:  <http://purl.jp/bio/10/mpo/>
     PREFIX obo: <http://purl.obolibrary.org/obo/>
 
-    SELECT DISTINCT  (?strain_id AS ?source_link) (?strain_number AS ?source_id) (?strain_name AS ?organism_name)
+    SELECT DISTINCT  (?strain_id AS ?source_link) (?strain_number AS ?source_id) (?strain_name AS ?organism_name) 
     (GROUP_CONCAT(DISTINCT ?isolated_from; SEPARATOR = ", ") AS ?isolation)
     (GROUP_CONCAT(DISTINCT ?tax_no; SEPARATOR = "||") AS ?tax_no)
     (GROUP_CONCAT(DISTINCT ?env; SEPARATOR = "||") AS ?env_links)

@@ -1,7 +1,7 @@
 {
-  "id": "environment_inhabitants",
-  "label": "Inhabitants",
-  "definition": "List of samples and cultures which were sampled in specified environment.",
+  "id": "environment_inhabitants_statistics_brc",
+  "label": "Inhabitants statistics",
+  "definition": "Number of samples and cultures which were sampled in specified environment.",
   "parameter": [
     {
       "key": "data-stanza-meo-id",
@@ -19,5 +19,5 @@
   "address": "hoge@example.org",
   "version": "1",
   "created": "2015-02-03",
-  "updated": "2020-04-11"
+  "updated": "2020-03-01"
 }

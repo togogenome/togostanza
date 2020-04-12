@@ -1,4 +1,4 @@
-class EnvironmentOrganismDistributionOnTemperatureNanoStanza < TogoStanza::Stanza::Base
+class EnvironmentOrganismDistributionOnTemperatureBrcNanoStanza < TogoStanza::Stanza::Base
   property :num_orgs_with_temperature_range do |meo_id|
     brc_results = query("http://togogenome.org/sparql-app", <<-SPARQL.strip_heredoc)
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -79,6 +79,7 @@ class EnvironmentOrganismDistributionOnTemperatureNanoStanza < TogoStanza::Stanz
     SPARQL
 
     results = brc_results.concat(gold_results)
+
     category2num = {Mesophile: 0, Thermophile: 0, Psychrophile: 0}
     results.each do |result|
       category = find_category(result)
