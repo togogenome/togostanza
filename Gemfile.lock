@@ -1,373 +1,373 @@
 PATH
-  remote: ./environment_attributes_stanza
+  remote: environment_attributes_stanza
   specs:
     environment_attributes_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./environment_environmental_ontology_stanza
+  remote: environment_environmental_ontology_stanza
   specs:
     environment_environmental_ontology_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./environment_geographical_map_stanza
+  remote: environment_geographical_map_stanza
   specs:
     environment_geographical_map_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./environment_inhabitants_brc_stanza
+  remote: environment_inhabitants_brc_stanza
   specs:
     environment_inhabitants_brc_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./environment_inhabitants_stanza
+  remote: environment_inhabitants_stanza
   specs:
     environment_inhabitants_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./environment_inhabitants_statistics_brc_stanza
+  remote: environment_inhabitants_statistics_brc_stanza
   specs:
     environment_inhabitants_statistics_brc_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./environment_inhabitants_statistics_nano_stanza
+  remote: environment_inhabitants_statistics_nano_stanza
   specs:
     environment_inhabitants_statistics_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./environment_inhabitants_statistics_stanza
+  remote: environment_inhabitants_statistics_stanza
   specs:
     environment_inhabitants_statistics_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./environment_organism_distribution_on_ph_nano_stanza
+  remote: environment_organism_distribution_on_ph_nano_stanza
   specs:
     environment_organism_distribution_on_ph_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./environment_organism_distribution_on_temperature_brc_nano_stanza
+  remote: environment_organism_distribution_on_temperature_brc_nano_stanza
   specs:
     environment_organism_distribution_on_temperature_brc_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./environment_organism_distribution_on_temperature_nano_stanza
+  remote: environment_organism_distribution_on_temperature_nano_stanza
   specs:
     environment_organism_distribution_on_temperature_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./environment_taxonomic_composition_stanza
+  remote: environment_taxonomic_composition_stanza
   specs:
     environment_taxonomic_composition_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./environment_top_level_symbolic_image_nano_stanza
+  remote: environment_top_level_symbolic_image_nano_stanza
   specs:
     environment_top_level_symbolic_image_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./gene_attributes_stanza
+  remote: gene_attributes_stanza
   specs:
     gene_attributes_stanza (0.0.1)
       bio
       togostanza
 
 PATH
-  remote: ./gene_length_nano_stanza
+  remote: gene_length_nano_stanza
   specs:
     gene_length_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./gene_wikidata_nano_stanza
+  remote: gene_wikidata_nano_stanza
   specs:
     gene_wikidata_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./genome_cross_references_stanza
+  remote: genome_cross_references_stanza
   specs:
     genome_cross_references_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./genome_genomic_context_stanza
+  remote: genome_genomic_context_stanza
   specs:
     genome_genomic_context_stanza (0.0.1)
       bio-svgenes (>= 0.3.3)
       togostanza
 
 PATH
-  remote: ./genome_information_stanza
+  remote: genome_information_stanza
   specs:
     genome_information_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./genome_jbrowse_stanza
+  remote: genome_jbrowse_stanza
   specs:
     genome_jbrowse_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./genome_plot_stanza
+  remote: genome_plot_stanza
   specs:
     genome_plot_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./gmo_applied_spices_stanza
+  remote: gmo_applied_spices_stanza
   specs:
     gmo_applied_spices_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./gmo_approximation_stanza
+  remote: gmo_approximation_stanza
   specs:
     gmo_approximation_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./gmo_genus_stanza
+  remote: gmo_genus_stanza
   specs:
     gmo_genus_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./js_stanza_wrapper_stanza
+  remote: js_stanza_wrapper_stanza
   specs:
     js_stanza_wrapper_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./lineage_information_stanza
+  remote: lineage_information_stanza
   specs:
     lineage_information_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./medium_components_stanza
+  remote: medium_components_stanza
   specs:
     medium_components_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./microbial_phenotype_cell_shape_stanza
+  remote: microbial_phenotype_cell_shape_stanza
   specs:
     microbial_phenotype_cell_shape_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./microbial_phenotype_environment_composition_stanza
+  remote: microbial_phenotype_environment_composition_stanza
   specs:
     microbial_phenotype_environment_composition_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./microbial_phenotype_genus_composition_stanza
+  remote: microbial_phenotype_genus_composition_stanza
   specs:
     microbial_phenotype_genus_composition_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./microbial_phenotype_information_stanza
+  remote: microbial_phenotype_information_stanza
   specs:
     microbial_phenotype_information_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./nucleotide_sequence_stanza
+  remote: nucleotide_sequence_stanza
   specs:
     nucleotide_sequence_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_cross_references_stanza
+  remote: organism_cross_references_stanza
   specs:
     organism_cross_references_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_culture_collections_stanza
+  remote: organism_culture_collections_stanza
   specs:
     organism_culture_collections_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_gc_nano_stanza
+  remote: organism_gc_nano_stanza
   specs:
     organism_gc_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_gene_list_stanza
+  remote: organism_gene_list_stanza
   specs:
     organism_gene_list_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_gene_number_nano_stanza
+  remote: organism_gene_number_nano_stanza
   specs:
     organism_gene_number_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_genome_size_nano_stanza
+  remote: organism_genome_size_nano_stanza
   specs:
     organism_genome_size_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_habitat_stanza
+  remote: organism_habitat_stanza
   specs:
     organism_habitat_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_jbrowse_stanza
+  remote: organism_jbrowse_stanza
   specs:
     organism_jbrowse_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_medium_information_stanza
+  remote: organism_medium_information_stanza
   specs:
     organism_medium_information_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_microbial_cell_shape_nano_stanza
+  remote: organism_microbial_cell_shape_nano_stanza
   specs:
     organism_microbial_cell_shape_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_names_stanza
+  remote: organism_names_stanza
   specs:
     organism_names_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_pathogen_information_stanza
+  remote: organism_pathogen_information_stanza
   specs:
     organism_pathogen_information_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_ph_nano_stanza
+  remote: organism_ph_nano_stanza
   specs:
     organism_ph_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_phenotype_stanza
+  remote: organism_phenotype_stanza
   specs:
     organism_phenotype_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_related_disease_nano_stanza
+  remote: organism_related_disease_nano_stanza
   specs:
     organism_related_disease_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./organism_wikidata_nano_stanza
+  remote: organism_wikidata_nano_stanza
   specs:
     organism_wikidata_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./protein_3d_structure_nano_stanza
+  remote: protein_3d_structure_nano_stanza
   specs:
     protein_3d_structure_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./protein_attributes_stanza
+  remote: protein_attributes_stanza
   specs:
     protein_attributes_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./protein_cross_references_stanza
+  remote: protein_cross_references_stanza
   specs:
     protein_cross_references_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./protein_ec_number_nano_stanza
+  remote: protein_ec_number_nano_stanza
   specs:
     protein_ec_number_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./protein_general_annotation_stanza
+  remote: protein_general_annotation_stanza
   specs:
     protein_general_annotation_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./protein_names_stanza
+  remote: protein_names_stanza
   specs:
     protein_names_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./protein_ontologies_stanza
+  remote: protein_ontologies_stanza
   specs:
     protein_ontologies_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./protein_orthologs_stanza
+  remote: protein_orthologs_stanza
   specs:
     protein_orthologs_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./protein_pfam_plot_stanza
+  remote: protein_pfam_plot_stanza
   specs:
     protein_pfam_plot_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./protein_references_stanza
+  remote: protein_references_stanza
   specs:
     protein_references_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./protein_references_timeline_nano_stanza
+  remote: protein_references_timeline_nano_stanza
   specs:
     protein_references_timeline_nano_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./protein_sequence_annotation_stanza
+  remote: protein_sequence_annotation_stanza
   specs:
     protein_sequence_annotation_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./protein_sequence_stanza
+  remote: protein_sequence_stanza
   specs:
     protein_sequence_stanza (0.0.1)
       togostanza
 
 PATH
-  remote: ./taxonomy_ortholog_profile_stanza
+  remote: taxonomy_ortholog_profile_stanza
   specs:
     taxonomy_ortholog_profile_stanza (0.0.1)
       togostanza
@@ -375,118 +375,126 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.2.10)
-      i18n (~> 0.7)
+    activesupport (6.0.3.2)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
       minitest (~> 5.1)
-      thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.4.0)
-    backports (3.11.3)
-    bio (1.5.1)
+      zeitwerk (~> 2.2, >= 2.2.2)
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    backports (3.18.1)
+    bio (2.0.1)
     bio-svgenes (0.4.1)
-    capybara (2.10.1)
+    capybara (3.33.0)
       addressable
-      mime-types (>= 1.16)
-      nokogiri (>= 1.3.3)
-      rack (>= 1.0.0)
-      rack-test (>= 0.5.4)
-      xpath (~> 2.0)
-    concurrent-ruby (1.0.5)
-    diff-lcs (1.2.5)
-    ffi (1.9.25)
+      mini_mime (>= 0.1.3)
+      nokogiri (~> 1.8)
+      rack (>= 1.6.0)
+      rack-test (>= 0.6.3)
+      regexp_parser (~> 1.5)
+      xpath (~> 3.2)
+    concurrent-ruby (1.1.6)
+    connection_pool (2.2.3)
+    diff-lcs (1.4.4)
+    ffi (1.13.1)
     flavour_saver (0.3.9)
       rltk (~> 2.2.0)
       tilt
-    haml (4.0.7)
+    haml (5.1.2)
+      temple (>= 0.8.0)
       tilt
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
-    hashie (3.5.7)
-    i18n (0.9.5)
+    hashie (4.1.0)
+    i18n (1.8.5)
       concurrent-ruby (~> 1.0)
-    json (1.8.6)
-    kgio (2.10.0)
+    kgio (2.11.3)
     link_header (0.0.8)
-    mime-types (3.1)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
-    mina (1.0.2)
+    mina (1.2.3)
       open4 (~> 1.3.4)
       rake
-    mini_portile2 (2.1.0)
-    minitest (5.11.3)
-    multi_json (1.13.1)
-    net-http-persistent (2.9.4)
-    nokogiri (1.6.8.1)
-      mini_portile2 (~> 2.1.0)
+    mini_mime (1.0.2)
+    mini_portile2 (2.4.0)
+    minitest (5.14.1)
+    multi_json (1.15.0)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
+    net-http-persistent (3.1.0)
+      connection_pool (~> 2.2)
+    nokogiri (1.10.10)
+      mini_portile2 (~> 2.4.0)
     open4 (1.3.4)
-    parallel (1.12.1)
-    rack (1.6.10)
-    rack-protection (1.5.5)
+    parallel (1.19.2)
+    public_suffix (4.0.5)
+    rack (2.2.3)
+    rack-protection (2.0.8.1)
       rack
-    rack-test (1.0.0)
+    rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    raindrops (0.17.0)
-    rake (11.3.0)
-    rdf (2.2.12)
+    raindrops (0.19.1)
+    rake (13.0.1)
+    rdf (3.1.4)
       hamster (~> 3.0)
       link_header (~> 0.0, >= 0.0.8)
+    regexp_parser (1.7.1)
     rltk (2.2.1)
       ffi (>= 1.0.0)
-    rspec (3.5.0)
-      rspec-core (~> 3.5.0)
-      rspec-expectations (~> 3.5.0)
-      rspec-mocks (~> 3.5.0)
-    rspec-core (3.5.4)
-      rspec-support (~> 3.5.0)
-    rspec-expectations (3.5.0)
+    rspec (3.9.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
+    rspec-core (3.9.2)
+      rspec-support (~> 3.9.3)
+    rspec-expectations (3.9.2)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
-    rspec-mocks (3.5.0)
+      rspec-support (~> 3.9.0)
+    rspec-mocks (3.9.1)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
-    rspec-support (3.5.0)
-    sinatra (1.4.8)
-      rack (~> 1.5)
-      rack-protection (~> 1.4)
-      tilt (>= 1.3, < 3)
-    sinatra-contrib (1.4.7)
-      backports (>= 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-support (3.9.3)
+    ruby2_keywords (0.0.2)
+    sinatra (2.0.8.1)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.8.1)
+      tilt (~> 2.0)
+    sinatra-contrib (2.0.8.1)
+      backports (>= 2.8.2)
       multi_json
-      rack-protection
-      rack-test
-      sinatra (~> 1.4.0)
-      tilt (>= 1.3, < 3)
-    sparql-client (1.99.1)
-      json (~> 1.8)
-      net-http-persistent (~> 2.9)
-      rdf (>= 1.99, < 3)
-      tins (= 1.6.0)
+      mustermann (~> 1.0)
+      rack-protection (= 2.0.8.1)
+      sinatra (= 2.0.8.1)
+      tilt (~> 2.0)
+    sparql-client (3.1.0)
+      net-http-persistent (~> 3.1)
+      rdf (~> 3.1)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    thor (0.20.0)
+    temple (0.8.2)
+    thor (1.0.1)
     thread_safe (0.3.6)
-    tilt (2.0.8)
-    tins (1.6.0)
-    togostanza (2.1.3)
-      activesupport (~> 4.2)
-      flavour_saver (~> 0.3)
-      haml (~> 4.0)
-      hashie (~> 3.4)
-      parallel (~> 1.6)
-      sinatra (~> 1.4)
-      sinatra-contrib (~> 1.4)
-      sparql-client (~> 1.1)
+    tilt (2.0.10)
+    togostanza (2.2.1)
+      activesupport (>= 5)
+      flavour_saver
+      haml
+      hashie
+      parallel
+      sinatra
+      sinatra-contrib
+      sparql-client
       sprockets (~> 3.4)
-      thor (~> 0.19)
-    tzinfo (1.2.5)
+      thor
+    tzinfo (1.2.7)
       thread_safe (~> 0.1)
-    unicorn (5.1.0)
+    unicorn (5.6.0)
       kgio (~> 2.6)
       raindrops (~> 0.7)
-    xpath (2.0.0)
-      nokogiri (~> 1.3)
+    xpath (3.2.0)
+      nokogiri (~> 1.8)
+    zeitwerk (2.4.0)
 
 PLATFORMS
   ruby
@@ -562,4 +570,4 @@ DEPENDENCIES
   unicorn
 
 BUNDLED WITH
-   1.13.1
+   2.1.4
