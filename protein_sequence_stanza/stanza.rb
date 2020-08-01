@@ -31,7 +31,7 @@ class ProteinSequenceStanza < TogoStanza::Stanza::Base
                  up:mass ?mass ;
                  up:modified ?modified ;
                  up:version ?version ;
-                 up:crc64Checksum ?checksum .
+                 up:md5Checksum ?checksum .
 
         # Sequence status
         OPTIONAL {
