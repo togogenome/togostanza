@@ -6,7 +6,7 @@
     {
       "key": "data-stanza-gene-id",
       "example": "BRCA1",
-      "description": "Locus tag of a gene",
+      "description": "Gene identifier.",
       "required": true
     },
     {

@@ -29,214 +29,24 @@
       "stanza:version": "1",
       "stanza:created": "2015-02-03",
       "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_attributes\" data-stanza-meo-id=\"MEO_0000006\"></div>"
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_attributes\" data-stanza-meo-id=\"MEO_0000006\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
     },
     {
-      "@id": "http://togostanza.org/stanza/environment_environmental_ontology",
-      "stanza:label": "Environmental ontology",
-      "stanza:definition": "Visualization for the structure of MEO (Metagenome/Microbes Environment Ontology).",
+      "@id": "http://togostanza.org/stanza/organism_microbial_cell_shape_nano",
+      "stanza:label": "Microbial cell shape",
+      "stanza:definition": "Display an illustlation of the cell shape or arrangement of the specified organism.",
       "stanza:parameter": [
         {
-          "stanza:key": "meo_id",
-          "stanza:example": "MEO_0000029",
-          "stanza:description": "MEO identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Environment",
-      "stanza:display": "Tree",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_environmental_ontology\" data-stanza-meo-id=\"MEO_0000029\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/environment_geographical_map",
-      "stanza:label": "Geographical map",
-      "stanza:definition": "Place where GOLD samples have sampled.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "meo_id",
-          "stanza:example": "MEO_0000029",
-          "stanza:description": "MEO identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Environment",
-      "stanza:display": "Map",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_geographical_map\" data-stanza-meo-id=\"MEO_0000029\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/environment_inhabitants",
-      "stanza:label": "Inhabitants",
-      "stanza:definition": "List of samples and cultures which were sampled in specified environment.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "meo_id",
-          "stanza:example": "MEO_0000029",
-          "stanza:description": "MEO identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Environment",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_inhabitants\" data-stanza-meo-id=\"MEO_0000029\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/environment_inhabitants_statistics_nano",
-      "stanza:label": "Inhabitants statistics",
-      "stanza:definition": "NanoStanza for showing the number of organisms of a specified environment.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "meo_id",
-          "stanza:example": "MEO_0000038",
-          "stanza:description": "MEO identifier .",
+          "stanza:key": "tax_id",
+          "stanza:example": "2110",
+          "stanza:description": "Taxonomy identifier.",
           "stanza:required": true
         }
       ],
       "stanza:type": "NanoStanza",
-      "stanza:context": "Environment",
-      "stanza:display": "Numeral",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_inhabitants_statistics_nano\" data-stanza-meo-id=\"MEO_0000038\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/environment_inhabitants_statistics",
-      "stanza:label": "Inhabitants statistics",
-      "stanza:definition": "Number of samples and cultures which were sampled in specified environment.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "meo_id",
-          "stanza:example": "MEO_0000029",
-          "stanza:description": "MEO identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Environment",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_inhabitants_statistics\" data-stanza-meo-id=\"MEO_0000029\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/environment_organism_distribution_on_ph_nano",
-      "stanza:label": "Growth pH distribution",
-      "stanza:definition": "NanoStanza for showing the number of organisms along with growth pH for the specified environmental feature.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "meo_id",
-          "stanza:example": "MEO_0000007",
-          "stanza:description": "MEO identifier",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "NanoStanza",
-      "stanza:context": "Environment",
-      "stanza:display": "Graph",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_organism_distribution_on_ph_nano\" data-stanza-meo-id=\"MEO_0000007\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/environment_organism_distribution_on_temperature_nano",
-      "stanza:label": "Growth temperature distribution",
-      "stanza:definition": "NanoStanza for showing the number of Psychrophiles, Mesophiles and Thermophiles with the specified environmental feature.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "meo_id",
-          "stanza:example": "MEO_0000005",
-          "stanza:description": "MEO identifier",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "NanoStanza",
-      "stanza:context": "Environment",
-      "stanza:display": "Chart",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_organism_distribution_on_temperature_nano\" data-stanza-meo-id=\"MEO_0000005\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/environment_taxonomic_composition",
-      "stanza:label": "Taxonomic composition",
-      "stanza:definition": "Visualization of the kind of organism which lives in specified environment.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "meo_id",
-          "stanza:example": "MEO_0000029",
-          "stanza:description": "MEO identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Environment",
-      "stanza:display": "Chart",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_taxonomic_composition\" data-stanza-meo-id=\"MEO_0000029\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/environment_top_level_symbolic_image_nano",
-      "stanza:label": "Environmental image",
-      "stanza:definition": "NanoStanza for showing an symbolic image for the MEO's toplevel category related to the given MEO ID.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "meo_id",
-          "stanza:example": "MEO_0000039",
-          "stanza:description": "MEO identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "NanoStanza",
-      "stanza:context": "Environment",
+      "stanza:context": "Organism",
       "stanza:display": "Image",
       "stanza:provider": "DBCLS",
       "stanza:license": "CC-BY",
@@ -244,68 +54,10 @@
       "stanza:address": "hoge@example.org",
       "stanza:version": "1",
       "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_top_level_symbolic_image_nano\" data-stanza-meo-id=\"MEO_0000039\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/gene_attributes",
-      "stanza:label": "Gene attributes",
-      "stanza:definition": "Basic information of the specified gene.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "BRCA1",
-          "stanza:description": "Gene identifier.",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Gene",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/gene_attributes\" data-stanza-gene-id=\"BRCA1\" data-stanza-tax-id=\"9606\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/gene_length_nano",
-      "stanza:label": "Gene length",
-      "stanza:definition": "NanoStanza for showing gene length.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "BRCA1",
-          "stanza:description": "Gene identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "NanoStanza",
-      "stanza:context": "Gene",
-      "stanza:display": "Numeral",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/gene_length_nano\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>"
+      "stanza:updated": "2018-07-06",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_microbial_cell_shape_nano\" data-stanza-tax-id=\"2110\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
     },
     {
       "@id": "http://togostanza.org/stanza/gene_wikidata_nano",
@@ -338,1048 +90,9 @@
       ],
       "stanza:created": "2016-06-14",
       "stanza:updated": "2016-06-14",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/gene_wikidata_nano\" data-stanza-tax-id=\"471472\" data-stanza-gene-id=\"CTL0127\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/genome_cross_references",
-      "stanza:label": "Cross references",
-      "stanza:definition": "Table of cross references of a given genome.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Gene",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2017-04-19",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/genome_cross_references\" data-stanza-tax-id=\"9606\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/genome_information",
-      "stanza:label": "Genomic information",
-      "stanza:definition": "Genomic information of a taxonomy.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Gene",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2017-04-19",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/genome_information\" data-stanza-tax-id=\"9606\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/genome_jbrowse",
-      "stanza:label": "Genomic context",
-      "stanza:definition": "Schematic view of the structure and surroundings of a gene.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "BRCA1",
-          "stanza:description": "Locus tag of a gene",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier",
-          "stanza:required": false
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Gene",
-      "stanza:display": "Other",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/genome_jbrowse\" data-stanza-gene-id=\"BRCA1\" data-stanza-tax-id=\"9606\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/genome_plot",
-      "stanza:label": "Genomic plot",
-      "stanza:definition": "Scatter plot of genomic information.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "511145",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Gene",
-      "stanza:display": "Chart",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/genome_plot\" data-stanza-tax-id=\"511145\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/gmo_applied_spices",
-      "stanza:label": "Applied Spices",
-      "stanza:definition": "Applied Spices of medium.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "medium_id",
-          "stanza:example": "NBRC_M231",
-          "stanza:description": "Medium identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Medium",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-09-30",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/gmo_applied_spices\" data-stanza-medium-id=\"NBRC_M231\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/gmo_approximation",
-      "stanza:label": "Approximation",
-      "stanza:definition": "Medium to medium relevance ratio.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "medium_id",
-          "stanza:example": "NBRC_M231",
-          "stanza:description": "Medium identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Medium",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-09-30",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/gmo_approximation\" data-stanza-medium-id=\"NBRC_M231\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/gmo_genus",
-      "stanza:label": "Genus List (Medium-based)",
-      "stanza:definition": "Medium-based organism count list and group by genus.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "medium_id",
-          "stanza:example": "NBRC_M231",
-          "stanza:description": "Medium identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Medium",
-      "stanza:display": "Chart",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-09-30",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/gmo_genus\" data-stanza-medium-id=\"NBRC_M231\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/lineage_information",
-      "stanza:label": "Taxonomic information",
-      "stanza:definition": "Lineage of the specified organism.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "511145",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Gene",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/lineage_information\" data-stanza-tax-id=\"511145\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/medium_components",
-      "stanza:label": "Medium Components",
-      "stanza:definition": "Medium components and general information.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "medium_id",
-          "stanza:example": "NBRC_M231",
-          "stanza:description": "Medium identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Medium",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-09-30",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/medium_components\" data-stanza-medium-id=\"NBRC_M231\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/microbial_phenotype_cell_shape",
-      "stanza:label": "Shape Information",
-      "stanza:definition": "phenotype's (with shaped, arrengement) visualizetion.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "mpo_id",
-          "stanza:example": "MPO_01003",
-          "stanza:description": "Phenotype(MPO) identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Phenotype",
-      "stanza:display": "Image",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-09-30",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/microbial_phenotype_cell_shape\" data-stanza-mpo-id=\"MPO_01003\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/microbial_phenotype_environment_composition",
-      "stanza:label": "Environment List (Phenotype-based)",
-      "stanza:definition": "Phenotype-based organism count list and group by environment.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "mpo_id",
-          "stanza:example": "MPO_01003",
-          "stanza:description": "Phenotype(MPO) identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Phenotype",
-      "stanza:display": "Chart",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-09-30",
-      "stanza:updated": "2017-01-08",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/microbial_phenotype_environment_composition\" data-stanza-mpo-id=\"MPO_01003\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/microbial_phenotype_genus_composition",
-      "stanza:label": "Genus List (Phenotype-based)",
-      "stanza:definition": "Phenotype-based organism count list and group by genus.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "mpo_id",
-          "stanza:example": "MPO_01003",
-          "stanza:description": "Phenotype(MPO) identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Phenotype",
-      "stanza:display": "Chart",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-09-30",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/microbial_phenotype_genus_composition\" data-stanza-mpo-id=\"MPO_01003\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/microbial_phenotype_information",
-      "stanza:label": "Organism List",
-      "stanza:definition": "Organism list of having target phenotype. and groupping genus.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "mpo_id",
-          "stanza:example": "MPO_01003",
-          "stanza:description": "Phenotype(MPO) identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Phenotype",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-09-30",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/microbial_phenotype_information\" data-stanza-mpo-id=\"MPO_01003\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/nucleotide_sequence",
-      "stanza:label": "Nucleotide sequence",
-      "stanza:definition": "Nucleotide sequences of the specified gene ID.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "BRCA1",
-          "stanza:description": "Gene identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Gene",
-      "stanza:display": "Text",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/nucleotide_sequence\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_cross_references",
-      "stanza:label": "Cross references",
-      "stanza:definition": "List of databases that references the specified organism.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Organism",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_cross_references\" data-stanza-tax-id=\"9606\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_culture_collections",
-      "stanza:label": "Culture collections",
-      "stanza:definition": "List of strains that is related to the specified taxonomy. These strains are related to taxonomy by NCBI taxonomy database or by sequence or by StrainInfo database or by strain name.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "228599",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Organism",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_culture_collections\" data-stanza-tax-id=\"228599\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_gc_nano",
-      "stanza:label": "GC percent",
-      "stanza:definition": "NanoStanza for showing GC percent of specified organism.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "NanoStanza",
-      "stanza:context": "Organism",
-      "stanza:display": "Chart",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_gc_nano\" data-stanza-tax-id=\"9606\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_gene_number_nano",
-      "stanza:label": "Gene number",
-      "stanza:definition": "NanoStanza for showing the number of gene, rrna and trna of a specified organism.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "NanoStanza",
-      "stanza:context": "Organism",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_gene_number_nano\" data-stanza-tax-id=\"9606\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_genome_size_nano",
-      "stanza:label": "Genome size",
-      "stanza:definition": "NanoStanza for showing the size of genome of a specified organism.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "NanoStanza",
-      "stanza:context": "Organism",
-      "stanza:display": "Numeral",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_genome_size_nano\" data-stanza-tax-id=\"9606\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_habitat",
-      "stanza:label": "Organism habitat",
-      "stanza:definition": "Link list of organism habitat.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "511145",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Organism",
-      "stanza:display": "Tree",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_habitat\" data-stanza-tax-id=\"511145\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_jbrowse",
-      "stanza:label": "Genomic context",
-      "stanza:definition": "Schematic view of the genome of the specified organism.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "511145",
-          "stanza:description": "Taxonomy identifier",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Organism",
-      "stanza:display": "Other",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2016-03-08",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_jbrowse\" data-stanza-tax-id=\"511145\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_medium_information",
-      "stanza:label": "Medium information",
-      "stanza:definition": "Medium information of the specified organism.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "1351",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Organism",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_medium_information\" data-stanza-tax-id=\"1351\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_microbial_cell_shape_nano",
-      "stanza:label": "Microbial cell shape",
-      "stanza:definition": "Display an illustlation of the cell shape or arrangement of the specified organism.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "2110",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "NanoStanza",
-      "stanza:context": "Organism",
-      "stanza:display": "Image",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_microbial_cell_shape_nano\" data-stanza-tax-id=\"2110\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_names",
-      "stanza:label": "Organism names",
-      "stanza:definition": "List of organism names and synonyms.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Organism",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_names\" data-stanza-tax-id=\"9606\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_pathogen_information",
-      "stanza:label": "Pathogen information",
-      "stanza:definition": "List of organisms and associated pathogen which have linage of the specified taxonomy.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "1763",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Organism",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_pathogen_information\" data-stanza-tax-id=\"1763\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_ph_nano",
-      "stanza:label": "Growth pH",
-      "stanza:definition": "Display growth pH of the specified organism.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "666510",
-          "stanza:description": "Taxonomy identifier",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "NanoStanza",
-      "stanza:context": "Organism",
-      "stanza:display": "Numeral",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_ph_nano\" data-stanza-tax-id=\"666510\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_phenotype",
-      "stanza:label": "Phenotype information",
-      "stanza:definition": "Phenotype information of specified organism.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "511145",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Phenotype",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_phenotype\" data-stanza-tax-id=\"511145\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_related_disease_nano",
-      "stanza:label": "Disease pathogen",
-      "stanza:definition": "NanoStanza for showing a pathogen symbol.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "400667",
-          "stanza:description": "Taxonomy identifier",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "NanoStanza",
-      "stanza:context": "Organism",
-      "stanza:display": "Image",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_related_disease_nano\" data-stanza-tax-id=\"400667\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/organism_wikidata_nano",
-      "stanza:label": "Wikidata",
-      "stanza:definition": "Corresponding Wikidata entry of an organism.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "471472",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "NanoStanza",
-      "stanza:context": "Organism",
-      "stanza:display": "String",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Toshiaki Katayama",
-      "stanza:address": "ktym@dbcls.jp",
-      "stanza:contributor": [
-        "Yoko Okabeppu",
-        "Tim Putman"
-      ],
-      "stanza:created": "2016-06-16",
-      "stanza:updated": "2016-06-16",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_wikidata_nano\" data-stanza-tax-id=\"471472\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/protein_3d_structure_nano",
-      "stanza:label": "Protein 3D structure",
-      "stanza:definition": "NanoStanza for showing a schematic mage of protein 3D structure of specifined genes.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier .",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "BRCA1",
-          "stanza:description": "Gene identifier .",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "NanoStanza",
-      "stanza:context": "Phenotype",
-      "stanza:display": "Image",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_3d_structure_nano\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/protein_attributes",
-      "stanza:label": "Protein attributes",
-      "stanza:definition": "Protein attributes",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier .",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "BRCA1",
-          "stanza:description": "Gene identifier .",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Phenotype",
-      "stanza:display": "Other",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_attributes\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/protein_cross_references",
-      "stanza:label": "Protein cross references",
-      "stanza:definition": "Protein cross references",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "BRCA1",
-          "stanza:description": "Gene identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Phenotype",
-      "stanza:display": "Other",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_cross_references\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/protein_ec_number_nano",
-      "stanza:label": "EC number",
-      "stanza:definition": "NanoStanza for showing an schematic mage of protein 3D structure of specifined genes.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "BRCA1",
-          "stanza:description": "Gene identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "NanoStanza",
-      "stanza:context": "Phenotype",
-      "stanza:display": "Numeral",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_ec_number_nano\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/protein_general_annotation",
-      "stanza:label": "Protein general annotation",
-      "stanza:definition": "Protein general annotation",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "BRCA1",
-          "stanza:description": "Gene identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_general_annotation\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
-      "stanza:type": "Stanza",
-      "stanza:context": "Phenotype",
-      "stanza:display": "Other",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/protein_names",
-      "stanza:label": "Protein names",
-      "stanza:definition": "Protein names",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "BRCA1",
-          "stanza:description": "Gene identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Phenotype",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_names\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/protein_ontologies",
-      "stanza:label": "Protein ontologies",
-      "stanza:definition": "Protein ontologies",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "BRCA1",
-          "stanza:description": "Gene identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Phenotype",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_ontologies\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/protein_orthologs",
-      "stanza:label": "Protein orthologs",
-      "stanza:definition": "Show members of an ortholog group.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "511145",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "b2030",
-          "stanza:description": "Gene identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Phenotype",
-      "stanza:display": "Text",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_orthologs\" data-stanza-tax-id=\"511145\" data-stanza-gene-id=\"b2030\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/protein_pfam_plot",
-      "stanza:label": "Pfam plot",
-      "stanza:definition": "Scatter plot of Pfam corresponding with genes.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "BRCA1",
-          "stanza:description": "Gene identifier.",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Phenotype",
-      "stanza:display": "Graph",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_pfam_plot\" data-stanza-gene-id=\"BRCA1\" data-stanza-tax-id=\"9606\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/protein_references",
-      "stanza:label": "Protein references",
-      "stanza:definition": "Protein references",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "BRCA1",
-          "stanza:description": "Gene identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Other",
-      "stanza:display": "Other",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_references\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>"
-    },
-    {
-      "@id": "http://togostanza.org/stanza/protein_references_timeline_nano",
-      "stanza:label": "Reference timeline",
-      "stanza:definition": "NanoStanza for showing a timeline view of protein reference.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "tax_id",
-          "stanza:example": "9606",
-          "stanza:description": "Taxonomy identifier.",
-          "stanza:required": true
-        },
-        {
-          "stanza:key": "gene_id",
-          "stanza:example": "BRCA1",
-          "stanza:description": "Gene identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "NanoStanza",
-      "stanza:context": "Other",
-      "stanza:display": "Graph",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_references_timeline_nano\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>"
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/gene_wikidata_nano\" data-stanza-tax-id=\"471472\" data-stanza-gene-id=\"CTL0127\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
     },
     {
       "@id": "http://togostanza.org/stanza/protein_sequence_annotation",
@@ -1409,7 +122,565 @@
       "stanza:version": "1",
       "stanza:created": "2015-02-03",
       "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_sequence_annotation\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>"
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_sequence_annotation\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/environment_inhabitants_brc",
+      "stanza:label": "Inhabitants",
+      "stanza:definition": "List of samples and cultures which were sampled in specified environment.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "meo_id",
+          "stanza:example": "MEO_0000029",
+          "stanza:description": "MEO identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Environment",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2020-03-01",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_inhabitants_brc\" data-stanza-meo-id=\"MEO_0000029\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/environment_inhabitants_statistics_nano",
+      "stanza:label": "Inhabitants statistics",
+      "stanza:definition": "NanoStanza for showing the number of organisms of a specified environment.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "meo_id",
+          "stanza:example": "MEO_0000038",
+          "stanza:description": "MEO identifier .",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Environment",
+      "stanza:display": "Numeral",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_inhabitants_statistics_nano\" data-stanza-meo-id=\"MEO_0000038\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/organism_gc_nano",
+      "stanza:label": "GC percent",
+      "stanza:definition": "NanoStanza for showing GC percent of specified organism.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Organism",
+      "stanza:display": "Chart",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_gc_nano\" data-stanza-tax-id=\"9606\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/protein_names",
+      "stanza:label": "Protein names",
+      "stanza:definition": "Protein names",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "BRCA1",
+          "stanza:description": "Gene identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Phenotype",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-05-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_names\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/nucleotide_sequence",
+      "stanza:label": "Nucleotide sequence",
+      "stanza:definition": "Nucleotide sequences of the specified gene ID.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "BRCA1",
+          "stanza:description": "Gene identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Gene",
+      "stanza:display": "Text",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-05-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/nucleotide_sequence\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/environment_inhabitants",
+      "stanza:label": "Inhabitants",
+      "stanza:definition": "List of samples and cultures which were sampled in specified environment.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "meo_id",
+          "stanza:example": "MEO_0000029",
+          "stanza:description": "MEO identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Environment",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2020-04-11",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_inhabitants\" data-stanza-meo-id=\"MEO_0000029\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/lineage_information",
+      "stanza:label": "Taxonomic information",
+      "stanza:definition": "Lineage of the specified organism.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "511145",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Gene",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/lineage_information\" data-stanza-tax-id=\"511145\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/organism_jbrowse",
+      "stanza:label": "Genomic context",
+      "stanza:definition": "Schematic view of the genome of the specified organism.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "511145",
+          "stanza:description": "Taxonomy identifier",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Organism",
+      "stanza:display": "Other",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2016-03-08",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_jbrowse\" data-stanza-tax-id=\"511145\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/environment_environmental_ontology",
+      "stanza:label": "Environmental ontology",
+      "stanza:definition": "Visualization for the structure of MEO (Metagenome/Microbes Environment Ontology).",
+      "stanza:parameter": [
+        {
+          "stanza:key": "meo_id",
+          "stanza:example": "MEO_0000029",
+          "stanza:description": "MEO identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Environment",
+      "stanza:display": "Tree",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_environmental_ontology\" data-stanza-meo-id=\"MEO_0000029\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/organism_genome_size_nano",
+      "stanza:label": "Genome size",
+      "stanza:definition": "NanoStanza for showing the size of genome of a specified organism.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Organism",
+      "stanza:display": "Numeral",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_genome_size_nano\" data-stanza-tax-id=\"9606\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/organism_cross_references",
+      "stanza:label": "Cross references",
+      "stanza:definition": "List of databases that references the specified organism.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Organism",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_cross_references\" data-stanza-tax-id=\"9606\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/protein_3d_structure_nano",
+      "stanza:label": "Protein 3D structure",
+      "stanza:definition": "NanoStanza for showing a schematic mage of protein 3D structure of specifined genes.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier .",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "BRCA1",
+          "stanza:description": "Gene identifier .",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Phenotype",
+      "stanza:display": "Image",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-05-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_3d_structure_nano\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/protein_attributes",
+      "stanza:label": "Protein attributes",
+      "stanza:definition": "Protein attributes",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier .",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "BRCA1",
+          "stanza:description": "Gene identifier .",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Phenotype",
+      "stanza:display": "Other",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-05-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_attributes\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/organism_ph_nano",
+      "stanza:label": "Growth pH",
+      "stanza:definition": "Display growth pH of the specified organism.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "666510",
+          "stanza:description": "Taxonomy identifier",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Organism",
+      "stanza:display": "Numeral",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_ph_nano\" data-stanza-tax-id=\"666510\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/microbial_phenotype_information",
+      "stanza:label": "Organism List",
+      "stanza:definition": "Organism list of having target phenotype. and groupping genus.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "mpo_id",
+          "stanza:example": "MPO_01003",
+          "stanza:description": "Phenotype(MPO) identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Phenotype",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-09-30",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/microbial_phenotype_information\" data-stanza-mpo-id=\"MPO_01003\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/organism_culture_collections",
+      "stanza:label": "Culture collections",
+      "stanza:definition": "List of strains that is related to the specified taxonomy. These strains are related to taxonomy by NCBI taxonomy database or by sequence or by StrainInfo database or by strain name.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "228599",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Organism",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "yokookbio@gmail.com",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2020-04-10",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_culture_collections\" data-stanza-tax-id=\"228599\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/protein_ec_number_nano",
+      "stanza:label": "EC number",
+      "stanza:definition": "NanoStanza for showing an schematic mage of protein 3D structure of specifined genes.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "BRCA1",
+          "stanza:description": "Gene identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Phenotype",
+      "stanza:display": "Numeral",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-05-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_ec_number_nano\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/organism_phenotype",
+      "stanza:label": "Phenotype information",
+      "stanza:definition": "Phenotype information of specified organism.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "511145",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Phenotype",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_phenotype\" data-stanza-tax-id=\"511145\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/gmo_approximation",
+      "stanza:label": "Approximation",
+      "stanza:definition": "Medium to medium relevance ratio.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "medium_id",
+          "stanza:example": "NBRC_M231",
+          "stanza:description": "Medium identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Medium",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-09-30",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/gmo_approximation\" data-stanza-medium-id=\"NBRC_M231\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/gene_attributes",
+      "stanza:label": "Gene attributes",
+      "stanza:definition": "Basic information of the specified gene.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "BRCA1",
+          "stanza:description": "Gene identifier.",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Gene",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-05-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/gene_attributes\" data-stanza-gene-id=\"BRCA1\" data-stanza-tax-id=\"9606\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
     },
     {
       "@id": "http://togostanza.org/stanza/protein_sequence",
@@ -1439,7 +710,788 @@
       "stanza:version": "1",
       "stanza:created": "2015-02-03",
       "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_sequence\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>"
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_sequence\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/protein_references_timeline_nano",
+      "stanza:label": "Reference timeline",
+      "stanza:definition": "NanoStanza for showing a timeline view of protein reference.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "BRCA1",
+          "stanza:description": "Gene identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Other",
+      "stanza:display": "Graph",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-05-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_references_timeline_nano\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/microbial_phenotype_genus_composition",
+      "stanza:label": "Genus List (Phenotype-based)",
+      "stanza:definition": "Phenotype-based organism count list and group by genus.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "mpo_id",
+          "stanza:example": "MPO_01003",
+          "stanza:description": "Phenotype(MPO) identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Phenotype",
+      "stanza:display": "Chart",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-09-30",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/microbial_phenotype_genus_composition\" data-stanza-mpo-id=\"MPO_01003\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/medium_components",
+      "stanza:label": "Medium Components",
+      "stanza:definition": "Medium components and general information.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "medium_id",
+          "stanza:example": "NBRC_M231",
+          "stanza:description": "Medium identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Medium",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-09-30",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/medium_components\" data-stanza-medium-id=\"NBRC_M231\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/environment_inhabitants_statistics",
+      "stanza:label": "Inhabitants statistics",
+      "stanza:definition": "Number of samples and cultures which were sampled in specified environment.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "meo_id",
+          "stanza:example": "MEO_0000029",
+          "stanza:description": "MEO identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Environment",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2020-04-11",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_inhabitants_statistics\" data-stanza-meo-id=\"MEO_0000029\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/protein_references",
+      "stanza:label": "Protein references",
+      "stanza:definition": "Protein references",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "BRCA1",
+          "stanza:description": "Gene identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Other",
+      "stanza:display": "Other",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-05-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_references\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/organism_wikidata_nano",
+      "stanza:label": "Wikidata",
+      "stanza:definition": "Corresponding Wikidata entry of an organism.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "471472",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Organism",
+      "stanza:display": "String",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Toshiaki Katayama",
+      "stanza:address": "ktym@dbcls.jp",
+      "stanza:contributor": [
+        "Yoko Okabeppu",
+        "Tim Putman"
+      ],
+      "stanza:created": "2016-06-16",
+      "stanza:updated": "2016-06-16",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_wikidata_nano\" data-stanza-tax-id=\"471472\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/protein_cross_references",
+      "stanza:label": "Protein cross references",
+      "stanza:definition": "Protein cross references",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "BRCA1",
+          "stanza:description": "Gene identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Phenotype",
+      "stanza:display": "Other",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-05-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_cross_references\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/organism_habitat",
+      "stanza:label": "Organism habitat",
+      "stanza:definition": "Link list of organism habitat.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "511145",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Organism",
+      "stanza:display": "Tree",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_habitat\" data-stanza-tax-id=\"511145\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/genome_plot",
+      "stanza:label": "Genomic plot",
+      "stanza:definition": "Scatter plot of genomic information.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "511145",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Gene",
+      "stanza:display": "Chart",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/genome_plot\" data-stanza-tax-id=\"511145\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/organism_medium_information",
+      "stanza:label": "Medium information",
+      "stanza:definition": "Medium information of the specified organism.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "1351",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Organism",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-08-06",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_medium_information\" data-stanza-tax-id=\"1351\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/genome_jbrowse",
+      "stanza:label": "Genomic context",
+      "stanza:definition": "Schematic view of the structure and surroundings of a gene.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "BRCA1",
+          "stanza:description": "Gene identifier.",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier",
+          "stanza:required": false
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Gene",
+      "stanza:display": "Other",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/genome_jbrowse\" data-stanza-gene-id=\"BRCA1\" data-stanza-tax-id=\"9606\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/organism_pathogen_information",
+      "stanza:label": "Pathogen information",
+      "stanza:definition": "List of organisms and associated pathogen which have linage of the specified taxonomy.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "1763",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Organism",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_pathogen_information\" data-stanza-tax-id=\"1763\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/protein_general_annotation",
+      "stanza:label": "Protein general annotation",
+      "stanza:definition": "Protein general annotation",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "BRCA1",
+          "stanza:description": "Gene identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_general_annotation\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
+      "stanza:type": "Stanza",
+      "stanza:context": "Phenotype",
+      "stanza:display": "Other",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-05-30",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/genome_information",
+      "stanza:label": "Genomic information",
+      "stanza:definition": "Genomic information of a taxonomy.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Gene",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2017-04-19",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/genome_information\" data-stanza-tax-id=\"9606\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/protein_orthologs",
+      "stanza:label": "Protein orthologs",
+      "stanza:definition": "Show members of an ortholog group.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "511145",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "b2030",
+          "stanza:description": "Gene identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Phenotype",
+      "stanza:display": "Text",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-05-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_orthologs\" data-stanza-tax-id=\"511145\" data-stanza-gene-id=\"b2030\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/genome_cross_references",
+      "stanza:label": "Cross references",
+      "stanza:definition": "Table of cross references of a given genome.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Gene",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2017-04-19",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/genome_cross_references\" data-stanza-tax-id=\"9606\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/organism_names",
+      "stanza:label": "Organism names",
+      "stanza:definition": "List of organism names and synonyms.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Organism",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_names\" data-stanza-tax-id=\"9606\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/environment_inhabitants_statistics_brc",
+      "stanza:label": "Inhabitants statistics",
+      "stanza:definition": "Number of samples and cultures which were sampled in specified environment.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "meo_id",
+          "stanza:example": "MEO_0000029",
+          "stanza:description": "MEO identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Environment",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2020-03-01",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_inhabitants_statistics_brc\" data-stanza-meo-id=\"MEO_0000029\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/organism_gene_number_nano",
+      "stanza:label": "Gene number",
+      "stanza:definition": "NanoStanza for showing the number of gene, rrna and trna of a specified organism.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Organism",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_gene_number_nano\" data-stanza-tax-id=\"9606\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/environment_top_level_symbolic_image_nano",
+      "stanza:label": "Environmental image",
+      "stanza:definition": "NanoStanza for showing an symbolic image for the MEO's toplevel category related to the given MEO ID.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "meo_id",
+          "stanza:example": "MEO_0000039",
+          "stanza:description": "MEO identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Environment",
+      "stanza:display": "Image",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_top_level_symbolic_image_nano\" data-stanza-meo-id=\"MEO_0000039\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/environment_geographical_map",
+      "stanza:label": "Geographical map",
+      "stanza:definition": "Place where GOLD samples have sampled.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "meo_id",
+          "stanza:example": "MEO_0000029",
+          "stanza:description": "MEO identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Environment",
+      "stanza:display": "Map",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-08-06",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_geographical_map\" data-stanza-meo-id=\"MEO_0000029\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/microbial_phenotype_cell_shape",
+      "stanza:label": "Shape Information",
+      "stanza:definition": "phenotype's (with shaped, arrengement) visualizetion.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "mpo_id",
+          "stanza:example": "MPO_01003",
+          "stanza:description": "Phenotype(MPO) identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Phenotype",
+      "stanza:display": "Image",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-09-30",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/microbial_phenotype_cell_shape\" data-stanza-mpo-id=\"MPO_01003\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/environment_organism_distribution_on_temperature_brc_nano",
+      "stanza:label": "Growth temperature distribution",
+      "stanza:definition": "NanoStanza for showing the number of Psychrophiles, Mesophiles and Thermophiles with the specified environmental feature.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "meo_id",
+          "stanza:example": "MEO_0000029",
+          "stanza:description": "MEO identifier",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Environment",
+      "stanza:display": "Chart",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2020-03-01",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_organism_distribution_on_temperature_brc_nano\" data-stanza-meo-id=\"MEO_0000029\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/protein_ontologies",
+      "stanza:label": "Protein ontologies",
+      "stanza:definition": "Protein ontologies",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "BRCA1",
+          "stanza:description": "Gene identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Phenotype",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-05-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_ontologies\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/environment_taxonomic_composition",
+      "stanza:label": "Taxonomic composition",
+      "stanza:definition": "Visualization of the kind of organism which lives in specified environment.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "meo_id",
+          "stanza:example": "MEO_0000029",
+          "stanza:description": "MEO identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Environment",
+      "stanza:display": "Chart",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_taxonomic_composition\" data-stanza-meo-id=\"MEO_0000029\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/gmo_applied_spices",
+      "stanza:label": "Applied Spices",
+      "stanza:definition": "Applied Spices of medium.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "medium_id",
+          "stanza:example": "NBRC_M231",
+          "stanza:description": "Medium identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Medium",
+      "stanza:display": "Table",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-09-30",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/gmo_applied_spices\" data-stanza-medium-id=\"NBRC_M231\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/gmo_genus",
+      "stanza:label": "Genus List (Medium-based)",
+      "stanza:definition": "Medium-based organism count list and group by genus.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "medium_id",
+          "stanza:example": "NBRC_M231",
+          "stanza:description": "Medium identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Medium",
+      "stanza:display": "Chart",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-09-30",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/gmo_genus\" data-stanza-medium-id=\"NBRC_M231\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/gene_length_nano",
+      "stanza:label": "Gene length",
+      "stanza:definition": "NanoStanza for showing gene length.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "BRCA1",
+          "stanza:description": "Gene identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Gene",
+      "stanza:display": "Numeral",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-05-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/gene_length_nano\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
     },
     {
       "@id": "http://togostanza.org/stanza/taxonomy_ortholog_profile",
@@ -1463,7 +1515,145 @@
       "stanza:version": "1",
       "stanza:created": "2015-02-03",
       "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/taxonomy_ortholog_profile\" data-stanza-tax-id=\"562\"></div>"
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/taxonomy_ortholog_profile\" data-stanza-tax-id=\"562\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/environment_organism_distribution_on_ph_nano",
+      "stanza:label": "Growth pH distribution",
+      "stanza:definition": "NanoStanza for showing the number of organisms along with growth pH for the specified environmental feature.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "meo_id",
+          "stanza:example": "MEO_0000007",
+          "stanza:description": "MEO identifier",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Environment",
+      "stanza:display": "Graph",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_organism_distribution_on_ph_nano\" data-stanza-meo-id=\"MEO_0000007\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/organism_related_disease_nano",
+      "stanza:label": "Disease pathogen",
+      "stanza:definition": "NanoStanza for showing a pathogen symbol.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "400667",
+          "stanza:description": "Taxonomy identifier",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Organism",
+      "stanza:display": "Image",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2015-09-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_related_disease_nano\" data-stanza-tax-id=\"400667\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/microbial_phenotype_environment_composition",
+      "stanza:label": "Environment List (Phenotype-based)",
+      "stanza:definition": "Phenotype-based organism count list and group by environment.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "mpo_id",
+          "stanza:example": "MPO_01003",
+          "stanza:description": "Phenotype(MPO) identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Phenotype",
+      "stanza:display": "Chart",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-09-30",
+      "stanza:updated": "2017-01-08",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/microbial_phenotype_environment_composition\" data-stanza-mpo-id=\"MPO_01003\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/protein_pfam_plot",
+      "stanza:label": "Pfam plot",
+      "stanza:definition": "Scatter plot of Pfam corresponding with genes.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "gene_id",
+          "stanza:example": "BRCA1",
+          "stanza:description": "Gene identifier.",
+          "stanza:required": true
+        },
+        {
+          "stanza:key": "tax_id",
+          "stanza:example": "9606",
+          "stanza:description": "Taxonomy identifier.",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "Stanza",
+      "stanza:context": "Phenotype",
+      "stanza:display": "Graph",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2018-05-30",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_pfam_plot\" data-stanza-gene-id=\"BRCA1\" data-stanza-tax-id=\"9606\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
+    },
+    {
+      "@id": "http://togostanza.org/stanza/environment_organism_distribution_on_temperature_nano",
+      "stanza:label": "Growth temperature distribution",
+      "stanza:definition": "NanoStanza for showing the number of Psychrophiles, Mesophiles and Thermophiles with the specified environmental feature.",
+      "stanza:parameter": [
+        {
+          "stanza:key": "meo_id",
+          "stanza:example": "MEO_0000029",
+          "stanza:description": "MEO identifier",
+          "stanza:required": true
+        }
+      ],
+      "stanza:type": "NanoStanza",
+      "stanza:context": "Environment",
+      "stanza:display": "Chart",
+      "stanza:provider": "DBCLS",
+      "stanza:license": "CC-BY",
+      "stanza:author": "Stanza Togo",
+      "stanza:address": "hoge@example.org",
+      "stanza:version": "1",
+      "stanza:created": "2015-02-03",
+      "stanza:updated": "2020-04-11",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/environment_organism_distribution_on_temperature_nano\" data-stanza-meo-id=\"MEO_0000029\"></div>",
+      "stanza:implemented": "ruby",
+      "stanza:host": "http://togostanza.org/stanza/"
     }
   ]
 }

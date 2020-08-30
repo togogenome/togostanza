@@ -48,6 +48,8 @@ Dir.glob("#{base_dir}/*_stanza/metadata.json").each do |file|
   jsonld_metadata['stanza:parameter'].each do |param|
      param['stanza:key'] = param['stanza:key'].gsub('data-stanza-','').gsub('-', '_')
   end
+  jsonld_metadata['stanza:implemented'] = "ruby"
+  jsonld_metadata['stanza:host'] = "http://togostanza.org/stanza/"
   stanza_list.push(jsonld_metadata)
 end
 
