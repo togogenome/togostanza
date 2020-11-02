@@ -13,36 +13,42 @@ class ProteinSequenceAnnotationStanza < TogoStanza::Stanza::Base
       FROM <http://togogenome.org/graph/tgup>
       WHERE {
         {
-          SELECT ?protein
+          SELECT DISTINCT ?parent_label ?label ?begin_location ?end_location ?annotation ?isoform
           {
-            <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
-              rdfs:seeAlso ?id_upid .
-            ?id_upid rdfs:seeAlso ?protein .
-            ?protein a up:Protein ;
-              up:reviewed ?reviewed .
-          } ORDER BY DESC(?reviewed) LIMIT 1
+            {
+              SELECT ?protein
+              {
+                <http://togogenome.org/gene/#{tax_id}:#{gene_id}> skos:exactMatch ?gene ;
+                  rdfs:seeAlso ?id_upid .
+                ?id_upid rdfs:seeAlso ?protein .
+                ?protein a up:Protein ;
+                  up:reviewed ?reviewed .
+              } ORDER BY DESC(?reviewed) LIMIT 1
+            }
+            ?protein up:annotation ?annotation .
+            ?annotation rdf:type ?type .
+            ?type rdfs:label ?label .
+
+            # sequence annotation 直下のtype のラベルを取得(Region, Site, Molecule Processing, Experimental Information)
+            ?type rdfs:subClassOf* ?parent_type .
+            ?parent_type rdfs:subClassOf up:Sequence_Annotation ;
+                         rdfs:label ?parent_label .
+
+            ?annotation up:range ?range .
+            ?range faldo:begin/faldo:position ?begin_location ;
+                   faldo:end/faldo:position ?end_location .
+
+            # sequence annotationが紐づいているisoformとそのsequenceを取得する
+            ?range faldo:begin/faldo:reference ?isoform .
+            ?isoform rdf:value ?value .
+          }
         }
-        ?protein up:annotation ?annotation .
-        ?annotation rdf:type ?type .
-        ?type rdfs:label ?label .
 
-        # sequence annotation 直下のtype のラベルを取得(Region, Site, Molecule Processing, Experimental Information)
-        ?type rdfs:subClassOf* ?parent_type .
-        ?parent_type rdfs:subClassOf up:Sequence_Annotation ;
-                     rdfs:label ?parent_label .
-
-        ?annotation up:range ?range .
         OPTIONAL { ?annotation rdfs:comment ?comment . }
-        ?range faldo:begin/faldo:position ?begin_location ;
-               faldo:end/faldo:position ?end_location .
-
-        # sequence annotationが紐づいているisoformとそのsequenceを取得する
-        ?range faldo:begin/faldo:reference ?isoform .
-        ?isoform rdf:value ?value .
 
         # description の一部が取得できるが、内容の表示に必要があるのか
         OPTIONAL {
-          ?annotation up:substitution ?substitution . 
+          ?annotation up:substitution ?substitution .
           ?isoform rdf:value ?seq .
         }
 
