@@ -30,7 +30,7 @@ Dir.glob("#{base_dir}/*_stanza/metadata.json").each do |file|
   jsonld_metadata = {}
   stanza_id = metadata.delete('id')
   # deprecated stanzas
-  if stanza_id == 'genome_genomic_context' || stanza_id == 'js_stanza_wrapper' || stanza_id == 'organism_gene_list'
+  if stanza_id == 'genome_genomic_context' || stanza_id == 'js_stanza_wrapper' || stanza_id == 'organism_gene_list' || stanza_id == 'gmo_approximation'
     next
   end
 

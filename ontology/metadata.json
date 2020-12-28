@@ -625,32 +625,6 @@
       "stanza:host": "http://togostanza.org/stanza/"
     },
     {
-      "@id": "http://togostanza.org/stanza/gmo_approximation",
-      "stanza:label": "Approximation",
-      "stanza:definition": "Medium to medium relevance ratio.",
-      "stanza:parameter": [
-        {
-          "stanza:key": "medium_id",
-          "stanza:example": "NBRC_M231",
-          "stanza:description": "Medium identifier.",
-          "stanza:required": true
-        }
-      ],
-      "stanza:type": "Stanza",
-      "stanza:context": "Medium",
-      "stanza:display": "Table",
-      "stanza:provider": "DBCLS",
-      "stanza:license": "CC-BY",
-      "stanza:author": "Stanza Togo",
-      "stanza:address": "hoge@example.org",
-      "stanza:version": "1",
-      "stanza:created": "2015-09-30",
-      "stanza:updated": "2015-09-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/gmo_approximation\" data-stanza-medium-id=\"NBRC_M231\"></div>",
-      "stanza:implemented": "ruby",
-      "stanza:host": "http://togostanza.org/stanza/"
-    },
-    {
       "@id": "http://togostanza.org/stanza/gene_attributes",
       "stanza:label": "Gene attributes",
       "stanza:definition": "Basic information of the specified gene.",
