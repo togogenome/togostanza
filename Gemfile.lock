@@ -475,7 +475,7 @@ GEM
     temple (0.8.2)
     thor (1.1.0)
     tilt (2.0.10)
-    togostanza (2.2.1)
+    togostanza (2.2.2)
       activesupport (>= 5)
       flavour_saver
       haml
