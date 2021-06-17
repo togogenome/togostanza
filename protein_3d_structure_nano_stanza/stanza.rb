@@ -25,7 +25,7 @@ class Protein3dStructureNanoStanza < TogoStanza::Stanza::Base
     SPARQL
 
     if result
-      result.merge(img_url: "https://pdbj.org/rest/molmil-renderer?type=mine&id=#{result[:pdb_uri][-4, 4].downcase!}")
+      result.merge(img_url: "https://pdbj.org/molmil-images/mine/#{result[:pdb_uri][-4, 4].downcase!}")
     else
       nil
     end
