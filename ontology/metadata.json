@@ -327,7 +327,7 @@
       "stanza:parameter": [
         {
           "stanza:key": "tax_id",
-          "stanza:example": "511145",
+          "stanza:example": "1003195",
           "stanza:description": "Taxonomy identifier",
           "stanza:required": true
         }
@@ -341,8 +341,8 @@
       "stanza:address": "hoge@example.org",
       "stanza:version": "1",
       "stanza:created": "2015-02-03",
-      "stanza:updated": "2016-03-08",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_jbrowse\" data-stanza-tax-id=\"511145\"></div>",
+      "stanza:updated": "2023-01-05",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/organism_jbrowse\" data-stanza-tax-id=\"1003195\"></div>",
       "stanza:implemented": "ruby",
       "stanza:host": "http://togostanza.org/stanza/"
     },
@@ -1092,13 +1092,13 @@
       "stanza:parameter": [
         {
           "stanza:key": "tax_id",
-          "stanza:example": "511145",
+          "stanza:example": "330879",
           "stanza:description": "Taxonomy identifier.",
           "stanza:required": true
         },
         {
           "stanza:key": "gene_id",
-          "stanza:example": "b2030",
+          "stanza:example": "AFUA_4G05860",
           "stanza:description": "Gene identifier.",
           "stanza:required": true
         }
@@ -1112,8 +1112,8 @@
       "stanza:address": "hoge@example.org",
       "stanza:version": "1",
       "stanza:created": "2015-02-03",
-      "stanza:updated": "2018-05-30",
-      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_orthologs\" data-stanza-tax-id=\"511145\" data-stanza-gene-id=\"b2030\"></div>",
+      "stanza:updated": "2023-01-05",
+      "stanza:usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_orthologs\" data-stanza-tax-id=\"330879\" data-stanza-gene-id=\"AFUA_4G05860\"></div>",
       "stanza:implemented": "ruby",
       "stanza:host": "http://togostanza.org/stanza/"
     },
