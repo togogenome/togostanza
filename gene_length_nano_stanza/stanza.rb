@@ -123,7 +123,6 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
         PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
         PREFIX uniprot: <http://purl.uniprot.org/core/>
 
- 
         SELECT ?feature ?priority ?reviewed
         { 
           GRAPH <http://togogenome.org/graph/tgup>
@@ -149,13 +148,16 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
     query4.join
     # 一つのクエリでUNIONで繋ぐと返ってこなくなったのでクエリを分割
 
+    # priority, reviewed の順で最初の1 featureを選択
     feature_list1.concat(feature_list2)
+    feature_list1.concat(feature_list3)
+    feature_list1.concat(feature_list4)
     if feature_list1.size == 0
       nil
       next
     end
-
     feature = feature_list1.first[:feature]
+
     results = query("http://dev.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
       SELECT ?insdc_location
