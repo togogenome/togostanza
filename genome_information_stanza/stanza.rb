@@ -25,7 +25,7 @@ class GenomeInformationStanza < TogoStanza::Stanza::Base
           insdc:sequence ?seq.
         ?seq rdfs:subClassOf/rdfs:label ?replicon_type ;
           insdc:sequence_length ?sequence_length .
-        ?refseq_link  togo:gene ?gene_cnt ;
+        ?refseq_link togo:coding_gene ?gene_cnt ;
           togo:rrna ?rrna_cnt ;
           togo:trna ?trna_cnt ;
           togo:other ?other_cnt .

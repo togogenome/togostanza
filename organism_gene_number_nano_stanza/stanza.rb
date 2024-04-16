@@ -8,7 +8,7 @@ class OrganismGeneNumberNanoStanza < TogoStanza::Stanza::Base
       FROM <http://togogenome.org/graph/stats>
       WHERE
       {
-        taxid:#{tax_id} tgstat:gene ?gene_number ;
+        taxid:#{tax_id} tgstat:coding_gene ?gene_number ;
         tgstat:rrna ?rrna_number ;
         tgstat:trna ?trna_number ;
         tgstat:ncrna ?ncrna_number .
