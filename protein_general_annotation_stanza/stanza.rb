@@ -1,7 +1,7 @@
 class ProteinGeneralAnnotationStanza < TogoStanza::Stanza::Base
   property :general_annotations do |tax_id, gene_id|
 
-    result = query("http://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    result = query("http://dev.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
     DEFINE sql:select-option "order"
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
