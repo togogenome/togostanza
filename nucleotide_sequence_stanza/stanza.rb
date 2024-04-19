@@ -8,7 +8,7 @@ class NucleotideSequenceStanza < TogoStanza::Stanza::Base
     feature_list3 = []
     feature_list4 = []
     query1 = Thread.new {
-      feature_list1 = query("http://dev.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
+      feature_list1 = query("http://sparql-app.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
         DEFINE sql:select-option "order"
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -46,7 +46,7 @@ class NucleotideSequenceStanza < TogoStanza::Stanza::Base
       SPARQL
     }
     query2 = Thread.new {
-      feature_list2 = query("http://dev.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
+      feature_list2 = query("http://sparql-app.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
         DEFINE sql:select-option "order"
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -84,7 +84,7 @@ class NucleotideSequenceStanza < TogoStanza::Stanza::Base
       SPARQL
     }
     query3 = Thread.new {
-      feature_list3 = query("http://dev.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
+      feature_list3 = query("http://sparql-app.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
         DEFINE sql:select-option "order"
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -112,7 +112,7 @@ class NucleotideSequenceStanza < TogoStanza::Stanza::Base
       SPARQL
     }
     query4 = Thread.new {
-      feature_list4 = query("http://dev.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
+      feature_list4 = query("http://sparql-app.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
         DEFINE sql:select-option "order"
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -156,7 +156,7 @@ class NucleotideSequenceStanza < TogoStanza::Stanza::Base
     end
     feature = feature_list1.first[:feature]
 
-    results = query("http://dev.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    results = query("http://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
       DEFINE sql:select-option "order"
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
