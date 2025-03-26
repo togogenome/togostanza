@@ -1,6 +1,6 @@
 class OrganismGenomeSizeNanoStanza < TogoStanza::Stanza::Base
   property :genome_size do |tax_id|
-   result = query("http://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+   result = query("https://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
      PREFIX taxid: <http://identifiers.org/taxonomy/>
      PREFIX stats: <http://togogenome.org/stats/>
 

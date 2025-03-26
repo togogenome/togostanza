@@ -1,6 +1,6 @@
 class OrganismPathogenInformationStanza < TogoStanza::Stanza::Base
   property :pathogen_list do |tax_id|
-    results = query("http://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    results = query("https://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX pdo: <http://purl.jp/bio/11/pdo/>
       PREFIX taxid: <http://identifiers.org/taxonomy/>

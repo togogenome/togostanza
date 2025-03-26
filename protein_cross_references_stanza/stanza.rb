@@ -1,6 +1,6 @@
 class ProteinCrossReferencesStanza < TogoStanza::Stanza::Base
   property :references do |tax_id, gene_id|
-    references = query("http://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    references = query("https://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
       DEFINE sql:select-option "order"
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>

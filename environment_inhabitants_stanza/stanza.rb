@@ -1,6 +1,6 @@
 class EnvironmentInhabitantsStanza < TogoStanza::Stanza::Base
   property :inhabitants_statistics do |meo_id|
-    nbrc_list = query("http://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    nbrc_list = query("https://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
     DEFINE sql:select-option "order"
     PREFIX mccv: <http://purl.jp/bio/10/mccv#>
     PREFIX meo: <http://purl.jp/bio/11/meo/>
@@ -41,7 +41,7 @@ class EnvironmentInhabitantsStanza < TogoStanza::Stanza::Base
     } GROUP BY ?strain_id ?strain_number ?strain_name ORDER BY DESC (?source_id)
     SPARQL
 
-    jcm_list = query("http://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    jcm_list = query("https://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
     DEFINE sql:select-option "order"
     PREFIX mccv: <http://purl.jp/bio/10/mccv#>
     PREFIX taxid: <http://identifiers.org/taxonomy/>
