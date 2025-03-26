@@ -10,7 +10,7 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
     feature_list3 = []
     feature_list4 = []
     query1 = Thread.new {
-      feature_list1 = query("https://sparql-app.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
+      feature_list1 = query("https://dev.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
         DEFINE sql:select-option "order"
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -48,7 +48,7 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
       SPARQL
     }
     query2 = Thread.new {
-      feature_list2 = query("https://sparql-app.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
+      feature_list2 = query("https://dev.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
         DEFINE sql:select-option "order"
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -86,7 +86,7 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
       SPARQL
     }
     query3 = Thread.new {
-      feature_list3 = query("https://sparql-app.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
+      feature_list3 = query("https://dev.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
         DEFINE sql:select-option "order"
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -114,7 +114,7 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
       SPARQL
     }
     query4 = Thread.new {
-      feature_list4 = query("https://sparql-app.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
+      feature_list4 = query("https://dev.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
         DEFINE sql:select-option "order"
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -158,7 +158,7 @@ class GeneLengthNanoStanza < TogoStanza::Stanza::Base
     end
     feature = feature_list1.first[:feature]
 
-    results = query("https://sparql-app.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
+    results = query("https://dev.togogenome.org/sparql",<<-SPARQL.strip_heredoc)
       PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
       SELECT ?insdc_location
       FROM <http://togogenome.org/graph/refseq>

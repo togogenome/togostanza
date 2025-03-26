@@ -1,5 +1,5 @@
 class MicrobialPhenotypeInformationStanza < TogoStanza::Stanza::Base
-  SPARQL_ENDPOINT_URL = 'https://sparql-app.togogenome.org/sparql'
+  SPARQL_ENDPOINT_URL = 'https://dev.togogenome.org/sparql'
 
   property :features do |mpo_id|
     query = <<-SPARQL.strip_heredoc

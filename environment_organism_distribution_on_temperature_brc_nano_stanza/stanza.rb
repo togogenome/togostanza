@@ -1,6 +1,6 @@
 class EnvironmentOrganismDistributionOnTemperatureBrcNanoStanza < TogoStanza::Stanza::Base
   property :num_orgs_with_temperature_range do |meo_id|
-    brc_results = query("https://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    brc_results = query("https://dev.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX mpo: <http://purl.jp/bio/10/mpo/>
     PREFIX mccv: <http://purl.jp/bio/10/mccv#>
@@ -49,7 +49,7 @@ class EnvironmentOrganismDistributionOnTemperatureBrcNanoStanza < TogoStanza::St
     }
     SPARQL
 
-    gold_results = query("https://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    gold_results = query("https://dev.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX mpo: <http://purl.jp/bio/01/mpo#>
     PREFIX mccv: <http://purl.jp/bio/01/mccv#>

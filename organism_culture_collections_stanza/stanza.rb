@@ -1,6 +1,6 @@
 class OrganismCultureCollectionsStanza < TogoStanza::Stanza::Base
   property :strain_list do |tax_id|
-    results = query("https://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    results = query("https://dev.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
     PREFIX dcterms: <http://purl.org/dc/terms/>
     PREFIX taxid: <http://identifiers.org/taxonomy/>
     PREFIX mccv: <http://purl.jp/bio/10/mccv#>
