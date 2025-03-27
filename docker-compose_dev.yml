@@ -1,0 +1,16 @@
+services:
+  stanza:
+    container_name: togogenome_stanza_dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: togogenome_stanza_dev
+    user: ${UID:-0}:${DOCKER_GID:-0}
+    volumes:
+      - ${PWD}:/usr/src/app
+    ports:
+      - "29292:9292"
+    networks:
+      - togogenome_dev
+networks:
+  togogenome_dev:
