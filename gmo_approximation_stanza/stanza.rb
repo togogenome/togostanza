@@ -1,5 +1,5 @@
 class GmoApproximationStanza < TogoStanza::Stanza::Base
-  SPARQL_ENDPOINT_URL = 'https://dev.togogenome.org/sparql'
+  SPARQL_ENDPOINT_URL = 'https://sparql-app.togogenome.org/sparql'
 
   property :medium_information do |medium_id|
     query = <<-SPARQL.strip_heredoc

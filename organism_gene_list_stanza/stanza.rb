@@ -1,6 +1,6 @@
 class OrganismGeneListStanza < TogoStanza::Stanza::Base
   property :organism_gene_list do |tax_id|
-    endpoint = "https://dev.togogenome.org/sparql"
+    endpoint = "https://sparql-app.togogenome.org/sparql"
 
     ### gene - gene name, position, etc.
     gene_position = query(endpoint, <<-SPARQL.strip_heredoc)

@@ -1,6 +1,6 @@
 class EnvironmentOrganismDistributionOnPhNanoStanza < TogoStanza::Stanza::Base
   property :list do |meo_id|
-    results = query("https://dev.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
+    results = query("https://sparql-app.togogenome.org/sparql", <<-SPARQL.strip_heredoc)
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX mpo: <http://purl.jp/bio/01/mpo#>
       PREFIX mccv: <http://purl.jp/bio/01/mccv#>
