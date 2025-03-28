@@ -35,7 +35,7 @@ Dir.glob("#{base_dir}/*_stanza/metadata.json").each do |file|
   end
 
   # @id
-  jsonld_metadata['@id'] = 'http://togostanza.org/stanza/' + stanza_id
+  jsonld_metadata['@id'] = 'https://togostanza.org/stanza/' + stanza_id
   # add prefix to jsonld
   jsonld_metadata.merge!(jsonld_keys(metadata, 'stanza'))
   # usage
@@ -43,18 +43,18 @@ Dir.glob("#{base_dir}/*_stanza/metadata.json").each do |file|
   jsonld_metadata['stanza:parameter'].each do |param|
     usage_param_list.push(param['stanza:key'] + '="' + param['stanza:example'] + '"')
   end
-  jsonld_metadata['stanza:usage'] = "<div data-stanza=\"http://togostanza.org/stanza/#{stanza_id}\" #{usage_param_list.join(' ')}></div>"
+  jsonld_metadata['stanza:usage'] = "<div data-stanza=\"https://togostanza.org/stanza/#{stanza_id}\" #{usage_param_list.join(' ')}></div>"
   # delete param prefix 'data-stanza-' and '-' to '_'
   jsonld_metadata['stanza:parameter'].each do |param|
      param['stanza:key'] = param['stanza:key'].gsub('data-stanza-','').gsub('-', '_')
   end
   jsonld_metadata['stanza:implemented'] = "ruby"
-  jsonld_metadata['stanza:host'] = "http://togostanza.org/stanza/"
+  jsonld_metadata['stanza:host'] = "https://togostanza.org/stanza/"
   stanza_list.push(jsonld_metadata)
 end
 
 metadata_json = {
-  '@context': { 'stanza': "http://togostanza.org/resource/stanza#"},
+  '@context': { 'stanza': "https://togostanza.org/resource/stanza#"},
   'stanza:stanzas': stanza_list
 }
 

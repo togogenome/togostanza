@@ -21,7 +21,7 @@
         font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
       }
     </style>
-    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></scriprt>
+    <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></scriprt>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     {{download_json}}
@@ -266,7 +266,7 @@
         */
         function click(d) {
           if(d.node_id.indexOf("MEO_") >= 0) {
-            top.location.href = d.node_id.replace("http://purl.jp/bio/11/meo/","http://togogenome.org/environment/");
+            top.location.href = d.node_id.replace("http://purl.jp/bio/11/meo/","https://togogenome.org/environment/");
           }
         }
       })();

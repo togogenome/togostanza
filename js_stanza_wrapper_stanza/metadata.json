@@ -5,7 +5,7 @@
   "parameter": [
     {
       "key": "data-stanza-server",
-      "example": "http://togostanza.org/dist/stanza",
+      "example": "https://togostanza.org/dist/stanza",
       "description": "JavaScript stanza server URL",
       "required": true
     },

@@ -16,7 +16,7 @@
       "required": true
     }
   ],
-  "usage": "<div data-stanza=\"http://togostanza.org/stanza/protein_general_annotation\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
+  "usage": "<div data-stanza=\"https://togostanza.org/stanza/protein_general_annotation\" data-stanza-tax-id=\"9606\" data-stanza-gene-id=\"BRCA1\"></div>",
   "type": "Stanza",
   "context": "Phenotype",
   "display": "Other",
