@@ -1,6 +1,6 @@
 # togostanza
 
-Collection of TogoStanza developed for the [TogoGenome](http://togogenome.org/) database.
+Collection of TogoStanza developed for the [TogoGenome](https://togogenome.org/) database.
 
 ## Change log
 

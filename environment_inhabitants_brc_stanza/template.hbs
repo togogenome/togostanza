@@ -33,14 +33,14 @@
               <td class='span2'>
                 {{#if tax_no_array}}
                   {{#each tax_no_array}}
-                    <a href="http://togogenome.org/organism/{{tax_no}}" target="_top">{{tax_no}}</a>{{#unless is_last_data}},&nbsp;{{/unless}}
+                    <a href="https://togogenome.org/organism/{{tax_no}}" target="_top">{{tax_no}}</a>{{#unless is_last_data}},&nbsp;{{/unless}}
                   {{/each}}
                 {{/if}}
               </td>
               <td class='span3'>{{isolation}}</td>
               <td class='span2'>
                 {{#each env_link_array}}
-                  <a href="http://togogenome.org/environment/{{meo_id}}" target="_top">{{meo_label}}</a>{{#unless is_last_data}},&nbsp;{{/unless}}
+                  <a href="https://togogenome.org/environment/{{meo_id}}" target="_top">{{meo_label}}</a>{{#unless is_last_data}},&nbsp;{{/unless}}
                 {{/each}}
               </td>
             </tr>

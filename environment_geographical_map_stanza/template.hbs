@@ -3,12 +3,12 @@
 <html>
   <head>
     <title>Environment GOLD Sampling Place</title>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <style type="text/css">
       #map { height: 500px; with: 800px}
     </style>
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="//cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript">
     $(function(){
       $.getJSON("./environment_geographical_map/resources/place_list?meo_id={{select_meo_id}}", function(json) {
@@ -25,7 +25,7 @@
           var map = L.map('map').setView([35.0, 139.0], 2);
           var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
             maxZoom: 18,
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
           });
           map.addLayer(tiles);
           for (var i = 0 ; i < json.place_list.length ; i++) {
